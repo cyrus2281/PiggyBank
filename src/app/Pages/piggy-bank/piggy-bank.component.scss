@@ -1,0 +1,11 @@
+@import "../../Core/styles/variables.scss";
+
+.piggyBank {
+  width: 100vw;
+  height: 100vh;
+
+  &.lightMode {
+    background-color: $white-1;
+    color: red;
+  }
+}
