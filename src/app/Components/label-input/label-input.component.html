@@ -1,0 +1,15 @@
+<div class="group" [class]="app_theme['theme']">
+  <input
+    [type]="type"
+    [name]="name"
+    class="form-input"
+    [(ngModel)]="value"
+    (keydown)="onChange.emit($event)"
+    (keyup)="onKeyUp.emit($event)"
+    (change)="onKeyDown.emit($event)"
+    [required]="required"
+  />
+  <label *ngIf="label" class="form-input-label" [class.shrink]="!!value">{{
+    label
+  }}</label>
+</div>
