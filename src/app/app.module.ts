@@ -9,6 +9,9 @@ import { ActionBarComponent } from './Common/action-bar/action-bar.component';
 import { SideBarComponent } from './Common/side-bar/side-bar.component';
 import { FooterComponent } from './Common/footer/footer.component';
 import { HeaderComponent } from './Common/header/header.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { AppRoutingModule } from './app-routing.module';
+import { SignInUpComponent } from './Pages/sign-in-up/sign-in-up.component';
 
 @NgModule({
   declarations: [
@@ -19,10 +22,13 @@ import { HeaderComponent } from './Common/header/header.component';
     ActionBarComponent,
     SideBarComponent,
     FooterComponent,
-    HeaderComponent
+    HeaderComponent,
+    SignInUpComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FontAwesomeModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

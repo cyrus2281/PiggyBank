@@ -1,0 +1,26 @@
+@import "./variables.scss";
+
+@mixin media-grid-columns($mobile, $tablet, $desktop) {
+  grid-template-columns: $mobile;
+
+  @media only screen and (min-width: $tablet-width) {
+    grid-template-columns: $tablet;
+  }
+
+  @media only screen and (min-width: $desktop-width) {
+    grid-template-columns: $desktop;
+  }
+}
+
+@mixin media-grid-rows($mobile, $tablet, $desktop) {
+  grid-template-rows: $mobile;
+
+  @media only screen and (min-width: $tablet-width) {
+    grid-template-rows: $tablet;
+  }
+
+  @media only screen and (min-width: $desktop-width) {
+    grid-template-rows: $desktop;
+  }
+}
+
