@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppComponent } from './app.component';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AppRoutingModule } from './app-routing.module';
 import { ComponentsModule } from './Components/components.module';
 import { CommonComponentsModule } from './Common/common.module';
@@ -11,6 +9,7 @@ import { CoreModule } from './Core/core.module';
 import { TransactionModule } from './Transaction/transaction.module';
 import { DirectoryModule } from './Directory/directory.module';
 import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -18,7 +17,6 @@ import { FormsModule } from '@angular/forms';
   ],
   imports: [
     BrowserModule,
-    FontAwesomeModule,
     AppRoutingModule,
     FormsModule,
     ComponentsModule,
@@ -26,7 +24,8 @@ import { FormsModule } from '@angular/forms';
     PagesModule,
     CoreModule,
     TransactionModule,
-    DirectoryModule
+    DirectoryModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
