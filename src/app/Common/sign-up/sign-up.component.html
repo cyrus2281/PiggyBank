@@ -1,37 +1,37 @@
 <div class="sign-up">
   <div class="sign-up-header">
-    <p class="sign-up-title">Don't have an account?</p>
-    <p class="sign-up-subtitle">Sign up with your email now.</p>
+    <p class="sign-up-title">{{'signup.title' | localize}}</p>
+    <p class="sign-up-subtitle">{{'signup.subtitle' | localize}}</p>
   </div>
   <form class="sign-up-form" onSubmit="{this.handleSubmit}">
     <pg-label-input
       type="text"
       name="name"
       [required]="true"
-      label="Display Name"
+      [label]="'common.name' | localize"
     ></pg-label-input>
     <pg-label-input
       type="email"
       name="email"
       [required]="true"
-      label="Email"
+      [label]="'common.email' | localize"
     ></pg-label-input>
     <pg-label-input
       type="password"
       name="password"
       [required]="true"
-      label="Password"
+      [label]="'common.password' | localize"
     ></pg-label-input>
     <pg-label-input
       type="password"
       name="confirmPassword"
       [required]="true"
-      label="Confirm Password"
+      [label]="'common.confirmPassword' | localize"
     ></pg-label-input>
     <div class="sign-up-btn">
       <pg-button
         type="submit"
-        label="SIGN UP"
+        [label]="'signup' | localize | uppercase"
         [style]="buttonStyle"
       ></pg-button>
     </div>
