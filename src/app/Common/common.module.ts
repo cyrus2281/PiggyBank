@@ -1,5 +1,6 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
+import { ComponentsModule } from "../Components/components.module";
 import { ActionBarComponent } from "./action-bar/action-bar.component";
 import { FooterComponent } from "./footer/footer.component";
 import { HeaderComponent } from "./header/header.component";
@@ -19,7 +20,8 @@ import { SignUpComponent } from "./sign-up/sign-up.component";
     SignUpComponent,
   ],
   imports: [
-      CommonModule
+      CommonModule,
+      ComponentsModule
   ],
   exports: [
     NavbarComponent,

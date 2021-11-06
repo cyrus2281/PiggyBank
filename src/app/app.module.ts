@@ -10,6 +10,7 @@ import { PagesModule } from './Pages/pages.module';
 import { CoreModule } from './Core/core.module';
 import { TransactionModule } from './Transaction/transaction.module';
 import { DirectoryModule } from './Directory/directory.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { DirectoryModule } from './Directory/directory.module';
     BrowserModule,
     FontAwesomeModule,
     AppRoutingModule,
+    FormsModule,
     ComponentsModule,
     CommonComponentsModule,
     PagesModule,
