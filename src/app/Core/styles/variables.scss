@@ -1,12 +1,19 @@
 
 // Colors
-$white-1: #FCF7FF;
+$white-1: #fdfaff;
+$white-2: #f3f3f3;
+$white-3: #fdfdfd;
 
 $black-1: #1B1B1E;
+
+$grey-1: #b2b2b3;
+$grey-2: #878C8F;
+$grey-3: #7a7c7e;
 
 $blue-1: #9BB1FF;
 $blue-2: #788BFF;
 $blue-3: #5465FF;
+
 
 
 //Devices Sizes
@@ -15,3 +22,17 @@ $mobile-width: 480px;
 $tablet-width: 992px;
 $desktop-width: 1280px;
 $max-width: 1800px;
+$max-height: 800px;
+
+
+// Radius
+$RoundRadius : 7px;
+$RoundRadiusPlus : 15px;
+
+
+// Font Family
+
+  $family1: Arial, Helvetica, sans-serif;
+  $family2: 'Times New Roman', Times, serif;
+  $family3: Times, serif;
+

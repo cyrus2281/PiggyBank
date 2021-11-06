@@ -1,0 +1,65 @@
+@import "../../Core/styles/variables.scss";
+@import "../../Core/styles/functions.scss";
+
+.lightMode {
+  background-color: $white-1;
+}
+
+.sign-in-up {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  justify-content: center;
+  margin: auto 0;
+
+  &-container {
+    width: 100vw;
+    max-width: $tablet-width;
+    box-shadow: 0px 10px 13px -7px #000000, -50px 5px 15px 15px rgba(0, 0, 0, 0);
+    overflow: hidden;
+
+    @include tablet-plus {
+      border: 1pt solid;
+      margin-top: 50px;
+      border-radius: $RoundRadiusPlus;
+      max-height: $max-height;
+    }
+
+    .lightMode & {
+      background-color: $white-3;
+      border-color: $grey-1;
+    }
+  }
+
+  &-tabs {
+    font-family: $family3;
+    display: flex;
+  }
+
+  &-tab {
+    width: 100%;
+    padding: 20px 40px;
+    font-size: 26px;
+    text-align: center;
+    border-bottom: 1pt solid;
+
+    .lightMode & {
+      & a {
+        color: $grey-3;
+      }
+      background-color: $white-2;
+    }
+  }
+
+  &-component {
+    padding: 10px;
+  }
+}
+
+.lightMode .current-tab {
+  & a {
+    color: $black-1;
+  }
+  background-color: $white-1;
+  border-color: $blue-3;
+}

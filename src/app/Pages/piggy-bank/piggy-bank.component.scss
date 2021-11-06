@@ -1,20 +1,18 @@
 @import "../../Core/styles/variables.scss";
 
+.lightMode {
+  background-color: $white-1;
+}
+
 .piggyBank {
   width: 100vw;
   height: 100vh;
   max-width: $max-width;
   margin: 0 auto;
 
-  &.lightMode {
-    background-color: $white-1;
-    color: red;
-  }
-
   &-body {
     height: 100%;
     display: flex;
     flex-direction: row;
-
   }
 }

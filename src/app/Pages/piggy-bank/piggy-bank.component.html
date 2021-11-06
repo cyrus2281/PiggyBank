@@ -1,9 +1,7 @@
-<div class="piggyBank" [ngClass]="{lightMode: app_theme['theme']==='lightMode'}">
-  <pg-header></pg-header>
+<div class="piggyBank" [class]="app_theme['theme']">
   <div class="piggyBank-body">
     <pg-side-bar></pg-side-bar>
-    <pg-page></pg-page>
-
+    <router-outlet></router-outlet>
   </div>
   <pg-footer></pg-footer>
 </div>
