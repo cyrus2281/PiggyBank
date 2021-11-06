@@ -1,11 +1,39 @@
-<div className='sign-up'>
-  <h2 className="title">I do not have an account</h2>
-  <span>Sign up with your email and password</span>
-  <form className='sign-up-form' onSubmit={this.handleSubmit}>
-      <input type='text' name='displayName' value={displayName} onChange={this.handleChange} required label='Display Name'>
-      <input type='email' name='email' value={email} onChange={this.handleChange} required label='Email'>
-      <input type='password' name='password' value={password} onChange={this.handleChange} required label='Password'>
-      <input type='password' name='confirmPassword' value={confirmPassword} onChange={this.handleChange} required label='Confirm Password'>
-      <button type='submit'>Sign Up</button>
+<div class="sign-up">
+  <div class="sign-up-header">
+    <p class="sign-up-title">Don't have an account?</p>
+    <p class="sign-up-subtitle">Sign up with your email now.</p>
+  </div>
+  <form class="sign-up-form" onSubmit="{this.handleSubmit}">
+    <pg-label-input
+      type="text"
+      name="name"
+      [required]="true"
+      label="Display Name"
+    ></pg-label-input>
+    <pg-label-input
+      type="email"
+      name="email"
+      [required]="true"
+      label="Email"
+    ></pg-label-input>
+    <pg-label-input
+      type="password"
+      name="password"
+      [required]="true"
+      label="Password"
+    ></pg-label-input>
+    <pg-label-input
+      type="password"
+      name="confirmPassword"
+      [required]="true"
+      label="Confirm Password"
+    ></pg-label-input>
+    <div class="sign-up-btn">
+      <pg-button
+        type="submit"
+        label="SIGN UP"
+        [style]="buttonStyle"
+      ></pg-button>
+    </div>
   </form>
 </div>

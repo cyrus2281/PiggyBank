@@ -1,15 +1,32 @@
+@import "../../Core/styles/variables.scss";
+@import "../../Core/styles/functions.scss";
+
 .sign-up {
   display: flex;
   flex-direction: column;
-  width: 380px;
-
-  .title {
-    margin: 10px 0;
+  margin: 10px auto;
+  padding: 0 15px;
+  @include tablet-plus {
+    max-width: $mobile-width + 100px;
   }
-}
-.sign-in-and-sign-up {
-width: 850px;
-display: flex;
-justify-content: space-between;
-margin: 30px auto;
+
+  &-title {
+    margin: 10px 0;
+    font-family: $family1;
+    font-size: 24px;
+  }
+
+  &-subtitle {
+    font-size: 16px;
+    font-family: $family2;
+  }
+
+  &-btn {
+    width: min-content;
+    margin-left: auto;
+    
+    @include mobile-only{
+      margin: 0 auto;
+    }
+  }
 }

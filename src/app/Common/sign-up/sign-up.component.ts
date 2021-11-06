@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ButtonStyleEnum } from 'src/app/Core/enum/button-style.enum';
 
 @Component({
   selector: 'pg-sign-up',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sign-up.component.scss']
 })
 export class SignUpComponent implements OnInit {
+  buttonStyle =  ButtonStyleEnum.PRIMARY;
 
   constructor() { }
 
