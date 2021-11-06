@@ -8,6 +8,7 @@ import APP_THEME from 'src/app/Core/theme/theme';
 })
 export class SignInUpComponent implements OnInit {
   app_theme = APP_THEME;
+  
 
   constructor() { }
 

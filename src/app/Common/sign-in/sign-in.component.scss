@@ -1,0 +1,55 @@
+@import "../../Core/styles/variables.scss";
+@import "../../Core/styles/functions.scss";
+
+.sign-in {
+  display: flex;
+  flex-direction: column;
+  margin: 10px auto;
+  padding: 0 15px;
+  @include tablet-plus {
+    max-width: $mobile-width + 100px;
+  }
+
+  &-title {
+    margin: 10px 0;
+    font-family: $family1;
+    font-size: 24px;
+  }
+
+  &-subtitle {
+    font-size: 16px;
+    font-family: $family2;
+  }
+
+  &-btns {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+  }
+
+  &-gap {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    &-line {
+      width: 40%;
+      height: 1pt;
+    }
+    &-or {
+      padding: 10px;
+    }
+  }
+
+  &-third-party{
+    display: grid;
+    gap: 25px;
+
+    @include tablet-plus {
+      grid-template-columns: 1fr 1fr;
+    }
+
+  }
+}

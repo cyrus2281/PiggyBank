@@ -6,6 +6,7 @@
     (click)="onClick.emit($event)"
     class="pg-button"
     [class]="style"
+    [class.shadow]="shadow"
   >
     {{ label }}
     <ng-content></ng-content>

@@ -13,7 +13,8 @@ export class ButtonComponent implements OnInit {
   @Input() name!: string;
   @Input() type: string = 'button';
   @Input() disabled: boolean = false;
-  @Input() style: ButtonStyleEnum = ButtonStyleEnum.SECONDARY;
+  @Input() shadow: boolean = false;
+  @Input() style!: ButtonStyleEnum;;
 
   @Output() onClick = new EventEmitter();
 

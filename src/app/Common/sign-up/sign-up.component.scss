@@ -20,13 +20,4 @@
     font-size: 16px;
     font-family: $family2;
   }
-
-  &-btn {
-    width: min-content;
-    margin-left: auto;
-    
-    @include mobile-only{
-      margin: 0 auto;
-    }
-  }
 }

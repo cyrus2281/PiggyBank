@@ -1,1 +1,43 @@
-<p>sign-in works!</p>
+<div class="sign-in">
+  <div class="sign-in-header">
+    <p class="sign-in-title">{{ "signin.title" | localize }}</p>
+  </div>
+  <form class="sign-in-form" onSubmit="{this.handleSubmit}">
+    <pg-label-input
+      type="email"
+      name="email"
+      [required]="true"
+      [label]="'common.email' | localize"
+    ></pg-label-input>
+    <pg-label-input
+      type="password"
+      name="password"
+      [required]="true"
+      [label]="'common.password' | localize"
+    ></pg-label-input>
+    <div class="sign-in-btns">
+      <pg-button
+        type="submit"
+        [label]="'signin' | localize | uppercase"
+        [style]="buttonStyle.PRIMARY"
+        [shadow]="true"
+        class="sign-in-btn"
+      ></pg-button>
+      <div class="sign-in-gap">
+        <hr class="sign-in-gap-line" />
+        <span class="sign-in-gap-or">{{ "common.or" | localize }}</span>
+        <hr class="sign-in-gap-line" />
+      </div>
+      <div class="sign-in-third-party">
+        <pg-button type="submit" [style]="buttonStyle.GOOGLE"[shadow]="true"
+          ><pg-icon svg="GOOGLE"></pg-icon
+          ><span>{{ "signin.google" | localize }}</span></pg-button
+        >
+        <pg-button type="submit" [style]="buttonStyle.FACEBOOK" [shadow]="true"
+          ><pg-icon svg='FACEBOOK'></pg-icon
+          ><span>{{ "signin.facebook" | localize }}</span></pg-button
+        >
+      </div>
+    </div>
+  </form>
+</div>

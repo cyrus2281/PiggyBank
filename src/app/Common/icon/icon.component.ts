@@ -9,7 +9,7 @@ import { ICONS } from './icons';
   styleUrls: ['./icon.component.scss']
 })
 export class IconComponent implements OnInit {
-  @Input() icon: string = 'home';
+  @Input() icon!: string;
   @Input() svg!: string;
 
   constructor(private iconRegistry: MatIconRegistry, private sanitizer: DomSanitizer) {
