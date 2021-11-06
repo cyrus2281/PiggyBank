@@ -8,6 +8,8 @@
     (keyup)="onKeyUp.emit($event)"
     (change)="onKeyDown.emit($event)"
     [required]="required"
+    [readOnly]="readOnly"
+    [disabled]="disabled"
   />
   <label *ngIf="label" class="form-input-label" [class.shrink]="!!value">{{
     label

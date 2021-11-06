@@ -24,14 +24,19 @@
   }
 }
 
+@mixin mobile-only {
+  @media only screen and (max-width: $mobile-width) {
+    @content;
+  }
+}
 
-@mixin tablet-plus{
+@mixin tablet-plus {
   @media only screen and (min-width: $tablet-width) {
     @content;
   }
 }
 
-@mixin desktop-only{
+@mixin desktop-only {
   @media only screen and (min-width: $desktop-width) {
     @content;
   }

@@ -11,8 +11,10 @@ export class LabelInputComponent implements OnInit {
   @Input() value!: string;
   @Input() label!: string;
   @Input() name!: string;
-  @Input() type: string = 'test';
+  @Input() type: string = 'text';
   @Input() required: boolean = false;
+  @Input() readOnly: boolean = false;
+  @Input() disabled: boolean = false;
 
   @Output() onChange = new EventEmitter();
   @Output() onKeyUp = new EventEmitter();

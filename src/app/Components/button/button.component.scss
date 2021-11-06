@@ -1,0 +1,57 @@
+@import "../../Core/styles/variables.scss";
+
+.pg-button {
+  min-width: 165px;
+  width: auto;
+  height: 50px;
+  letter-spacing: 0.5px;
+  line-height: 50px;
+  padding: 0 35px 0 35px;
+  font-size: 15px;
+  font-family: $family3;
+  font-weight: bolder;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  justify-content: center;
+  transition: $transition-quick;
+  border: 1px solid transparent;
+}
+
+.lightMode {
+
+  .secondary {
+    background-color: $white-1;
+    color: $black-1;
+    border-color: $black-1;
+
+    &:hover {
+      background-color: $black-1;
+      color: $white-1;
+      border-color: $white-1;
+    }
+  }
+
+  .secondary-reverse {
+    background-color: $black-1;
+    color: $white-1;
+    border-color: $white-1;
+
+    &:hover {
+      background-color: $white-1;
+      color: $black-1;
+      border-color: $black-1;
+    }
+  }
+
+  .primary {
+    background-color: $blue-1;
+    color: $white-1;
+    border-color: $blue-1;
+
+    &:hover {
+      background-color: $blue-2;
+      border-color: $blue-2;
+    }
+  }
+}

@@ -1,0 +1,13 @@
+<div [class]="app_theme['theme']">
+  <button
+    [type]="type"
+    [name]="name"
+    [disabled]="disabled"
+    (click)="onClick.emit($event)"
+    class="pg-button"
+    [class]="style"
+  >
+    {{ label }}
+    <ng-content></ng-content>
+  </button>
+</div>

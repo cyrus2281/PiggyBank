@@ -3,10 +3,12 @@ import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { BrowserModule } from "@angular/platform-browser";
 import { LabelInputComponent } from './label-input/label-input.component';
+import { ButtonComponent } from './button/button.component';
 
 @NgModule({
   declarations: [
-    LabelInputComponent
+    LabelInputComponent,
+    ButtonComponent
   ],
   imports: [
       CommonModule,
@@ -14,7 +16,8 @@ import { LabelInputComponent } from './label-input/label-input.component';
       FormsModule
   ],
   exports: [
-    LabelInputComponent
+    LabelInputComponent,
+    ButtonComponent
   ]
 })
 export class ComponentsModule { }

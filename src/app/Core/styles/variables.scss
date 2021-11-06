@@ -10,15 +10,15 @@ $grey-1: #b2b2b3;
 $grey-2: #878C8F;
 $grey-3: #7a7c7e;
 
-$blue-1: #9BB1FF;
-$blue-2: #788BFF;
+$blue-1: #4295f4;
+$blue-2: #0048ce;
 $blue-3: #5465FF;
 
 
 
 //Devices Sizes
 
-$mobile-width: 480px;
+$mobile-width: 580px;
 $tablet-width: 992px;
 $desktop-width: 1280px;
 $max-width: 1800px;
@@ -35,4 +35,12 @@ $RoundRadiusPlus : 15px;
   $family1: Arial, Helvetica, sans-serif;
   $family2: 'Times New Roman', Times, serif;
   $family3: Times, serif;
+
+
+// Transition
+$transition-quick: all .3s ease-in-out;
+$transition-fast: all .5s ease-in-out;
+$transition-normal: all .7s ease-in-out;
+$transition-slow: all 1s ease-in-out;
+$transition-long: all 1.5s ease-in-out;
 
