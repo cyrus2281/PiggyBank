@@ -10,6 +10,9 @@ import { TransactionModule } from './Transaction/transaction.module';
 import { DirectoryModule } from './Directory/directory.module';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { StoreModule } from '@ngrx/store';
+import { reducers } from './Data/Redux/root.reducer';
+import { EffectsModule } from '@ngrx/effects';
 
 @NgModule({
   declarations: [
@@ -26,6 +29,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     TransactionModule,
     DirectoryModule,
     BrowserAnimationsModule,
+    StoreModule.forRoot(reducers),
+    EffectsModule.forRoot([]),
   ],
   providers: [],
   bootstrap: [AppComponent]
