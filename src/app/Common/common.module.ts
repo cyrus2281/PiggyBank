@@ -11,6 +11,7 @@ import { SideBarComponent } from "./side-bar/side-bar.component";
 import { SignInComponent } from "./sign-in/sign-in.component";
 import { SignUpComponent } from "./sign-up/sign-up.component";
 import { IconComponent } from './icon/icon.component';
+import { FormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { IconComponent } from './icon/icon.component';
   imports: [
       CommonModule,
       ComponentsModule,
-      CoreModule
+      CoreModule,
+      FormsModule
   ],
   exports: [
     NavbarComponent,

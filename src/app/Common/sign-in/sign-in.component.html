@@ -4,12 +4,14 @@
   </div>
   <form class="sign-in-form" onSubmit="{this.handleSubmit}">
     <pg-label-input
+      [(ngModel)]="email"
       type="email"
       name="email"
       [required]="true"
       [label]="'common.email' | localize"
     ></pg-label-input>
     <pg-label-input
+      [(ngModel)]="password"
       type="password"
       name="password"
       [required]="true"
@@ -22,6 +24,7 @@
         [style]="buttonStyle.PRIMARY"
         [shadow]="true"
         class="sign-in-btn"
+        (click)="signIn()"
       ></pg-button>
       <div class="sign-in-gap">
         <hr class="sign-in-gap-line" />

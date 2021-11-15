@@ -14,9 +14,7 @@ export class ButtonComponent implements OnInit {
   @Input() type: string = 'button';
   @Input() disabled: boolean = false;
   @Input() shadow: boolean = false;
-  @Input() style!: ButtonStyleEnum;;
-
-  @Output() onClick = new EventEmitter();
+  @Input() style!: ButtonStyleEnum;
 
   constructor() { }
 

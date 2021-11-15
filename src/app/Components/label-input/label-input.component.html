@@ -1,12 +1,13 @@
 <div class="group" [class]="app_theme['theme']">
   <input
+    [(ngModel)]="value"
+    (ngModelChange)="onModelChange(value)"
     [type]="type"
     [name]="name"
     class="form-input"
-    [(ngModel)]="value"
-    (keydown)="onChange.emit($event)"
+    (keydown)="onKeyDown.emit($event)"
     (keyup)="onKeyUp.emit($event)"
-    (change)="onKeyDown.emit($event)"
+    (change)="change.emit($event)"
     [required]="required"
     [readOnly]="readOnly"
     [disabled]="disabled"
