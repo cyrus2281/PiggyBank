@@ -41,3 +41,16 @@
     @content;
   }
 }
+
+@mixin for-screen($attribute, $value, $gap:1) {
+  #{$attribute}: $value;
+
+  @media only screen and (min-width: $tablet-width) {
+    #{$attribute}: $value + $gap;
+  }
+
+  @media only screen and (min-width: $desktop-width) {
+    #{$attribute}: $value + ($gap * 2);
+  }
+}
+

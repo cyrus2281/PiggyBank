@@ -26,7 +26,7 @@
     }
 
     .lightMode & {
-      background-color: $white-3;
+      background-color: $white-2;
       border-color: $grey-1;
     }
   }
@@ -39,7 +39,7 @@
   &-tab {
     width: 100%;
     padding: 20px 40px;
-    font-size: 26px;
+    @include for-screen('font-size', 18px, 4px);
     text-align: center;
     border-bottom: 1pt solid;
 

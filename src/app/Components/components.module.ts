@@ -5,11 +5,13 @@ import { BrowserModule } from "@angular/platform-browser";
 import { LabelInputComponent } from './label-input/label-input.component';
 import { ButtonComponent } from './button/button.component';
 import {MatIconModule} from '@angular/material/icon';
+import { IconComponent } from "./icon/icon.component";
 
 @NgModule({
   declarations: [
     LabelInputComponent,
-    ButtonComponent
+    ButtonComponent,
+    IconComponent,
   ],
   imports: [
       CommonModule,
@@ -20,7 +22,7 @@ import {MatIconModule} from '@angular/material/icon';
   exports: [
     LabelInputComponent,
     ButtonComponent,
-    MatIconModule
+    IconComponent,
   ]
 })
 export class ComponentsModule { }

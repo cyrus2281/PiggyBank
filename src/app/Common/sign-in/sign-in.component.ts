@@ -3,11 +3,9 @@ import { Store } from '@ngrx/store';
 import { ButtonStyleEnum } from 'src/app/Core/enum/button-style.enum';
 import { AppState } from 'src/app/Data/Redux/root.reducer';
 import * as AccountActions from 'src/app/Account/store/account.actions';
+import { SignInMethodsEnum } from 'src/app/Core/enum/sign-in-methods.enum';
+import { AccountService } from 'src/app/Account/account.service';
 
-export enum SignInMethods {
-  GOOGLE = 'google',
-  FACEBOOK = 'facebook'
-}
 @Component({
   selector: 'pg-sign-in',
   templateUrl: './sign-in.component.html',
@@ -15,24 +13,17 @@ export enum SignInMethods {
 })
 export class SignInComponent implements OnInit {
   buttonStyle = ButtonStyleEnum;
-  signInMethods = SignInMethods;
+  signInMethods = SignInMethodsEnum;
   email!: string;
   password!: string;
 
-  constructor(private store: Store<AppState>) { }
+  constructor(public accountService: AccountService) { }
 
-  ngOnInit(): void {
-    this.store.select('account').subscribe();
-  }
+  ngOnInit(): void {}
 
   signIn() {
     console.log(this.email, this.password);
-
-    // this.store.dispatch(new AccountActions.AddEmail(email));
-  }
-
-  signInWith(method: SignInMethods) {
-
+    this.accountService.signInWithEmailAndPassword(this.email, this.password);
   }
 
 }
