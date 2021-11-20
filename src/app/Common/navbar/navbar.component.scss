@@ -1,5 +1,150 @@
+@import "../../Core/styles/functions.scss";
+@import "../../Core/styles/variables.scss";
+
 .nav {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  background-color: $white-3;
+  @include for-screen(padding, 5px, 5);
+
+  &-left {
+    display: flex;
+    gap: 10px;
+
+    &-button {
+      display: none;
+      @include mobile-only() {
+        display: block;
+      }
+
+      &-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        gap: 1.5px;
+        border: 1px solid;
+        padding: 3px;
+        border-radius: 50%;
+        position: relative;
+        overflow: hidden;
+        width: 20px;
+        height: 20px;
+
+        .lightMode &{
+          border-color: $black-1;
+        }
+      }
+
+      &-dot{
+        @for $i from 1 through 9 {
+          &-#{$i} {
+            width: 3px;
+            height: 3px;
+            border-radius: 50%;
+            transition: $transition-quick;
+
+            .close & {
+              opacity: 0;
+
+              @if $i == 5 {
+                position: absolute;
+                opacity: 1;
+                width: 12px;
+                height: 2px;
+                right: 0;
+                bottom:50%;
+                border-radius: 3px;
+                transform: translate(-30% , 50%);
+              }
+              @if $i == 7 {
+                opacity: 1;
+                position: absolute;
+                width: 7px;
+                bottom: 20%;
+                left: 0;
+                height: 2px;
+                border-radius: 3px;
+                rotate: 40deg;
+                transform: translate(.5px, -3.5px);
+              }
+              @if $i == 1 {
+                opacity: 1;
+                position: absolute;
+                width: 7px;
+                top: 20%;
+                left: 0;
+                height: 2px;
+                border-radius: 3px;
+                rotate: -40deg;
+                transform: translate(.5px, 3.5px);
+              }
+            }
+
+            .lightMode &{
+              background-color: $black-1;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &-right {
+    display: flex;
+    gap: 10px;
+
+    &-menu {
+      padding: 3px;
+      display: block;
+      @include desktop-only() {
+        display: none;
+      }
+
+      &-bar {
+        @for $i from 1 through 3 {
+          &-#{$i} {
+            width: 20px;
+            height: 2px;
+            margin: 3px 0;
+            border-radius: 3px;
+            transition: $transition-quick;
+            .lightMode &{
+              background-color: $black-1;
+            }
+          }
+        }
+      }
+
+      &.close {
+        .nav-right-menu-bar-2 {
+            visibility: hidden;
+            opacity: 0;
+        }
+        .nav-right-menu-bar-1 {
+          transform: rotateZ(45deg) translate(4px, 4px);
+        }
+        .nav-right-menu-bar-3 {
+          transform: rotateZ(-45deg) translate(3px, -3px);
+        }
+
+      }
+    }
+
+    &-refresh {
+      animation: rotating 1.5s linear infinite;
+    }
+  }
+}
+
+@keyframes rotating {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  70% {
+    transform: rotateZ(300deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
 }
