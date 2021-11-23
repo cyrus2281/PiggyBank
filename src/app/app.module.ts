@@ -11,7 +11,7 @@ import { DirectoryModule } from './Directory/directory.module';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StoreModule } from '@ngrx/store';
-import { reducers } from './Data/Redux/root.reducer';
+import { effects, reducers } from './Data/Redux/root.reducer';
 import { EffectsModule } from '@ngrx/effects';
 
 @NgModule({
@@ -30,7 +30,7 @@ import { EffectsModule } from '@ngrx/effects';
     DirectoryModule,
     BrowserAnimationsModule,
     StoreModule.forRoot(reducers),
-    EffectsModule.forRoot([]),
+    EffectsModule.forRoot(effects),
   ],
   providers: [],
   bootstrap: [AppComponent]

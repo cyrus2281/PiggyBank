@@ -1,10 +1,20 @@
 import { Action } from "@ngrx/store";
+import { AccountModel } from "../account.model";
 import * as AccountActions from './account.actions';
-const initialState = {
-  email: "cyrus",
+
+export interface AccountState {
+  account: AccountModel
 }
 
-export function accountReducer(state = initialState, action: AccountActions.AccountAction) {
+const initialState: AccountState = {
+  account: new AccountModel()
+}
+
+export function accountReducer(
+  state: AccountState = initialState,
+  action: AccountActions.AccountAction)
+  {
+
   switch (action.type) {
     case AccountActions.ADD_EMAIL:
       return {
@@ -14,5 +24,4 @@ export function accountReducer(state = initialState, action: AccountActions.Acco
     default:
       return state;
   }
-
 }

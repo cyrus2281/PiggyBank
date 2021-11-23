@@ -23,7 +23,7 @@ export class SignInComponent implements OnInit {
 
   signIn() {
     console.log(this.email, this.password);
-    this.accountService.signInWithEmailAndPassword(this.email, this.password);
+    this.accountService.signInWithEmail(this.email, this.password);
   }
 
 }
