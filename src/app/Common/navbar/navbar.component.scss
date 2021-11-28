@@ -12,6 +12,12 @@
     display: flex;
     gap: 10px;
 
+    &-logo{
+      &-img {
+        height: 100%;
+      }
+    }
+
     &-button {
       display: none;
       @include mobile-only() {
@@ -30,6 +36,7 @@
         overflow: hidden;
         width: 20px;
         height: 20px;
+        cursor: pointer;
 
         .lightMode &{
           border-color: $black-1;
@@ -95,6 +102,7 @@
     &-menu {
       padding: 3px;
       display: block;
+      cursor: pointer;
       @include desktop-only() {
         display: none;
       }

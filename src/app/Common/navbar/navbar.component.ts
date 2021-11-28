@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import APP_THEME from 'src/app/Core/theme/theme';
+import { HeaderService } from '../header/header.service';
 
 @Component({
   selector: 'pg-navbar',
@@ -9,7 +10,7 @@ import APP_THEME from 'src/app/Core/theme/theme';
 export class NavbarComponent implements OnInit {
   app_theme = APP_THEME;
 
-  constructor() { }
+  constructor(public headerService: HeaderService) { }
 
   ngOnInit(): void {
   }
