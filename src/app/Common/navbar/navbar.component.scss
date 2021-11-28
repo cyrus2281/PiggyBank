@@ -50,12 +50,12 @@
               @if $i == 5 {
                 position: absolute;
                 opacity: 1;
-                width: 12px;
+                width: 10px;
                 height: 2px;
                 right: 0;
                 bottom:50%;
                 border-radius: 3px;
-                transform: translate(-30% , 50%);
+                transform: translate(-20% , 50%);
               }
               @if $i == 7 {
                 opacity: 1;
@@ -65,8 +65,7 @@
                 left: 0;
                 height: 2px;
                 border-radius: 3px;
-                rotate: 40deg;
-                transform: translate(.5px, -3.5px);
+                transform: translate(.5px, -2.5px) rotate(40deg);
               }
               @if $i == 1 {
                 opacity: 1;
@@ -76,8 +75,7 @@
                 left: 0;
                 height: 2px;
                 border-radius: 3px;
-                rotate: -40deg;
-                transform: translate(.5px, 3.5px);
+                transform: translate(.5px, 2.5px) rotate(-40deg);
               }
             }
 
