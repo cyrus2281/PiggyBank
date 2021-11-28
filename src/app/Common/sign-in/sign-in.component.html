@@ -32,12 +32,12 @@
         <hr class="sign-in-gap-line" />
       </div>
       <div class="sign-in-third-party">
-        <pg-button type="submit" [style]="buttonStyle.GOOGLE"[shadow]="true" (click)="accountService.signInWith(signInMethods.GOOGLE)"
-          ><pg-icon svg="GOOGLE"></pg-icon
+        <pg-button type="submit" [style]="buttonStyle.GOOGLE"[shadow]="true" (click)="authService.signInWith(signInMethods.GOOGLE)"
+          ><pg-icon svg="google"></pg-icon
           ><span>{{ "signin.google" | localize }}</span></pg-button
         >
-        <pg-button type="submit" [style]="buttonStyle.FACEBOOK" [shadow]="true" (click)="accountService.signInWith(signInMethods.FACEBOOK)"
-          ><pg-icon svg='FACEBOOK'></pg-icon
+        <pg-button type="submit" [style]="buttonStyle.FACEBOOK" [shadow]="true" (click)="authService.signInWith(signInMethods.FACEBOOK)"
+          ><pg-icon svg='facebook'></pg-icon
           ><span>{{ "signin.facebook" | localize }}</span></pg-button
         >
       </div>
