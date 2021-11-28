@@ -1,2 +1,15 @@
-<mat-icon *ngIf="!!svg" class="svg" [svgIcon]="svg"></mat-icon>
-<mat-icon *ngIf="!!icon" class="icon">{{icon}}</mat-icon>
+<mat-icon
+  *ngIf="!!svg"
+  class="svg"
+  [svgIcon]="svg"
+  [ngStyle]="styles"
+  [class]="'icon-size-' + size"
+></mat-icon>
+
+<mat-icon
+  *ngIf="!!icon"
+  class="icon"
+  [class]="'icon-size-' + size"
+  [ngStyle]="styles"
+  >{{ icon }}</mat-icon
+>

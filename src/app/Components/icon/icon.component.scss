@@ -1,0 +1,26 @@
+.icon-size{
+  &-xsmall {
+    width: 10px;
+    height: 10px;
+  }
+  &-small {
+    width: 18px;
+    height: 18px;
+  }
+  &-medium {
+    width: 24px;
+    height: 24px;
+  }
+  &-large {
+    width: 35px;
+    height: 35px;
+  }
+  &-xlarge {
+    width: 50px;
+    height: 50px;
+  }
+  &-xxlarge {
+    width: 100px;
+    height: 100px;
+  }
+}

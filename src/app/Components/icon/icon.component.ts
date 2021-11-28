@@ -1,7 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { MatIconRegistry } from '@angular/material/icon';
-import { ICONS } from './icons';
+import { iconListMap, ICONS } from './icons/icons';
+import { IconSizeEnum } from './icons/icon.enum';
 
 @Component({
   selector: 'pg-icon',
@@ -11,6 +12,11 @@ import { ICONS } from './icons';
 export class IconComponent implements OnInit {
   @Input() icon!: string;
   @Input() svg!: string;
+  @Input() type: string = 'brand';
+  @Input() styles!: { [klass: string]: any; } | null;
+  @Input() size : IconSizeEnum = IconSizeEnum.medium;
+
+  iconList = iconListMap;
 
   constructor(private iconRegistry: MatIconRegistry, private sanitizer: DomSanitizer) {
 
@@ -18,7 +24,8 @@ export class IconComponent implements OnInit {
 
   ngOnInit(): void {
     if (!!this.svg) {
-      this.iconRegistry.addSvgIconLiteral(this.svg, this.sanitizer.bypassSecurityTrustHtml(ICONS[this.svg]));
+      const icon = this.iconList[this.type][this.svg.toLowerCase()]
+      this.iconRegistry.addSvgIconLiteral(this.svg, this.sanitizer.bypassSecurityTrustHtml(icon));
     }
   }
 
