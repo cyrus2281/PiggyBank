@@ -5,16 +5,19 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  align-items: center;
   background-color: $white-3;
   @include for-screen(padding, 5px, 5);
+  @include for-screen(height, 50px, 10);
 
   &-left {
     display: flex;
     gap: 10px;
+    align-items: center;
 
     &-logo{
       &-img {
-        height: 100%;
+        @include for-screen(height, 30px, 10);
       }
     }
 
@@ -28,15 +31,18 @@
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: repeat(3, 1fr);
+        justify-items: center;
+        justify-content: center;
+        align-items: center;
+
         gap: 1.5px;
-        border: 1px solid;
+        border: 2px solid;
         padding: 3px;
         border-radius: 50%;
         position: relative;
         overflow: hidden;
-        width: 20px;
-        height: 20px;
-        cursor: pointer;
+        width: 30px;
+        height: 30px;
 
         .lightMode &{
           border-color: $black-1;
@@ -46,8 +52,8 @@
       &-dot{
         @for $i from 1 through 9 {
           &-#{$i} {
-            width: 3px;
-            height: 3px;
+            width: 4px;
+            height: 4px;
             border-radius: 50%;
             transition: $transition-quick;
 
@@ -57,8 +63,8 @@
               @if $i == 5 {
                 position: absolute;
                 opacity: 1;
-                width: 10px;
-                height: 2px;
+                width: 14px;
+                height: 3px;
                 right: 0;
                 bottom:50%;
                 border-radius: 3px;
@@ -67,22 +73,22 @@
               @if $i == 7 {
                 opacity: 1;
                 position: absolute;
-                width: 7px;
+                width: 11px;
                 bottom: 20%;
                 left: 0;
-                height: 2px;
+                height: 3px;
                 border-radius: 3px;
-                transform: translate(.5px, -2.5px) rotate(40deg);
+                transform: translate(2.5px, -3.5px) rotate(40deg);
               }
               @if $i == 1 {
                 opacity: 1;
                 position: absolute;
-                width: 7px;
+                width: 11px;
                 top: 20%;
                 left: 0;
-                height: 2px;
+                height: 3px;
                 border-radius: 3px;
-                transform: translate(.5px, 2.5px) rotate(-40deg);
+                transform: translate(2.5px, 3.5px) rotate(-40deg);
               }
             }
 
@@ -97,6 +103,7 @@
 
   &-right {
     display: flex;
+    align-items: center;
     gap: 10px;
 
     &-menu {
@@ -110,9 +117,9 @@
       &-bar {
         @for $i from 1 through 3 {
           &-#{$i} {
-            width: 20px;
-            height: 2px;
-            margin: 3px 0;
+            width: 30px;
+            height: 3px;
+            margin: 4px 0;
             border-radius: 3px;
             transition: $transition-quick;
             .lightMode &{
@@ -128,10 +135,10 @@
             opacity: 0;
         }
         .nav-right-menu-bar-1 {
-          transform: rotateZ(45deg) translate(4px, 4px);
+          transform: rotateZ(45deg) translate(6px, 5px);
         }
         .nav-right-menu-bar-3 {
-          transform: rotateZ(-45deg) translate(3px, -3px);
+          transform: rotateZ(-45deg) translate(5px, -4px);
         }
 
       }
@@ -139,8 +146,14 @@
 
     &-refresh {
       animation: rotating 1.5s linear infinite;
-      width: 24px;
-      height: 24px;
+      @include for-screen(width, 25px, 10);
+      @include for-screen(height, 25px, 10);
+      ::ng-deep .material-icons {
+        @include for-screen(font-size, 25px, 10);
+        display: block;
+        height: unset;
+        width: unset;
+      }
     }
   }
 }
