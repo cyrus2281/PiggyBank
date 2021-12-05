@@ -6,7 +6,7 @@
     [name]="name"
     class="form-input"
     (keydown)="onKeyDown.emit($event)"
-    (keyup)="onKeyUp.emit($event)"
+    (keyup)="keyUp($event)"
     (change)="change.emit($event)"
     [required]="required"
     [readOnly]="readOnly"

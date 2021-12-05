@@ -4,7 +4,7 @@ export const localization : {[token: string]: string} = {
   'common.cancel': 'Cancel',
   'common.email': 'Email',
   'common.password': 'Password',
-  'common.confirmPassword': 'Password',
+  'common.confirmPassword': 'Confirm Password',
   'common.name': 'Display Name',
   'common.or': 'or',
   'common.and': 'and',

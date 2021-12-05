@@ -6,7 +6,7 @@ import * as AccountActions from '../../Account/store/account.actions';
 import { SignInMethodsEnum } from '../../Account/enum/sign-in-methods.enum';
 import { AccountService } from '../../Account/services/account.service';
 import { AuthService } from '../../Account/services/auth.service';
-import { emailValidator } from 'src/app/Core/utilities/validate.utilities';
+import { emailValidator } from 'src/app/Core/utilities/validate.utils';
 
 
 @Component({
@@ -20,6 +20,10 @@ export class SignInComponent implements OnInit {
   signInMethods = SignInMethodsEnum;
   email!: string;
   password!: string;
+  isValid = {
+    email: false,
+    password: false
+  }
 
   constructor(public accountService: AccountService, public authService: AuthService) { }
 
@@ -27,6 +31,11 @@ export class SignInComponent implements OnInit {
 
   signIn() {
     this.authService.signInWithEmail(this.email, this.password);
+  }
+
+  val(s: any){
+    console.log(s);
+
   }
 
 }

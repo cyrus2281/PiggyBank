@@ -16,10 +16,11 @@
   justify-content: center;
   transition: $transition-quick;
   border: 1px solid transparent;
-  @include for-screen('font-size', 12px, 2px);
+  @include for-screen("font-size", 12px, 2px);
 }
 
-.google, .facebook {
+.google,
+.facebook {
   display: flex;
   justify-content: start;
   align-items: center;
@@ -82,7 +83,8 @@
     }
   }
 
-  .google, .facebook {
+  .google,
+  .facebook {
     background-color: $blue-1;
     color: $white-1;
     border: 2pt solid $blue-2;
@@ -94,6 +96,23 @@
     &:hover {
       background-color: $blue-2;
       border-color: $blue-2;
+    }
+  }
+
+  .disabled {
+    background-color: $grey-1;
+    border-color: $grey-3;
+    color: $black-1;
+
+    &:hover {
+      background-color: $grey-1;
+      border-color: $grey-3;
+      color: $black-1;
+      cursor: default;
+
+      &.shadow {
+        box-shadow: 2px 2px 5px black;
+      }
     }
   }
 }

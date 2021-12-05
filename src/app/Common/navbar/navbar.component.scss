@@ -6,6 +6,7 @@
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+  align-content: center;
   background-color: $white-3;
   @include for-screen(padding, 5px, 5);
   @include for-screen(height, 50px, 10);
@@ -109,7 +110,9 @@
     &-menu {
       padding: 3px;
       display: block;
-      cursor: pointer;
+      @include tablet-plus() {
+        cursor: pointer;
+      }
       @include desktop-only() {
         display: none;
       }

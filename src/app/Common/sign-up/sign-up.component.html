@@ -9,24 +9,37 @@
       name="name"
       [required]="true"
       [label]="'common.name' | localize"
+      [(ngModel)]="name"
+      (isValid)="isValid.name = $event"
+      [validate]="textLengthValidator"
     ></pg-label-input>
     <pg-label-input
       type="email"
       name="email"
       [required]="true"
       [label]="'common.email' | localize"
+      [(ngModel)]="email"
+      (isValid)="isValid.email = $event"
+      [validate]="emailValidator"
     ></pg-label-input>
     <pg-label-input
       type="password"
       name="password"
       [required]="true"
       [label]="'common.password' | localize"
+      [(ngModel)]="password"
+      (isValid)="isValid.password = $event"
+      [validate]="passwordValidator"
     ></pg-label-input>
     <pg-label-input
       type="password"
       name="confirmPassword"
       [required]="true"
       [label]="'common.confirmPassword' | localize"
+      [(ngModel)]="confirmPassword"
+      [validateArgs]="[password]"
+      (isValid)="isValid.confirmPassword = $event"
+      [validate]="sameTextValidator"
     ></pg-label-input>
     <div class="sign-up-btn">
       <pg-button
@@ -34,6 +47,7 @@
         [label]="'signup' | localize | uppercase"
         [style]="buttonStyle"
         [shadow]="true"
+        [disabled]="!isValid.email || !isValid.password || !isValid.confirmPassword || !isValid.name"
       ></pg-button>
     </div>
   </form>

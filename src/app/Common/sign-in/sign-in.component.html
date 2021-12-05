@@ -9,6 +9,8 @@
       name="email"
       [required]="true"
       [label]="'common.email' | localize"
+      (isValid)="isValid.email = $event"
+      [validate]="emailValidator"
     ></pg-label-input>
     <pg-label-input
       [(ngModel)]="password"
@@ -16,6 +18,7 @@
       name="password"
       [required]="true"
       [label]="'common.password' | localize"
+      (isValid)="isValid.password = $event"
     ></pg-label-input>
     <div class="sign-in-btns">
       <pg-button
@@ -23,6 +26,7 @@
         [label]="'signin' | localize | uppercase"
         [style]="buttonStyle.PRIMARY"
         [shadow]="true"
+        [disabled]="!isValid.email || !isValid.password"
         class="sign-in-btn"
         (click)="signIn()"
       ></pg-button>

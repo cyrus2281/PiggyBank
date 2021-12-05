@@ -1,7 +1,11 @@
 <nav class="nav" [class]="app_theme['theme']">
   <div class="nav-left">
-    <div class="nav-left-button">
-      <div class="nav-left-button-container" [class.close]="headerService.sideBarOpen" (click)="headerService.toggleSideBar()">
+    <div class="nav-left-button" *ngIf="authService.isLoggedIn">
+      <div
+        class="nav-left-button-container"
+        [class.close]="headerService.sideBarOpen"
+        (click)="headerService.toggleSideBar()"
+      >
         <div class="nav-left-button-dot-1"></div>
         <div class="nav-left-button-dot-2"></div>
         <div class="nav-left-button-dot-3"></div>
@@ -13,11 +17,22 @@
         <div class="nav-left-button-dot-9"></div>
       </div>
     </div>
-    <div class="nav-left-logo"><img class="nav-left-logo-img" src="piggy-bank.svg" alt="Piggy Bank Logo" ></div>
+    <div class="nav-left-logo">
+      <img
+        class="nav-left-logo-img"
+        src="piggy-bank.svg"
+        alt="Piggy Bank Logo"
+      />
+    </div>
   </div>
   <div class="nav-right">
     <div class="nav-right-refresh"><pg-icon icon="autorenew"></pg-icon></div>
-    <div class="nav-right-menu" [class.close]="headerService.actionBarOpen" (click)="headerService.toggleActionBar()">
+    <div
+      class="nav-right-menu"
+      [class.close]="headerService.actionBarOpen"
+      (click)="headerService.toggleActionBar()"
+      *ngIf="authService.isLoggedIn"
+    >
       <div class="nav-right-menu-bar-1"></div>
       <div class="nav-right-menu-bar-2"></div>
       <div class="nav-right-menu-bar-3"></div>
