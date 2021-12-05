@@ -19,4 +19,17 @@ export const localization : {[token: string]: string} = {
   'signin.google': 'Sign in with Google',
   'signin.facebook': 'Sign in with Facebook',
 
+  // Validation
+  'validate.error.localEmail': 'Local part of email can not be more than 64 characters!',
+  'validate.error.invalidEmail': 'Invalid Email Address!',
+  'validate.error.sameText': 'Text mismatch!',
+  'validate.error.confirmPassword': 'Passwords do not match!',
+  'validate.error.tooLong': 'Input is too long!',
+  'validate.error.tooShort': 'Input is too short!',
+  'validate.error.password.length': 'Password must contain at least 8 characters!',
+  'validate.error.password.hasNumber': 'Password must contain at least one number!',
+  'validate.error.password.hasCapital': 'Password must contain at least one uppercase character!',
+  'validate.error.password.hasLower': 'Password must contain at least one lowercase character!',
+  'validate.error.password.hasSymbol': 'Password must contain at least one symbol!',
+
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ButtonStyleEnum } from 'src/app/Core/enum/button-style.enum';
-import { emailValidator, passwordValidator, sameTextValidator, textLengthValidatorGenerator } from 'src/app/Core/utilities/validate.utils';
+import { LocalizationService } from 'src/app/Core/localization/localization.service';
+import { emailValidator, passwordValidatorGenerator, confirmPasswordValidator, textLengthValidatorGenerator, Validator } from 'src/app/Core/utilities/validate.utils';
 
 @Component({
   selector: 'pg-sign-up',
@@ -11,8 +12,8 @@ export class SignUpComponent implements OnInit {
   buttonStyle =  ButtonStyleEnum.PRIMARY;
   emailValidator = emailValidator;
   textLengthValidator = textLengthValidatorGenerator(2,32);
-  sameTextValidator = sameTextValidator;
-  passwordValidator = passwordValidator;
+  confirmPasswordValidator = confirmPasswordValidator;
+  passwordValidator!: Validator;
 
   name!: string;
   email!: string;
@@ -26,7 +27,9 @@ export class SignUpComponent implements OnInit {
     confirmPassword: false,
   }
 
-  constructor() { }
+  constructor(private localizationService : LocalizationService) {
+      this.passwordValidator = passwordValidatorGenerator(localizationService.translate.bind(localizationService))
+   }
 
   ngOnInit(): void {
   }

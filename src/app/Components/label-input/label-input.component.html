@@ -16,7 +16,5 @@
     label | localize
   }}</label>
 
-  <div class="form-input-error" *ngIf="!valid && !!error">
-      {{error | localize}}
-  </div>
+  <div class="form-input-error" *ngIf="!valid && !!error" [innerHTML]="error | localize"></div>
 </div>

@@ -39,7 +39,7 @@
       [(ngModel)]="confirmPassword"
       [validateArgs]="[password]"
       (isValid)="isValid.confirmPassword = $event"
-      [validate]="sameTextValidator"
+      [validate]="confirmPasswordValidator"
     ></pg-label-input>
     <div class="sign-up-btn">
       <pg-button
