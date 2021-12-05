@@ -13,6 +13,10 @@
     [disabled]="disabled"
   />
   <label *ngIf="label" class="form-input-label" [class.shrink]="!!value">{{
-    label
+    label | localize
   }}</label>
+
+  <div class="form-input-error" *ngIf="!valid && !!error">
+      {{error | localize}}
+  </div>
 </div>

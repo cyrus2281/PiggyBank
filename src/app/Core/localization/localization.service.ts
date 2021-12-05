@@ -11,7 +11,6 @@ export class LocalizationService {
 
   constructor() {
     this.languages['en'] = en;
-    console.log(en);
   }
 
   public translate(token: string, ...args: LocalizationArgumentModel[]) {

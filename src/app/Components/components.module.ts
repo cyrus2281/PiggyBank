@@ -6,6 +6,7 @@ import { LabelInputComponent } from './label-input/label-input.component';
 import { ButtonComponent } from './button/button.component';
 import {MatIconModule} from '@angular/material/icon';
 import { IconComponent } from "./icon/icon.component";
+import { CoreModule } from "../Core/core.module";
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { IconComponent } from "./icon/icon.component";
       CommonModule,
       BrowserModule,
       FormsModule,
-      MatIconModule
+      MatIconModule,
+      CoreModule
   ],
   exports: [
     LabelInputComponent,

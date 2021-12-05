@@ -17,7 +17,7 @@
     border: none;
     border-radius: 0;
     border-bottom: 1px solid;
-    margin: 25px 0;
+    margin: 25px 0 15px;
 
     &:focus {
       outline: none;
@@ -28,27 +28,34 @@
     }
   }
 
-  input[type='password'] {
+  input[type="password"] {
     letter-spacing: 0.3em;
   }
 
-  .form-input-label {
-    font-size: 16px;
-    font-weight: normal;
-    position: absolute;
-    pointer-events: none;
-    left: 5px;
-    top: 10px;
-    transition: 300ms ease all;
-    font-family: $family2;
+  .form-input {
+    &-label {
+      font-size: 16px;
+      font-weight: normal;
+      position: absolute;
+      pointer-events: none;
+      left: 5px;
+      top: 10px;
+      transition: 300ms ease all;
+      font-family: $family2;
 
-    &.shrink {
-      @include shrinkLabel();
+      &.shrink {
+        @include shrinkLabel();
+      }
+    }
+
+    &-error {
+        opacity: .9;
+        padding-left: 10px;
     }
   }
 }
 
-.lightMode  {
+.lightMode {
   .form-input {
     border-color: $grey-3;
     color: $black-1;
@@ -56,5 +63,9 @@
 
   .form-input-label {
     color: $grey-3;
+  }
+
+  .form-input-error {
+    color: $red-3;
   }
 }

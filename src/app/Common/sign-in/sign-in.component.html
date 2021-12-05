@@ -8,7 +8,7 @@
       type="email"
       name="email"
       [required]="true"
-      [label]="'common.email' | localize"
+      label="common.email"
       (isValid)="isValid.email = $event"
       [validate]="emailValidator"
     ></pg-label-input>
@@ -17,7 +17,7 @@
       type="password"
       name="password"
       [required]="true"
-      [label]="'common.password' | localize"
+      label="common.password"
       (isValid)="isValid.password = $event"
     ></pg-label-input>
     <div class="sign-in-btns">
