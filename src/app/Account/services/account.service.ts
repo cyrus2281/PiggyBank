@@ -3,7 +3,7 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { SignInMethodsEnum } from '../enum/sign-in-methods.enum';
 import { AppState } from '../../Data/Redux/root.reducer';
-import { AccountState } from '../store/account.reducer';
+import { AccountState, ACCOUNT_STORE } from '../store/account.reducer';
 
 @Injectable({
   providedIn: 'root'
@@ -22,6 +22,6 @@ export class AccountService {
   }
 
   getAccount(): Observable<AccountState> {
-    return this.store.select('account');
+    return this.store.select(ACCOUNT_STORE);
   }
 }

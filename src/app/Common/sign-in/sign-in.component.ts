@@ -6,6 +6,7 @@ import * as AccountActions from '../../Account/store/account.actions';
 import { SignInMethodsEnum } from '../../Account/enum/sign-in-methods.enum';
 import { AccountService } from '../../Account/services/account.service';
 import { AuthService } from '../../Account/services/auth.service';
+import { emailValidator } from 'src/app/Core/utilities/validate.utilities';
 
 
 @Component({
@@ -14,6 +15,7 @@ import { AuthService } from '../../Account/services/auth.service';
   styleUrls: ['./sign-in.component.scss']
 })
 export class SignInComponent implements OnInit {
+  emailValidator = emailValidator;
   buttonStyle = ButtonStyleEnum;
   signInMethods = SignInMethodsEnum;
   email!: string;
@@ -24,7 +26,6 @@ export class SignInComponent implements OnInit {
   ngOnInit(): void {}
 
   signIn() {
-    console.log(this.email, this.password);
     this.authService.signInWithEmail(this.email, this.password);
   }
 

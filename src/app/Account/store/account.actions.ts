@@ -1,18 +1,25 @@
 import { Action } from "@ngrx/store";
+import { AccountModel } from "../account.model";
 
-export const ADD_EMAIL = '[Account] Add Email';
-export const SIGN_IN_WITH_EMAIL = '[Account] Sign In With Email';
-
-export class AddEmail implements Action {
-  readonly type = ADD_EMAIL;
-  constructor(public payload: string){}
-}
+export const SIGN_IN_WITH_EMAIL_START = '[Account] Sign In With Email Start';
+export const SIGN_IN_WITH_EMAIL_SUCCESS = '[Account] Sign In With Email Success';
+export const SIGN_IN_WITH_EMAIL_ERROR = '[Account] Sign In With Email Error';
 
 export class SignInWithEmail implements Action {
-  readonly type = SIGN_IN_WITH_EMAIL;
+  readonly type = SIGN_IN_WITH_EMAIL_START;
   constructor(public payload: {email: string, password: string}){}
 }
 
+export class SignInWithEmailSuccess implements Action {
+  readonly type = SIGN_IN_WITH_EMAIL_SUCCESS;
+  constructor(public payload: AccountModel){}
+}
+
+export class SignInWithEmailError implements Action {
+  readonly type = SIGN_IN_WITH_EMAIL_ERROR;
+  constructor(public payload: Error){}
+}
 
 
-export type AccountAction = AddEmail;
+
+export type AccountAction = SignInWithEmail | SignInWithEmailSuccess | SignInWithEmailError;

@@ -3,23 +3,33 @@ import { AccountModel } from "../account.model";
 import * as AccountActions from './account.actions';
 
 export interface AccountState {
-  account: AccountModel
+  account: AccountModel;
+  error: Error | null;
 }
 
 const initialState: AccountState = {
-  account: new AccountModel()
+  account: new AccountModel(),
+  error: null
 }
+
+export const ACCOUNT_STORE = 'account';
 
 export function accountReducer(
   state: AccountState = initialState,
-  action: AccountActions.AccountAction)
-  {
+  action: AccountActions.AccountAction) {
 
   switch (action.type) {
-    case AccountActions.ADD_EMAIL:
+    case AccountActions.SIGN_IN_WITH_EMAIL_SUCCESS:
       return {
         ...state,
-        email: action.payload
+        account: action.payload,
+        error: null
+      }
+
+    case AccountActions.SIGN_IN_WITH_EMAIL_ERROR:
+      return {
+        ...state,
+        error: action.payload
       }
     default:
       return state;
