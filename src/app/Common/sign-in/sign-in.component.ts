@@ -1,13 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Store } from '@ngrx/store';
 import { ButtonStyleEnum } from '../../Core/enum/button-style.enum';
-import { AppState } from '../../Data/Redux/root.reducer';
-import * as AccountActions from '../../Account/store/account.actions';
 import { SignInMethodsEnum } from '../../Account/enum/sign-in-methods.enum';
-import { AccountService } from '../../Account/services/account.service';
 import { AuthService } from '../../Account/services/auth.service';
 import { emailValidator } from 'src/app/Core/utilities/validate.utils';
-
 
 @Component({
   selector: 'pg-sign-in',
@@ -25,17 +20,11 @@ export class SignInComponent implements OnInit {
     password: false
   }
 
-  constructor(public accountService: AccountService, public authService: AuthService) { }
+  constructor(public authService: AuthService) { }
 
   ngOnInit(): void {}
 
   signIn() {
     this.authService.signInWithEmail(this.email, this.password);
   }
-
-  val(s: any){
-    console.log(s);
-
-  }
-
 }

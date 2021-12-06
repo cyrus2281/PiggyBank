@@ -48,7 +48,8 @@
         [style]="buttonStyle"
         [shadow]="true"
         [disabled]="!isValid.email || !isValid.password || !isValid.confirmPassword || !isValid.name"
-      ></pg-button>
+        (click)="signUp()"
+        ></pg-button>
     </div>
   </form>
 </div>

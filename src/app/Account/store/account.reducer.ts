@@ -19,14 +19,15 @@ export function accountReducer(
   action: AccountActions.AccountAction) {
 
   switch (action.type) {
-    case AccountActions.SIGN_IN_WITH_EMAIL_SUCCESS:
+    case AccountActions.SIGN_IN_SUCCESS:
       return {
         ...state,
         account: action.payload,
         error: null
       }
 
-    case AccountActions.SIGN_IN_WITH_EMAIL_ERROR:
+    case AccountActions.SIGN_IN_ERROR:
+    case AccountActions.SIGN_UP_ERROR:
       return {
         ...state,
         error: action.payload

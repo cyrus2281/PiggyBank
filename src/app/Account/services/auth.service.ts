@@ -14,7 +14,9 @@ export class AuthService {
   private subscriptions = new SubSink();
   private _isLoggedIn: boolean = !false;
 
-  constructor(private store: Store<AppState>, private routerService: RouterService) {
+  constructor(
+    private store: Store<AppState>,
+    private routerService: RouterService) {
     this.subscriptions.add(this.store.select(ACCOUNT_STORE).subscribe(accountStore => {
       if (this._isLoggedIn !== accountStore.account.isLoggedIn) {
         this._isLoggedIn = accountStore.account.isLoggedIn
@@ -33,12 +35,15 @@ export class AuthService {
   }
 
   public signInWithEmail(email: string, password: string) {
-    this.store.dispatch(new AccountActions.SignInWithEmail({ email, password }))
-
+    this.store.dispatch(new AccountActions.SignInWithEmail({ email, password }));
   }
 
   public signInWith(method: SignInMethodsEnum) {
 
+  }
+
+  public signUp(displayName: string, email: string, password: string) {
+    this.store.dispatch(new AccountActions.SignUp({ displayName, email, password }));
   }
 
   public signOut() {

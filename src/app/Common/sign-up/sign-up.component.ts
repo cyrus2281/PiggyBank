@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/Account/services/auth.service';
 import { ButtonStyleEnum } from 'src/app/Core/enum/button-style.enum';
 import { LocalizationService } from 'src/app/Core/localization/localization.service';
 import { emailValidator, passwordValidatorGenerator, confirmPasswordValidator, textLengthValidatorGenerator, Validator } from 'src/app/Core/utilities/validate.utils';
@@ -27,11 +28,14 @@ export class SignUpComponent implements OnInit {
     confirmPassword: false,
   }
 
-  constructor(private localizationService : LocalizationService) {
-      this.passwordValidator = passwordValidatorGenerator(localizationService.translate.bind(localizationService))
+  constructor(private localizationService : LocalizationService, public authService: AuthService) {
+      this.passwordValidator = passwordValidatorGenerator(this.localizationService.translate.bind(localizationService))
    }
 
   ngOnInit(): void {
   }
 
+  signUp() {
+    this.authService.signUp(this.name, this.email, this.password);
+  }
 }
