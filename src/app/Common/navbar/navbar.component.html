@@ -37,5 +37,8 @@
       <div class="nav-right-menu-bar-2"></div>
       <div class="nav-right-menu-bar-3"></div>
     </div>
+    <button (click)="authService.signOut()" *ngIf="authService.isLoggedIn">
+      logout
+    </button>
   </div>
 </nav>

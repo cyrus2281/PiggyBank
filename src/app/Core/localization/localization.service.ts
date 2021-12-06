@@ -6,8 +6,8 @@ import { LocalizationArgumentModel } from './localization-argument.model';
   providedIn: 'root'
 })
 export class LocalizationService {
-  languages: { [lang: string]: { [token: string]: string }; } = {};
-  sysLang: string = 'en';
+  private languages: { [lang: string]: { [token: string]: string }; } = {};
+  private sysLang: string = 'en';
 
   constructor() {
     this.languages['en'] = en;

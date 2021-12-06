@@ -27,26 +27,12 @@ export class AuthFirebaseService {
     return signInWithEmailAndPassword(this.auth, email, password);
   }
 
-  signOut(){
-    signOut(this.auth).then(() => {
-      // Sign-out successful.
-    }).catch((error) => {
-      // An error happened.
-    });
+  signOut(): Promise<void>{
+    return signOut(this.auth);
   }
 
-  onAuthStateChanged() {
-    onAuthStateChanged(this.auth, (user) => {
-      if (user) {
-        // User is signed in, see docs for a list of available properties
-        // https://firebase.google.com/docs/reference/js/firebase.User
-        const uid = user.uid;
-        // ...
-      } else {
-        // User is signed out
-        // ...
-      }
-    });
+  onAuthStateChanged(fn: (user: User | null)=>void) {
+    return onAuthStateChanged(this.auth, fn);
   }
 
   createUserProfileDocument = async (userAuth: User, additionalData: any) => {

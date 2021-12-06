@@ -1,8 +1,12 @@
 
 export class AccountModel {
   public isLoggedIn : boolean = false;
-  constructor(public email?: string,public displayName?: string){
-      if (email && displayName) {
+  private email!: string;
+  private displayName!: string;
+
+
+  constructor(private uid: string){
+      if (uid) {
         this.isLoggedIn = true;
       }
   }

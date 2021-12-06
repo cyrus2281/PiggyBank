@@ -32,4 +32,13 @@ export const localization : {[token: string]: string} = {
   'validate.error.password.hasLower': 'Password must contain at least one lowercase character!',
   'validate.error.password.hasSymbol': 'Password must contain at least one symbol!',
 
+  // Error
+  'error.account.userDisabled': 'This account has been disabled. Contact us for more info.',
+  'error.account.notFound': 'User not found, please check your email and password and try again!',
+  'error.account.emailInUse': 'There is already an account for this email address.',
+  'error.account.notAllowed': 'This action is not allowed. Contact us for more info',
+  'error.account.popupBlocked': 'the popup was blocked by the browser, please allow popups and try again.',
+  'error.account.tooManyRequests': 'Access to this account has been temporarily disabled due to many failed login attempts.',
+  'error.account.unknown': 'An unknown error occurred!',
+
 }
