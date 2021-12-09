@@ -22,7 +22,7 @@ export class AccountEffects {
               const account = new AccountModel(userCredential.user.uid);
               return new AccountActions.SignInSuccess(account);
             } else {
-              throw new FirebaseError('auth/user-not-found', 'Firebase: Error (auth/user-not-found).');
+              throw new FirebaseError('auth/unknown', 'An unknown error occurred!');
             }
           }).catch((error: FirebaseError) => {
             console.log(error.code, error.message);
@@ -44,7 +44,7 @@ export class AccountEffects {
               const account = new AccountModel(userCredential.user.uid);
               return new AccountActions.SignInSuccess(account);
             } else {
-              throw new FirebaseError('auth/user-not-found', 'Firebase: Error (auth/user-not-found).');
+              throw new FirebaseError('auth/unknown', 'An unknown error occurred!');
             }
           }).catch((error: FirebaseError) => {
             console.log(error.code, error.message);

@@ -6,10 +6,11 @@ import { SignInMethodsEnum } from '../enum/sign-in-methods.enum';
 import { ACCOUNT_STORE } from '../store/account.reducer';
 import * as AccountActions from '../store/account.actions';
 import { RouterService } from 'src/app/Core/routing/router.service';
-import { MessageService } from 'src/app/Core/services/message.service';
+import { MessageService } from 'src/app/Core/message/message.service';
 import { AuthFirebaseService } from 'src/app/Data/Firebase/auth.firebase.service';
 import { AccountModel } from '../account.model';
 import { Unsubscribe } from '@firebase/auth';
+import { MessageTypeEnum } from 'src/app/Core/message/message-type.enum';
 
 @Injectable({
   providedIn: 'root'
@@ -111,7 +112,7 @@ export class AuthService {
         err = 'error.account.unknown';
         break;
     }
-    this.messageService.showMessage(err);
+    this.messageService.showMessage(err, MessageTypeEnum.error);
   }
 
   ngOnDestroy() {
