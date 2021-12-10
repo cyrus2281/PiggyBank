@@ -112,6 +112,9 @@ export class AuthService {
       case 'auth/account-exists-with-different-credential':
         err = 'error.account.emailInUse';
         break;
+      case 'auth/popup-closed-by-user':
+        err = 'error.account.closedByUser';
+        break;
       case 'auth/popup-blocked':
         err = 'error.account.popupBlocked';
         break;

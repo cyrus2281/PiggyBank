@@ -3,7 +3,7 @@ import { Firestore, doc, getDoc, setDoc } from 'firebase/firestore/lite';
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword,
   Auth, onAuthStateChanged, updateProfile, sendEmailVerification, updatePassword, User,
   sendPasswordResetEmail, deleteUser, reauthenticateWithCredential, AuthCredential, signOut,
-  UserCredential, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+  UserCredential, GoogleAuthProvider, signInWithPopup, FacebookAuthProvider } from "firebase/auth";
 import { FirebaseService } from './firebase.service';
 @Injectable({
   providedIn: 'root'
@@ -12,6 +12,7 @@ export class AuthFirebaseService {
   private auth: Auth;
   private firestore: Firestore;
   private googleProvider: GoogleAuthProvider;
+  private facebookProvider: FacebookAuthProvider;
 
 
   constructor(private firebaseService: FirebaseService) {
@@ -20,6 +21,7 @@ export class AuthFirebaseService {
     this.auth.languageCode = 'en';
     this.firestore = this.firebaseService.firestore;
     this.googleProvider = new GoogleAuthProvider();
+    this.facebookProvider = new FacebookAuthProvider();
    }
 
 
@@ -36,7 +38,7 @@ export class AuthFirebaseService {
   }
 
   signInWithFacebook(){
-
+    return signInWithPopup(this.auth, this.facebookProvider);
   }
 
   signOut(): Promise<void>{

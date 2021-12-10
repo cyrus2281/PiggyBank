@@ -50,6 +50,26 @@ export class AccountEffects {
     )
   });
 
+  accountSignInWithFacebook$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(AccountActions.SIGN_IN_WITH_FACEBOOK_START),
+      mergeMap(() => {
+        return from(this.authFirebaseService.signInWithFacebook()
+          .then((userCredential) => {
+            if (userCredential.user.uid) {
+              const account = new AccountModel(userCredential.user.uid);
+              return new AccountActions.SignInSuccess(account);
+            } else {
+              throw new FirebaseError('auth/unknown', 'An unknown error occurred!');
+            }
+          }).catch((error: FirebaseError) => {
+            return new AccountActions.ShowError(error.code);
+          })
+        );
+      })
+    )
+  });
+
   accountSignUp$ = createEffect(() => {
     return this.actions$.pipe(
       ofType(AccountActions.SIGN_UP_START),

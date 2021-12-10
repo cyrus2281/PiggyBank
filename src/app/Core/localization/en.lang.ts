@@ -39,6 +39,7 @@ export const localization : {[token: string]: string} = {
   'error.account.notAllowed': 'This action is not allowed. Contact us for more info',
   'error.account.popupBlocked': 'the popup was blocked by the browser, please allow popups and try again.',
   'error.account.tooManyRequests': 'Access to this account has been temporarily disabled due to many failed login attempts.',
+  'error.account.closedByUser': 'Sign in popup was closed by user.',
   'error.account.unknown': 'An unknown error occurred!',
 
 }
