@@ -2,6 +2,8 @@ import { Action } from "@ngrx/store";
 import { AccountModel } from "../account.model";
 
 export const SIGN_IN_WITH_EMAIL_START = '[Account] Sign In With Email Start';
+export const SIGN_IN_WITH_GOOGLE_START = '[Account] Sign In With Google';
+export const SIGN_IN_WITH_FACEBOOK_START = '[Account] Sign In With Facebook';
 export const SIGN_IN_SUCCESS = '[Account] Sign In Success';
 
 export const SIGN_UP_START = '[Account] Sign Up';
@@ -15,6 +17,16 @@ export const CLEAR_ERROR = '[Account] Clear Error';
 export class SignInWithEmail implements Action {
   readonly type = SIGN_IN_WITH_EMAIL_START;
   constructor(public payload: {email: string, password: string}){}
+}
+
+export class SignInWithGoogle implements Action {
+  readonly type = SIGN_IN_WITH_GOOGLE_START;
+  constructor(){}
+}
+
+export class SignInWithFacebook implements Action {
+  readonly type = SIGN_IN_WITH_FACEBOOK_START;
+  constructor(){}
 }
 
 export class SignInSuccess implements Action {
@@ -47,6 +59,6 @@ export class ClearError implements Action {
 }
 
 export type AccountAction =
-  SignInWithEmail | SignUp | SignOut |
+  SignInWithEmail | SignInWithGoogle | SignInWithFacebook | SignUp | SignOut |
   SignInSuccess | SignOutSuccess |
   ShowError | ClearError;

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { FirebaseError } from '@firebase/util';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { from } from 'rxjs';
+import { EMPTY, from } from 'rxjs';
 import { mergeMap } from 'rxjs/operators';
 import { AuthFirebaseService } from 'src/app/Data/Firebase/auth.firebase.service';
 import { AccountModel } from '../account.model';
@@ -14,10 +14,8 @@ export class AccountEffects {
     return this.actions$.pipe(
       ofType(AccountActions.SIGN_IN_WITH_EMAIL_START),
       mergeMap((action: AccountActions.SignInWithEmail) => {
-        console.log(action);
         return from(this.authFirebaseService.signInWithEmailAndPassword(action.payload.email, action.payload.password)
           .then((userCredential) => {
-            console.log(action, userCredential.user);
             if (userCredential.user.uid) {
               const account = new AccountModel(userCredential.user.uid);
               return new AccountActions.SignInSuccess(account);
@@ -25,7 +23,26 @@ export class AccountEffects {
               throw new FirebaseError('auth/unknown', 'An unknown error occurred!');
             }
           }).catch((error: FirebaseError) => {
-            console.log(error.code, error.message);
+            return new AccountActions.ShowError(error.code);
+          })
+        );
+      })
+    )
+  });
+
+  accountSignInWithGoogle$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(AccountActions.SIGN_IN_WITH_GOOGLE_START),
+      mergeMap(() => {
+        return from(this.authFirebaseService.signInWithGoogle()
+          .then((userCredential) => {
+            if (userCredential.user.uid) {
+              const account = new AccountModel(userCredential.user.uid);
+              return new AccountActions.SignInSuccess(account);
+            } else {
+              throw new FirebaseError('auth/unknown', 'An unknown error occurred!');
+            }
+          }).catch((error: FirebaseError) => {
             return new AccountActions.ShowError(error.code);
           })
         );
@@ -39,7 +56,6 @@ export class AccountEffects {
       mergeMap((action: AccountActions.SignUp) => {
         return from(this.authFirebaseService.createUserWithEmailAndPassword(action.payload.email, action.payload.password)
           .then((userCredential) => {
-            console.log(action, userCredential.user);
             if (userCredential.user.uid) {
               const account = new AccountModel(userCredential.user.uid);
               return new AccountActions.SignInSuccess(account);
@@ -47,7 +63,6 @@ export class AccountEffects {
               throw new FirebaseError('auth/unknown', 'An unknown error occurred!');
             }
           }).catch((error: FirebaseError) => {
-            console.log(error.code, error.message);
             return new AccountActions.ShowError(error.code);
           })
         );
@@ -63,7 +78,6 @@ export class AccountEffects {
           .then(() => {
             return new AccountActions.SignOutSuccess();
           }).catch((error: FirebaseError) => {
-            console.log(error.code, error.message);
             return new AccountActions.ShowError(error.code);
           })
         );

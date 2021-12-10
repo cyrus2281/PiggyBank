@@ -1,21 +1,25 @@
 import { Injectable } from '@angular/core';
-import { getFirestore, Firestore, doc, getDoc, setDoc } from 'firebase/firestore/lite';
+import { Firestore, doc, getDoc, setDoc } from 'firebase/firestore/lite';
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword,
   Auth, onAuthStateChanged, updateProfile, sendEmailVerification, updatePassword, User,
-  sendPasswordResetEmail, deleteUser, reauthenticateWithCredential, AuthCredential, signOut, UserCredential } from "firebase/auth";
+  sendPasswordResetEmail, deleteUser, reauthenticateWithCredential, AuthCredential, signOut,
+  UserCredential, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { FirebaseService } from './firebase.service';
-
 @Injectable({
   providedIn: 'root'
 })
 export class AuthFirebaseService {
-  private auth!: Auth;
-  private firestore!: Firestore;
+  private auth: Auth;
+  private firestore: Firestore;
+  private googleProvider: GoogleAuthProvider;
 
 
   constructor(private firebaseService: FirebaseService) {
     this.auth = getAuth();
-    this.firestore = firebaseService.firestore;
+    // TODO: select based on user language
+    this.auth.languageCode = 'en';
+    this.firestore = this.firebaseService.firestore;
+    this.googleProvider = new GoogleAuthProvider();
    }
 
 
@@ -25,6 +29,14 @@ export class AuthFirebaseService {
 
   signInWithEmailAndPassword(email: string, password: string): Promise<UserCredential> {
     return signInWithEmailAndPassword(this.auth, email, password);
+  }
+
+  signInWithGoogle(): Promise<UserCredential>{
+    return signInWithPopup(this.auth, this.googleProvider);
+  }
+
+  signInWithFacebook(){
+
   }
 
   signOut(): Promise<void>{

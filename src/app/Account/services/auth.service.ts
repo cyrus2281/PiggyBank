@@ -25,15 +25,15 @@ export class AuthService {
     private routerService: RouterService,
     private messageService: MessageService,
     private authFirebaseService: AuthFirebaseService,
-    ) {
-      this.unsubscribeFromAuth = this.authFirebaseService.onAuthStateChanged(user => {
-        if (user) {
-          const account = new AccountModel(user.uid);
-          this.store.dispatch(new AccountActions.SignInSuccess(account));
-        } else {
-          this.store.dispatch(new AccountActions.SignOut());
-        }
-      });
+  ) {
+    this.unsubscribeFromAuth = this.authFirebaseService.onAuthStateChanged(user => {
+      if (user) {
+        const account = new AccountModel(user.uid);
+        this.store.dispatch(new AccountActions.SignInSuccess(account));
+      } else {
+        this.store.dispatch(new AccountActions.SignOut());
+      }
+    });
 
     this.subscriptions.add(this.store.select(ACCOUNT_STORE).subscribe(accountStore => {
       if (this._isLoggedIn !== accountStore?.account?.isLoggedIn) {
@@ -61,6 +61,14 @@ export class AuthService {
   }
 
   public signInWith(method: SignInMethodsEnum) {
+    switch (method) {
+      case SignInMethodsEnum.GOOGLE:
+        this.store.dispatch(new AccountActions.SignInWithGoogle());
+        break;
+      case SignInMethodsEnum.FACEBOOK:
+        this.store.dispatch(new AccountActions.SignInWithFacebook());
+        break;
+    }
 
   }
 
