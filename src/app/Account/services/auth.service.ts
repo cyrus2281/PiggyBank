@@ -77,7 +77,7 @@ export class AuthService {
   }
 
   public signOut() {
-    this.store.dispatch(new AccountActions.SignOut());
+    this.store.dispatch(new AccountActions.SignOut(true));
   }
 
   private handleError(error: string) {

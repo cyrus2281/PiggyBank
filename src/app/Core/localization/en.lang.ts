@@ -14,10 +14,16 @@ export const localization : {[token: string]: string} = {
   'signup': 'Sign Up',
   'signup.title': 'Don\'t have an account?',
   'signup.subtitle': 'Sign up with your email now.',
+  'signup.loading': 'Signing up...',
+  'signup.success': 'Signed up successfully',
   'signin': 'Sign In',
   'signin.title': 'Sign in into your account',
   'signin.google': 'Sign in with Google',
   'signin.facebook': 'Sign in with Facebook',
+  'signin.loading': 'Signing in...',
+  'signin.success': 'Signed in successfully',
+  'signout': 'Sign Out',
+  'signout.success': 'Signed out successfully',
 
   // Validation
   'validate.error.localEmail': 'Local part of email can not be more than 64 characters!',

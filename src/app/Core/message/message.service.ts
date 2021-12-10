@@ -27,8 +27,8 @@ export class MessageService {
 
   showDynamicMessage(
     loading: string,
-    success: string | ((data: any) => string),
-    error: string | ((data: any) => string)
+    success: string | ((data: any) => any),
+    error: string | ((data: any) => any)
   ) {
     return this.toastService.observe({ loading, success, error });
   }

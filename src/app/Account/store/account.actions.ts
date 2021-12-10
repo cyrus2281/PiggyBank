@@ -40,7 +40,7 @@ export class SignUp implements Action {
 
 export class SignOut implements Action {
   readonly type = SIGN_OUT_START;
-  constructor(){}
+  constructor(public payload: boolean = false){}
 }
 
 export class SignOutSuccess implements Action {
