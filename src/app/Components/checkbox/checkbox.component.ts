@@ -5,7 +5,6 @@ import { ControlValueAccessorModel } from 'src/app/Model/control-value-accessor.
 @Component({
   selector: 'pg-checkbox',
   templateUrl: './checkbox.component.html',
-  styleUrls: ['./checkbox.component.scss'],
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
@@ -24,12 +23,4 @@ export class CheckboxComponent extends ControlValueAccessorModel<boolean> {
   @Input() labelPosition: 'before' | 'after' = 'before';
 
   @Output() change = new EventEmitter<boolean>();
-
-  constructor() {
-    super();
-    setInterval(() => {
-      console.log('value: ' + this.value);
-    }, 5000)
-  }
-
 }

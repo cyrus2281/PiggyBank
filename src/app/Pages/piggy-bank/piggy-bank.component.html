@@ -1,7 +1,10 @@
 <div class="piggyBank" [class]="app_theme['theme']">
   <div class="piggyBank-body">
     <pg-side-bar></pg-side-bar>
-    <router-outlet></router-outlet>
+    <pg-master-layout>
+      <router-outlet></router-outlet>
+      <pg-checkbox [(ngModel)]="test">Test</pg-checkbox>
+    </pg-master-layout>
   </div>
   <pg-footer></pg-footer>
 </div>
