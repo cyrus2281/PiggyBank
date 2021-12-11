@@ -146,29 +146,5 @@
 
       }
     }
-
-    &-refresh {
-      animation: rotating 1.5s linear infinite;
-      @include for-screen(width, 25px, 10);
-      @include for-screen(height, 25px, 10);
-      ::ng-deep .material-icons {
-        @include for-screen(font-size, 25px, 10);
-        display: block;
-        height: unset;
-        width: unset;
-      }
-    }
-  }
-}
-
-@keyframes rotating {
-  0% {
-    transform: rotateZ(0deg);
-  }
-  70% {
-    transform: rotateZ(300deg);
-  }
-  100% {
-    transform: rotateZ(360deg);
   }
 }

@@ -1,0 +1,13 @@
+<mat-checkbox
+    [required]="required"
+    [checked]="checked"
+    [indeterminate]="dashed"
+    [disableRipple]="ripple"
+    [labelPosition]="labelPosition"
+    [name]="name"
+    (change)="change.emit($event.checked)"
+    [(ngModel)]="value"
+    (ngModelChange)="onModelChange(value)"
+    >
+  <ng-content></ng-content>
+</mat-checkbox>

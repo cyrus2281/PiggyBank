@@ -26,8 +26,6 @@ import { environment } from 'src/environments/environment';
     FormsModule,
     ComponentsModule,
     CommonComponentsModule,
-    PagesModule,
-    CoreModule,
     TransactionModule,
     DirectoryModule,
     BrowserAnimationsModule,
