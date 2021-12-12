@@ -15,6 +15,7 @@ import { DatePickerComponent } from './date-picker/date-picker.component';
 import { MasterLayoutComponent } from './master-layout/master-layout.component';
 import { ProgressBarComponent } from './progress-bar/progress-bar.component';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatRadioModule} from '@angular/material/radio';
 @NgModule({
   declarations: [
     LabelInputComponent,
@@ -35,6 +36,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
       CoreModule,
       MatIconModule,
       MatCheckboxModule,
+      MatRadioModule,
   ],
   exports: [
     LabelInputComponent,

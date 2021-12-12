@@ -1,0 +1,19 @@
+<mat-radio-group
+  class="radio-group"
+  [class]="class"
+  [(ngModel)]="value"
+  (ngModelChange)="onModelChange(value)"
+  (change)="change.emit($event.value)"
+>
+  <mat-radio-button
+    *ngFor="let option of options"
+    class="radio-button"
+    [value]="option.value"
+    [required]="option.required"
+    [disabled]="option.disabled"
+    [disableRipple]="ripple"
+    [labelPosition]="labelPosition"
+  >
+    {{ option.label }}
+  </mat-radio-button>
+</mat-radio-group>
