@@ -36,9 +36,9 @@
       <div class="nav-right-menu-bar-2"></div>
       <div class="nav-right-menu-bar-3"></div>
     </div>
-    <button (click)="authService.signOut()" *ngIf="authService.isLoggedIn" matTooltip="Logout" [matTooltipPosition]="position">
+    <pg-button (click)="authService.signOut()" *ngIf="authService.isLoggedIn" matTooltip="Logout" [matTooltipPosition]="position">
       logout
-    </button>
+    </pg-button>
   </div>
 </nav>
 <!-- initializing icon -->

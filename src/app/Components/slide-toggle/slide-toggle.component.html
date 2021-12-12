@@ -1,7 +1,6 @@
-<mat-checkbox
+<mat-slide-toggle
     [required]="required"
     [checked]="checked"
-    [indeterminate]="dashed"
     [disableRipple]="ripple"
     [labelPosition]="labelPosition"
     [disabled]="disabled"
@@ -11,4 +10,4 @@
     (ngModelChange)="onModelChange(value)"
     >
   <ng-content></ng-content>
-</mat-checkbox>
+</mat-slide-toggle>

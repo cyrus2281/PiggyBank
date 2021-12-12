@@ -1,0 +1,58 @@
+<mat-form-field [appearance]="style" *ngIf="isRange">
+  <mat-label>{{ label }}</mat-label>
+  <mat-date-range-input [rangePicker]="rangePicker" [disabled]="disabled">
+    <input
+      matStartDate
+      [placeholder]="startLabel"
+      (dateChange)="change.emit($event.value)"
+      [(ngModel)]="start"
+      (ngModelChange)="dateChange(start, true)"
+    />
+    <input
+      matEndDate
+      [placeholder]="endLabel"
+      (dateChange)="change.emit($event.value)"
+      [(ngModel)]="end"
+      (ngModelChange)="dateChange(end, false)"
+    />
+  </mat-date-range-input>
+  <mat-datepicker-toggle matSuffix [for]="rangePicker"></mat-datepicker-toggle>
+  <mat-date-range-picker [touchUi]="touchUi" [disabled]="disabled" #rangePicker>
+    <mat-datepicker-actions>
+      <pg-button
+        class="date-button"
+        [style]="cancelStyle"
+        matDatepickerCancel
+        >{{ "common.cancel" | localize }}</pg-button
+      >
+      <pg-button class="date-button" [style]="applyStyle" matDatepickerApply>
+        {{ "common.apply" | localize }}
+      </pg-button>
+    </mat-datepicker-actions></mat-date-range-picker
+  >
+</mat-form-field>
+<mat-form-field [appearance]="style" *ngIf="!isRange">
+  <mat-label>{{ label }}</mat-label>
+  <input
+    matInput
+    [matDatepicker]="datePicker"
+    [disabled]="disabled"
+    (dateChange)="change.emit($event.value)"
+    [(ngModel)]="value"
+    (ngModelChange)="onModelChange(value)"
+  />
+  <mat-datepicker-toggle matSuffix [for]="datePicker"></mat-datepicker-toggle>
+  <mat-datepicker [touchUi]="touchUi" [disabled]="disabled" #datePicker>
+    <mat-datepicker-actions>
+      <pg-button
+        class="date-button"
+        [style]="cancelStyle"
+        matDatepickerCancel
+        >{{ "common.cancel" | localize }}</pg-button
+      >
+      <pg-button class="date-button" [style]="applyStyle" matDatepickerApply>
+        {{ "common.apply" | localize }}
+      </pg-button>
+    </mat-datepicker-actions>
+  </mat-datepicker>
+</mat-form-field>

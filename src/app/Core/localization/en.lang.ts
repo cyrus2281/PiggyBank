@@ -2,6 +2,7 @@
 export const localization : {[token: string]: string} = {
   // Common Words
   'common.cancel': 'Cancel',
+  'common.apply': 'Apply',
   'common.email': 'Email',
   'common.password': 'Password',
   'common.confirmPassword': 'Confirm Password',

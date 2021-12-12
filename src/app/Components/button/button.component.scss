@@ -2,12 +2,9 @@
 @import "../../Core/styles/functions.scss";
 
 .pg-button {
-  min-width: 165px;
   width: 100%;
-  height: 50px;
   letter-spacing: 0.5px;
-  line-height: 50px;
-  padding: 0 35px 0 35px;
+  padding: 10px;
   font-family: $family3;
   font-weight: bolder;
   border: none;
@@ -80,6 +77,17 @@
     &:hover {
       background-color: $blue-2;
       border-color: $blue-2;
+    }
+  }
+
+  .pale {
+    background-color: $grey-2;
+    color: $white-1;
+    border-color: $grey-2;
+
+    &:hover {
+      background-color: $grey-3;
+      border-color: $grey-3;
     }
   }
 

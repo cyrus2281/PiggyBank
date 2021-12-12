@@ -16,6 +16,12 @@ import { MasterLayoutComponent } from './master-layout/master-layout.component';
 import { ProgressBarComponent } from './progress-bar/progress-bar.component';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatRadioModule} from '@angular/material/radio';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatNativeDateModule } from "@angular/material/core";
+import { MatInputModule } from '@angular/material/input';
+
 @NgModule({
   declarations: [
     LabelInputComponent,
@@ -37,7 +43,12 @@ import {MatRadioModule} from '@angular/material/radio';
       MatIconModule,
       MatCheckboxModule,
       MatRadioModule,
-  ],
+      MatSlideToggleModule,
+      MatDatepickerModule,
+      MatFormFieldModule,
+      MatNativeDateModule,
+      MatInputModule,
+    ],
   exports: [
     LabelInputComponent,
     ButtonComponent,
