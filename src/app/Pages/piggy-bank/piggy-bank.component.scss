@@ -1,18 +1,32 @@
 @import "../../Core/styles/variables.scss";
+@import "../../Core/styles/functions.scss";
 
 .lightMode {
   background-color: $white-1;
 }
 
 .piggyBank {
-  width: 100vw;
-  height: 100vh;
+  height: calc(100vh - 50px);
+  @include tablet-plus(){
+    height: calc(100vh - 60px);
+  }
+  @include desktop-only(){
+    height: calc(100vh - 70px);
+  }
   max-width: $max-width;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
 
   &-body {
-    height: 100%;
     display: flex;
     flex-direction: row;
+    background-color: lightyellow;
+    height: 100%;
+  }
+
+  &-footer {
+    @include for-screen(height, 70px, 5px);
+    background-color: rgb(107, 107, 107);
   }
 }

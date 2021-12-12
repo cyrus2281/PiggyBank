@@ -18,12 +18,12 @@
   }}</label>
 
   <div class="form-input-error" *ngIf="!valid && !!error" [innerHTML]="error | localize"></div>
-</div>
 
-<mat-autocomplete #auto="matAutocomplete">
-  <ng-container  *ngIf="!!options">
-    <mat-option *ngFor="let option of filteredOptions" [value]="option">
-      {{option}}
-    </mat-option>
-  </ng-container>
-</mat-autocomplete>
+  <mat-autocomplete #auto="matAutocomplete">
+    <ng-container  *ngIf="!!options">
+      <mat-option *ngFor="let option of filteredOptions" [value]="option">
+        {{option}}
+      </mat-option>
+    </ng-container>
+  </mat-autocomplete>
+</div>

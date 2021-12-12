@@ -26,7 +26,8 @@ import { FormsModule } from "@angular/forms";
       CommonModule,
       ComponentsModule,
       CoreModule,
-      FormsModule
+      FormsModule,
+      ComponentsModule
   ],
   exports: [
     NavbarComponent,

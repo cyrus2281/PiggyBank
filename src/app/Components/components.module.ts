@@ -12,15 +12,17 @@ import { SlideToggleComponent } from './slide-toggle/slide-toggle.component';
 import { DatePickerComponent } from './date-picker/date-picker.component';
 import { MasterLayoutComponent } from './master-layout/master-layout.component';
 import { ProgressBarComponent } from './progress-bar/progress-bar.component';
-import {MatIconModule} from '@angular/material/icon';
-import {MatCheckboxModule} from '@angular/material/checkbox';
-import {MatRadioModule} from '@angular/material/radio';
-import {MatSlideToggleModule} from '@angular/material/slide-toggle';
-import {MatDatepickerModule} from '@angular/material/datepicker';
-import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatNativeDateModule } from "@angular/material/core";
 import { MatInputModule } from '@angular/material/input';
-import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { ProgressBarWrapperComponent } from './progress-bar-wrapper/progress-bar-wrapper.component';
 
 @NgModule({
   declarations: [
@@ -33,22 +35,24 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
     DatePickerComponent,
     MasterLayoutComponent,
     ProgressBarComponent,
+    ProgressBarWrapperComponent,
   ],
   imports: [
-      CommonModule,
-      BrowserModule,
-      FormsModule,
-      CoreModule,
-      MatIconModule,
-      MatCheckboxModule,
-      MatRadioModule,
-      MatSlideToggleModule,
-      MatDatepickerModule,
-      MatFormFieldModule,
-      MatNativeDateModule,
-      MatInputModule,
-      MatAutocompleteModule,
-    ],
+    CommonModule,
+    BrowserModule,
+    FormsModule,
+    CoreModule,
+    MatIconModule,
+    MatCheckboxModule,
+    MatRadioModule,
+    MatSlideToggleModule,
+    MatDatepickerModule,
+    MatFormFieldModule,
+    MatNativeDateModule,
+    MatInputModule,
+    MatAutocompleteModule,
+    MatProgressBarModule,
+  ],
   exports: [
     LabelInputComponent,
     ButtonComponent,
@@ -58,6 +62,8 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
     SlideToggleComponent,
     DatePickerComponent,
     MasterLayoutComponent,
+    ProgressBarComponent,
+    ProgressBarWrapperComponent,
   ]
 })
 export class ComponentsModule { }
