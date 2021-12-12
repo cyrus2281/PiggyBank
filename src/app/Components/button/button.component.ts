@@ -14,6 +14,7 @@ export class ButtonComponent implements OnInit {
   @Input() type: string = 'button';
   @Input() disabled: boolean = false;
   @Input() shadow: boolean = false;
+  @Input() circle: boolean = false;
   @Input() style!: ButtonStyleEnum;
 
   constructor() { }

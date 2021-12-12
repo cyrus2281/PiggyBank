@@ -1,4 +1,4 @@
-<div [class]="app_theme['theme']">
+<div [class]="app_theme['theme']" class="pg-button-container">
   <button
     [type]="type"
     [name]="name"
@@ -7,6 +7,7 @@
     [class]="style"
     [class.shadow]="shadow"
     [class.disabled]="disabled"
+    [class.circle]="circle"
   >
     {{ label }}
     <ng-content></ng-content>

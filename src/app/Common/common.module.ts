@@ -4,23 +4,25 @@ import { AppModule } from "../app.module";
 import { ComponentsModule } from "../Components/components.module";
 import { CoreModule } from "../Core/core.module";
 import { ActionBarComponent } from "./action-bar/action-bar.component";
-import { FooterComponent } from "./footer/footer.component";
 import { HeaderComponent } from "./header/header.component";
 import { NavbarComponent } from "./navbar/navbar.component";
 import { SideBarComponent } from "./side-bar/side-bar.component";
 import { SignInComponent } from "./sign-in/sign-in.component";
 import { SignUpComponent } from "./sign-up/sign-up.component";
 import { FormsModule } from "@angular/forms";
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { MenuComponent } from './menu/menu.component';
 
 @NgModule({
   declarations: [
     NavbarComponent,
     ActionBarComponent,
     SideBarComponent,
-    FooterComponent,
     HeaderComponent,
     SignInComponent,
     SignUpComponent,
+    DashboardComponent,
+    MenuComponent,
   ],
   imports: [
       CommonModule,
@@ -33,10 +35,11 @@ import { FormsModule } from "@angular/forms";
     NavbarComponent,
     ActionBarComponent,
     SideBarComponent,
-    FooterComponent,
     HeaderComponent,
     SignInComponent,
     SignUpComponent,
+    DashboardComponent,
+    MenuComponent,
   ]
 })
 export class CommonComponentsModule { }

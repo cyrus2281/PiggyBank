@@ -1,5 +1,6 @@
 
 import { Routes } from "@angular/router";
+import { DashboardComponent } from "src/app/Common/dashboard/dashboard.component";
 import { PiggyBankGuard } from "src/app/Pages/piggy-bank/guard/piggy-bank.guard";
 import { SignInUpGuard } from "src/app/Pages/sign-in-up/guard/sign-in-up.guard";
 import { SignInComponent } from "../../Common/sign-in/sign-in.component";
@@ -12,6 +13,9 @@ export const appRoutes: Routes = [
     path: "",
     component: PiggyBankComponent,
     canActivate: [PiggyBankGuard],
+    children: [
+      { path: "", component: DashboardComponent },
+    ]
   },
   {
     path: "account", component: SignInUpComponent,

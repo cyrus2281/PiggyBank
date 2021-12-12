@@ -1,0 +1,54 @@
+@import "../../Core/styles/variables.scss";
+@import "../../Core/styles/functions.scss";
+
+.action-bar {
+  background-color: $white-3;
+  position: relative;
+  height: 100%;
+
+  &-buttons {
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    @include for-screen(gap, 60px, 10px);
+
+
+    &-right, &-left {
+      @include for-screen(width, 25%, 5%);
+      @include for-screen(height, 40px, 5px);
+      max-width: 300px;
+
+      ::ng-deep {
+        .pg-button {
+          height: 100%;
+          width: 100%;
+          @include for-screen(border-radius, 20px, 5px);
+        }
+      }
+    }
+
+    &-add {
+      position: absolute;
+      right: 50%;
+      transform: translate(50%,-50%);
+      z-index: 50;
+
+      ::ng-deep {
+        .pg-button {
+          display: flex;
+          align-items: center;
+          @include for-screen(font-size, 50px, 10px);
+          @include for-screen(width, 50px, 10px);
+          @include for-screen(height, 50px, 10px);
+        }
+      }
+    }
+  }
+}
+
+.lightMode {
+  &.action-bar {
+    background-color: $white-3;
+  }
+}

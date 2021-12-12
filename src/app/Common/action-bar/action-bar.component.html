@@ -1,1 +1,9 @@
 
+<div class="action-bar" [class]="app_theme['theme']">
+  <pg-button [style]="buttonStyle.PRIMARY" [circle]="true" class="action-bar-buttons-add" (click)="change()">&#43;</pg-button>
+  <pg-progress-bar-wrapper [mode]="mode[num]" [value]="40" [bufferValue]="70"></pg-progress-bar-wrapper>
+  <div class="action-bar-buttons">
+  <pg-button [style]="buttonStyle.SECONDARY_REVERSE" class="action-bar-buttons-left">Action 1</pg-button>
+  <pg-button [style]="buttonStyle.SECONDARY_REVERSE" class="action-bar-buttons-right">Action 2</pg-button>
+  </div>
+</div>
