@@ -26,21 +26,39 @@ export class LabelInputComponent extends ControlValueAccessorModel<string> imple
   @Input() disabled: boolean = false;
   @Input() validate: Validator = (value: string) => ({isValid: !!value, error:''});
   @Input() validateArgs: any[] = [];
+  @Input() options!: string[];
+  @Input() auto!: any;
+
   @Output() change = new EventEmitter();
   @Output() onKeyUp = new EventEmitter();
   @Output() onKeyDown = new EventEmitter();
   @Output() isValid = new EventEmitter<boolean>();
+
   error: string = '';
   valid: boolean = true;
+  filteredOptions!: string[];
 
   ngOnInit(): void {
+    this.filteredOptions = this.options;
   }
 
-  keyUp(event: Event){
-    this.onKeyUp.emit(event);
+  private _filter(value: string) {
+    const filterValue = this._normalizeValue(value);
+    this.filteredOptions = this.options.filter(option => this._normalizeValue(option).includes(filterValue));
+  }
+
+  private _normalizeValue(value: string): string {
+    return value.toLowerCase().replace(/\s/g, '');
+  }
+
+  valueChange(option: string){
+    if (this.options){
+      this._filter(option);
+    }
     const validation = this.validate(this.value, ...this.validateArgs);
     this.valid = validation.isValid;
     this.error = validation.error;
     this.isValid.emit(this.valid);
+    this.onModelChange(this.value);
   }
 }

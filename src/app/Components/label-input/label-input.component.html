@@ -1,16 +1,17 @@
 <div class="group" [class]="app_theme['theme']">
   <input
     [(ngModel)]="value"
-    (ngModelChange)="onModelChange(value)"
+    (ngModelChange)="valueChange(value)"
     [type]="type"
     [name]="name"
     class="form-input"
     (keydown)="onKeyDown.emit($event)"
-    (keyup)="keyUp($event)"
+    (keyup)="onKeyUp.emit($event)"
     (change)="change.emit($event)"
     [required]="required"
     [readOnly]="readOnly"
     [disabled]="disabled"
+    [matAutocomplete]="auto"
   />
   <label *ngIf="label" class="form-input-label" [class.shrink]="!!value">{{
     label | localize
@@ -18,3 +19,11 @@
 
   <div class="form-input-error" *ngIf="!valid && !!error" [innerHTML]="error | localize"></div>
 </div>
+
+<mat-autocomplete #auto="matAutocomplete">
+  <ng-container  *ngIf="!!options">
+    <mat-option *ngFor="let option of filteredOptions" [value]="option">
+      {{option}}
+    </mat-option>
+  </ng-container>
+</mat-autocomplete>
