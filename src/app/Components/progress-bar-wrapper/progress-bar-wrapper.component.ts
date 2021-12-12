@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ProgressBarMode } from '../progress-bar/progress-bar.component';
 
 @Component({
   selector: 'pg-progress-bar-wrapper',
@@ -6,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./progress-bar-wrapper.component.scss']
 })
 export class ProgressBarWrapperComponent {
-  @Input() mode: 'determinate' | 'indeterminate' | 'buffer' | 'query' = 'indeterminate';
+  @Input() mode: ProgressBarMode= 'breath';
   @Input() error: boolean = false;
   @Input() value!: number;
   @Input() bufferValue!: number;

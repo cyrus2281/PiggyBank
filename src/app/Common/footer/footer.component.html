@@ -1,1 +1,2 @@
-<pg-progress-bar-wrapper></pg-progress-bar-wrapper>
+<pg-progress-bar-wrapper [mode]="mode[num]" [value]="40" [bufferValue]="70"></pg-progress-bar-wrapper>
+<pg-button (click)="change()">Click to change bar mode: {{mode[num]}}</pg-button>

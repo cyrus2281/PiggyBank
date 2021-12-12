@@ -43,10 +43,12 @@
     class="
       mat-progress-bar-primary mat-progress-bar-fill mat-progress-bar-element
     "
+    [class.pg-progress-bar-breath]="mode === 'breath'"
     [ngStyle]="_primaryTransform()"
     #primaryValueBar
   ></div>
   <div
+    [class.pg-progress-bar-breath]="mode === 'breath'"
     class="
       mat-progress-bar-secondary mat-progress-bar-fill mat-progress-bar-element
     "

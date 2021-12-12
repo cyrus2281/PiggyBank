@@ -73,7 +73,7 @@ export function MAT_PROGRESS_BAR_LOCATION_FACTORY(): MatProgressBarLocation {
   };
 }
 
-export type ProgressBarMode = 'determinate' | 'indeterminate' | 'buffer' | 'query';
+export type ProgressBarMode = 'determinate' | 'indeterminate' | 'buffer' | 'query' | 'breath' ;
 
 /** Default `mat-progress-bar` options that can be overridden. */
 export interface MatProgressBarDefaultOptions {

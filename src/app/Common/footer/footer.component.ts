@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProgressBarMode } from 'src/app/Components/progress-bar/progress-bar.component';
 
 @Component({
   selector: 'pg-footer',
@@ -6,10 +7,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent implements OnInit {
+  mode: ProgressBarMode[] = ['determinate', 'indeterminate', 'buffer', 'query', 'breath'];
+  num = 0
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
+  change() {
+    if (this.num < 5) {
+      this.num++;
+    } else {
+      this.num = 0
+    }
+  }
 }
