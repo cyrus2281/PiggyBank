@@ -1,0 +1,44 @@
+@import "../../Core/styles/variables.scss";
+@import "../../Core/styles/functions.scss";
+
+.menu {
+  @include for-screen(padding, 32px, 10);
+
+  &-overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    top: 0;
+    transition: $transition-fast;
+    opacity: 0;
+    visibility: hidden;
+
+    &.show {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    &.lightMode {
+      background-color: $grey-2-light;
+    }
+  }
+
+  &-container {
+    opacity: 1;
+    height: 100%;
+    width: 50%;
+    max-width: 400px;
+    float: right;
+    transition: $transition-fast;
+    transform: translateX(100%);
+
+    .show & {
+      transform: translateX(0);
+    }
+
+    .lightMode &{
+      background-color: $white-2;
+    }
+  }
+}

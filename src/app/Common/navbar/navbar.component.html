@@ -26,14 +26,13 @@
     </div>
   </div>
   <div class="nav-right">
-    <pg-button (click)="authService.signOut()" *ngIf="authService.isLoggedIn" [matTooltip]="'signout' | localize" [matTooltipPosition]="position">
-      {{ 'signout' | localize}}
-    </pg-button>
     <div
       class="nav-right-menu"
       [class.close]="showMenu"
       (click)="headerService.toggleMenu()"
       *ngIf="authService.isLoggedIn"
+      [matTooltip]="(showMenu ? 'nav-menu-close' : 'nav-menu') | localize"
+      matTooltipTouchGestures="off"
     >
       <div class="nav-right-menu-bar-1"></div>
       <div class="nav-right-menu-bar-2"></div>

@@ -49,4 +49,8 @@ export const localization : {[token: string]: string} = {
   'error.account.closedByUser': 'Sign in popup was closed by user.',
   'error.account.unknown': 'An unknown error occurred!',
 
+  // Nav
+  'nav-menu': 'Menu',
+  'nav-menu-close': 'Close Menu',
+
 }

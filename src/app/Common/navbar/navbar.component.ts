@@ -3,7 +3,6 @@ import { AuthService } from '../../Account/services/auth.service';
 import { IconSizeEnum } from '../../Components/icon/icons/icon.enum';
 import { HeaderService } from '../header/header.service';
 import APP_THEME from '../../Core/theme/theme';
-import { TooltipPosition } from '@angular/material/tooltip';
 import { SubSink } from 'subsink';
 
 @Component({
@@ -18,8 +17,6 @@ export class NavbarComponent implements OnInit, OnDestroy {
   subscriptions = new SubSink();
   showMenu: boolean = false;
   showSideBar: boolean = false;
-
-  position: TooltipPosition = 'above';
 
   constructor(public headerService: HeaderService, public authService: AuthService) { }
 
