@@ -1,0 +1,71 @@
+@import "../../Core/styles/variables.scss";
+@import "../../Core/styles/functions.scss";
+
+.scroll-panel {
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+
+  &-content {
+    height: 100%;
+    width: 100%;
+  }
+
+  &::-webkit-scrollbar {
+    @include for-screen(width, 5px, 2px);
+    @include for-screen(height, 5px, 2px);
+  }
+
+  &::-webkit-scrollbar-track {
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+  }
+
+  &.lightMode {
+    &::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 5px $grey-1;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: $grey-2;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background: $grey-3;
+    }
+
+    &.color {
+      &::-webkit-scrollbar-thumb {
+        background: $blue-1;
+      }
+
+      &::-webkit-scrollbar-thumb:hover {
+        background: $blue-2;
+      }
+    }
+  }
+
+  &.right {
+    direction: rtl;
+  }
+
+  &.top,
+  &.top .scroll-panel-content {
+    transform: rotateX(180deg);
+    -ms-transform: rotateX(180deg);
+    -webkit-transform: rotateX(180deg);
+  }
+
+  &.hidden {
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    & {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  }
+}

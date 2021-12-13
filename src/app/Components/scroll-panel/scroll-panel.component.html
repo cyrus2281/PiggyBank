@@ -1,0 +1,12 @@
+<div
+  class="scroll-panel"
+  [class]="app_theme['theme']"
+  [class.color]="color"
+  [class.right]="right"
+  [class.top]="top"
+  [class.hidden]="hidden"
+>
+  <div class="scroll-panel-content">
+    <ng-content></ng-content>
+  </div>
+</div>

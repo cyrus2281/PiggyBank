@@ -23,6 +23,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { ProgressBarWrapperComponent } from './progress-bar-wrapper/progress-bar-wrapper.component';
+import { ScrollPanelComponent } from './scroll-panel/scroll-panel.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { ProgressBarWrapperComponent } from './progress-bar-wrapper/progress-bar
     MasterLayoutComponent,
     ProgressBarComponent,
     ProgressBarWrapperComponent,
+    ScrollPanelComponent,
   ],
   imports: [
     CommonModule,
@@ -64,6 +66,7 @@ import { ProgressBarWrapperComponent } from './progress-bar-wrapper/progress-bar
     MasterLayoutComponent,
     ProgressBarComponent,
     ProgressBarWrapperComponent,
+    ScrollPanelComponent,
   ]
 })
 export class ComponentsModule { }
