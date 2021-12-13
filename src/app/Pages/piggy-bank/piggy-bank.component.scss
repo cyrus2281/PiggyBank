@@ -21,7 +21,13 @@
   &-body {
     display: flex;
     flex-direction: row;
-    height: 100%;
+    height: calc(100% - 70px);
+    @include tablet-plus(){
+      height: calc(100% - 75px);
+    }
+    @include desktop-only(){
+      height: calc(100% - 80px);
+    }
   }
 
   &-layout {
@@ -30,6 +36,7 @@
   }
 
   &-action-bar {
+    height: 100%;
     @include for-screen(height, 70px, 5px);
   }
 }

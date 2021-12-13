@@ -10,6 +10,10 @@
   background-color: $white-3;
   @include for-screen(padding, 5px, 5);
   @include for-screen(height, 50px, 10);
+  border-bottom: 1px solid;
+  &.lightMode{
+    border-color: $blue-1;
+  }
 
   &-left {
     display: flex;
@@ -24,7 +28,7 @@
 
     &-button {
       display: none;
-      @include mobile-only() {
+      @include tablet-less() {
         display: block;
       }
 
@@ -46,7 +50,7 @@
         height: 30px;
 
         .lightMode &{
-          border-color: $black-1;
+          border-color: $blue-3;
         }
       }
 
@@ -94,7 +98,7 @@
             }
 
             .lightMode &{
-              background-color: $black-1;
+              background-color: $blue-3;
             }
           }
         }
@@ -113,9 +117,6 @@
       @include tablet-plus() {
         cursor: pointer;
       }
-      @include desktop-only() {
-        display: none;
-      }
 
       &-bar {
         @for $i from 1 through 3 {
@@ -126,7 +127,7 @@
             border-radius: 3px;
             transition: $transition-quick;
             .lightMode &{
-              background-color: $black-1;
+              background-color: $blue-3;
             }
           }
         }

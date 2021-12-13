@@ -8,13 +8,13 @@
 
   &-buttons {
     display: flex;
-    height: 100%;
+    height: calc(100% - 5px);
     justify-content: center;
     align-items: center;
     @include for-screen(gap, 60px, 10px);
 
-
-    &-right, &-left {
+    &-right,
+    &-left {
       @include for-screen(width, 25%, 5%);
       @include for-screen(height, 40px, 5px);
       max-width: 300px;
@@ -31,7 +31,7 @@
     &-add {
       position: absolute;
       right: 50%;
-      transform: translate(50%,-50%);
+      transform: translate(50%, -50%);
       z-index: 50;
 
       ::ng-deep {
@@ -41,6 +41,14 @@
           @include for-screen(font-size, 50px, 10px);
           @include for-screen(width, 50px, 10px);
           @include for-screen(height, 50px, 10px);
+
+          &:hover {
+            transform: scale(1.1);
+          }
+
+          .lightMode &:hover {
+            border-color: $blue-3;
+          }
         }
       }
     }

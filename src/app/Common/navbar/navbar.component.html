@@ -3,7 +3,7 @@
     <div class="nav-left-button" *ngIf="authService.isLoggedIn">
       <div
         class="nav-left-button-container"
-        [class.close]="headerService.sideBarOpen"
+        [class.close]="showSideBar"
         (click)="headerService.toggleSideBar()"
       >
         <div class="nav-left-button-dot-1"></div>
@@ -31,8 +31,8 @@
     </pg-button>
     <div
       class="nav-right-menu"
-      [class.close]="headerService.actionBarOpen"
-      (click)="headerService.toggleActionBar()"
+      [class.close]="showMenu"
+      (click)="headerService.toggleMenu()"
       *ngIf="authService.isLoggedIn"
     >
       <div class="nav-right-menu-bar-1"></div>

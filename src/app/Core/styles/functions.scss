@@ -30,6 +30,12 @@
   }
 }
 
+@mixin tablet-less {
+  @media only screen and (max-width: $tablet-width) {
+    @content;
+  }
+}
+
 @mixin tablet-plus {
   @media only screen and (min-width: $tablet-width) {
     @content;

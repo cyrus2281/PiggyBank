@@ -1,0 +1,73 @@
+@import "../../Core/styles/variables.scss";
+@import "../../Core/styles/functions.scss";
+
+.sidebar {
+  height: 100%;
+  width: 70px;
+  position: relative;
+
+  &-container {
+    position: absolute;
+    transition: $transition-fast;
+    width: 100%;
+    height: 100%;
+    z-index: 50;
+
+    .lightMode & {
+      background-color:$white-1;
+      background: linear-gradient(90deg, $white-1 0%, $white-3 100%);
+    }
+
+    @include tablet-less() {
+      .show & {
+        width: 280px;
+        max-width: 280px;
+
+        // delete
+        .h {
+          display: flex;
+        }
+        // till here
+      }
+    }
+  }
+
+  @include tablet-plus(){
+    width: 250px;
+    max-width: 250px;
+  }
+
+  @include desktop-only(){
+    width: 280px;
+    max-width: 280px;
+  }
+}
+
+
+// delete from here
+.temp {
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+
+  &2 {
+    font-size: 22px;
+    margin-left: 5px;
+  display: flex;
+
+  }
+}
+.test {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 10px;
+}
+
+.h {
+  @include tablet-less() {
+    display: none;
+  }
+}
+// delete till here

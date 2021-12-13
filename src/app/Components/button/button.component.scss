@@ -81,13 +81,13 @@
   }
 
   .primary {
-    background-color: $blue-1;
     color: $white-1;
-    border-color: $blue-1;
+    border-color: $blue-3;
+    background: $blue-1;
+    background: radial-gradient(circle, $blue-1 0%, $blue-2 50%, $blue-3 100%);
 
     &:hover {
-      background-color: $blue-2;
-      border-color: $blue-2;
+      border-color: $white-3;
     }
   }
 
@@ -119,11 +119,13 @@
   }
 
   .disabled {
+    background: unset;
     background-color: $grey-1;
     border-color: $grey-3;
     color: $black-1;
 
     &:hover {
+      background: unset;
       background-color: $grey-1;
       border-color: $grey-3;
       color: $black-1;

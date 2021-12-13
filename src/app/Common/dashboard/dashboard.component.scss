@@ -1,5 +1,7 @@
+@import "../../Core/styles/variables.scss";
+
 .dashboard {
-  background-color: lightyellow;
+  background-color: $white-1;
   width: 100%;
   height: 100%;
 }
