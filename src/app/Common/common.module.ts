@@ -11,6 +11,7 @@ import { SideBarItemWrapperComponent } from './components/side-bar-item-wrapper/
 import { SideBarComponent } from "./components/side-bar/side-bar.component";
 import { SignInComponent } from "./components/sign-in/sign-in.component";
 import { SignUpComponent } from "./components/sign-up/sign-up.component";
+import { SideBarItemComponent } from './components/side-bar-item/side-bar-item.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { SignUpComponent } from "./components/sign-up/sign-up.component";
     SignUpComponent,
     MenuComponent,
     SideBarItemWrapperComponent,
+    SideBarItemComponent,
   ],
   imports: [
       CommonModule,

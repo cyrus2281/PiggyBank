@@ -1,0 +1,41 @@
+@import "../../../Core/styles/functions.scss";
+
+
+@include tablet-less() {
+  .show :host {
+    // delete
+    .h {
+      display: flex;
+    }
+    // till here
+  }
+}
+
+// delete from here
+.temp {
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+
+  &2 {
+    font-size: 22px;
+    margin-left: 5px;
+  display: flex;
+
+  }
+}
+
+.test {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 10px;
+}
+
+.h {
+  @include tablet-less() {
+    display: none;
+  }
+}
+// delete till here
