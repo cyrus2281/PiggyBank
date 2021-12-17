@@ -6,8 +6,6 @@ import { ComponentsModule } from './Components/components.module';
 import { CommonComponentsModule } from './Common/common.module';
 import { PagesModule } from './Pages/pages.module';
 import { CoreModule } from './Core/core.module';
-import { TransactionModule } from './Transaction/transaction.module';
-import { DirectoryModule } from './Directory/directory.module';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StoreModule } from '@ngrx/store';
@@ -26,8 +24,6 @@ import { environment } from 'src/environments/environment';
     FormsModule,
     ComponentsModule,
     CommonComponentsModule,
-    TransactionModule,
-    DirectoryModule,
     BrowserAnimationsModule,
     StoreModule.forRoot(reducers),
     EffectsModule.forRoot(effects),

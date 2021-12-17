@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/Account/services/auth.service';
-import { ButtonStyleEnum } from 'src/app/Core/enum/button-style.enum';
+import { ButtonStyleEnum } from 'src/app/Components/enum/button-style.enum';
 import { LocalizationService } from 'src/app/Core/localization/localization.service';
 import { emailValidator, passwordValidatorGenerator, confirmPasswordValidator, textLengthValidatorGenerator, Validator } from 'src/app/Core/utilities/validate.utils';
 

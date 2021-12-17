@@ -2,7 +2,7 @@ import { Component, EventEmitter, forwardRef, Input, OnInit, Output } from '@ang
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
 import APP_THEME from 'src/app/Core/theme/theme';
 import { Validator } from 'src/app/Core/utilities/validate.utils';
-import { ControlValueAccessorModel } from 'src/app/Model/control-value-accessor.model';
+import { ControlValueAccessorModel } from 'src/app/Components/model/control-value-accessor.model';
 
 @Component({
   selector: 'pg-label-input',

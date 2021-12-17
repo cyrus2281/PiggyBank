@@ -1,7 +1,7 @@
 import { Component, EventEmitter, forwardRef, Input, Output } from '@angular/core';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
-import { ControlValueAccessorModel } from 'src/app/Model/control-value-accessor.model';
-import { RadioButtonModel } from 'src/app/Model/radio-button-model';
+import { ControlValueAccessorModel } from 'src/app/Components/model/control-value-accessor.model';
+import { RadioButtonModel } from '../../model/radio-button-model';
 
 
 @Component({

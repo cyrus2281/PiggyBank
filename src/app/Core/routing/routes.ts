@@ -1,6 +1,6 @@
 
 import { Routes } from "@angular/router";
-import { DashboardComponent } from "src/app/Common/dashboard/dashboard.component";
+import { DashboardComponent } from "src/app/Budget/dashboard/dashboard.component";
 import { PiggyBankGuard } from "src/app/Pages/piggy-bank/guard/piggy-bank.guard";
 import { SignInUpGuard } from "src/app/Pages/sign-in-up/guard/sign-in-up.guard";
 import { SignInComponent } from "../../Common/sign-in/sign-in.component";

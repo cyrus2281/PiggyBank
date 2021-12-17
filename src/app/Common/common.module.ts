@@ -10,7 +10,6 @@ import { SideBarComponent } from "./side-bar/side-bar.component";
 import { SignInComponent } from "./sign-in/sign-in.component";
 import { SignUpComponent } from "./sign-up/sign-up.component";
 import { FormsModule } from "@angular/forms";
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { MenuComponent } from './menu/menu.component';
 
 @NgModule({
@@ -21,7 +20,6 @@ import { MenuComponent } from './menu/menu.component';
     HeaderComponent,
     SignInComponent,
     SignUpComponent,
-    DashboardComponent,
     MenuComponent,
   ],
   imports: [
@@ -38,7 +36,6 @@ import { MenuComponent } from './menu/menu.component';
     HeaderComponent,
     SignInComponent,
     SignUpComponent,
-    DashboardComponent,
     MenuComponent,
   ]
 })

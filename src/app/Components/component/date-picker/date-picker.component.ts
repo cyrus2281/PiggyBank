@@ -1,7 +1,7 @@
 import { Component, EventEmitter, forwardRef, Input, OnInit, Output } from '@angular/core';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
-import { ButtonStyleEnum } from 'src/app/Core/enum/button-style.enum';
-import { ControlValueAccessorModel } from 'src/app/Model/control-value-accessor.model';
+import { ButtonStyleEnum } from 'src/app/Components/enum/button-style.enum';
+import { ControlValueAccessorModel } from 'src/app/Components/model/control-value-accessor.model';
 
 @Component({
   selector: 'pg-date-picker',

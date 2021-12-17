@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ProgressBarMode } from 'src/app/Components/progress-bar/progress-bar.component';
-import { ButtonStyleEnum } from 'src/app/Core/enum/button-style.enum';
+import { ProgressBarMode } from 'src/app/Components/component/progress-bar/progress-bar.component';
+import { ButtonStyleEnum } from 'src/app/Components/enum/button-style.enum';
 import APP_THEME from 'src/app/Core/theme/theme';
 
 @Component({
