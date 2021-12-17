@@ -40,6 +40,8 @@ import { SideBarItemComponent } from './components/side-bar-item/side-bar-item.c
     SignInComponent,
     SignUpComponent,
     MenuComponent,
+    SideBarItemWrapperComponent,
+    SideBarItemComponent,
   ]
 })
 export class CommonComponentsModule { }

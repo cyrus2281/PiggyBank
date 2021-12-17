@@ -1,6 +1,6 @@
 
 import { Routes } from "@angular/router";
-import { DashboardComponent } from "src/app/Budget/components/dashboard/dashboard.component";
+import { budgetRouts } from "src/app/Budget/routes/budget.routes";
 import { SignInComponent } from "src/app/Common/components/sign-in/sign-in.component";
 import { SignUpComponent } from "src/app/Common/components/sign-up/sign-up.component";
 import { PiggyBankGuard } from "src/app/Pages/piggy-bank/guard/piggy-bank.guard";
@@ -14,7 +14,12 @@ export const appRoutes: Routes = [
     component: PiggyBankComponent,
     canActivate: [PiggyBankGuard],
     children: [
-      { path: "", component: DashboardComponent },
+      budgetRouts,
+      {
+        path: "",
+        redirectTo: "budget",
+        pathMatch: 'full'
+      }
     ]
   },
   {

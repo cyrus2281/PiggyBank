@@ -1,8 +1,8 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { DirectoryCardModel } from 'src/app/Budget/models/directory-card.model';
+import { Component, Inject, OnDestroy, OnInit } from '@angular/core';
 import APP_THEME from 'src/app/Core/theme/theme';
 import { SubSink } from 'subsink';
 import { SideBarItemModelInterface } from '../../models/side-bar-item.model';
+import { SideBarServiceInterface } from '../../models/side-bar.service.interface';
 import { HeaderService } from '../../services/header.service';
 
 @Component({
@@ -16,12 +16,16 @@ export class SideBarComponent implements OnInit, OnDestroy {
   show: boolean = false;
   items: SideBarItemModelInterface[] = [];
 
-  constructor(public headerService: HeaderService) {
-    this.items.push(new DirectoryCardModel('test one'), new DirectoryCardModel('test two'), new DirectoryCardModel('test three'));
-   }
+  constructor(
+    public headerService: HeaderService,
+    @Inject('SideBarServiceInterface') private sidebarService: SideBarServiceInterface<any>
+  ) { }
 
   ngOnInit(): void {
-    this.subscriptions.add(this.headerService.getSideBarStatus().subscribe(show => this.show = show));
+    this.subscriptions.add(
+      this.headerService.getSideBarStatus().subscribe(show => this.show = show),
+      this.sidebarService.getSidebarItems().subscribe(items => this.items = items)
+    );
   }
 
   ngOnDestroy(): void {

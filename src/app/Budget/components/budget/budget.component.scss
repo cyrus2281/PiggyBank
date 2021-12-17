@@ -1,11 +1,11 @@
-@import "../../Core/styles/variables.scss";
-@import "../../Core/styles/functions.scss";
+@import "../../../Core/styles/variables.scss";
+@import "../../../Core/styles/functions.scss";
 
 .lightMode {
   background-color: $white-1;
 }
 
-.piggyBank {
+.budget {
   height: calc(100vh - 50px);
   @include tablet-plus(){
     height: calc(100vh - 60px);

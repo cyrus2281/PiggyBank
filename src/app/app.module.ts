@@ -13,6 +13,7 @@ import { effects, reducers } from './Data/Redux/root.reducer';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from 'src/environments/environment';
+import { BudgetModule } from './Budget/budget.module';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { environment } from 'src/environments/environment';
     ComponentsModule,
     CommonComponentsModule,
     BrowserAnimationsModule,
+    BudgetModule,
     StoreModule.forRoot(reducers),
     EffectsModule.forRoot(effects),
     StoreDevtoolsModule.instrument({logOnly:environment.production}),
