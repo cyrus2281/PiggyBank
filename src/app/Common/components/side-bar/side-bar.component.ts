@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import APP_THEME from 'src/app/Core/theme/theme';
 import { SubSink } from 'subsink';
-import { HeaderService } from '../header/header.service';
+import { HeaderService } from '../../services/header.service';
 
 @Component({
   selector: 'pg-side-bar',

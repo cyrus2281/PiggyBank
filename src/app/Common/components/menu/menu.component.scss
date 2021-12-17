@@ -1,5 +1,5 @@
-@import "../../Core/styles/variables.scss";
-@import "../../Core/styles/functions.scss";
+@import "../../../Core/styles/variables.scss";
+@import "../../../Core/styles/functions.scss";
 
 .menu {
   @include for-screen(padding, 32px, 10);

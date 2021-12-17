@@ -1,9 +1,9 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { AuthService } from '../../Account/services/auth.service';
-import { IconSizeEnum } from '../../Components/icon/icons/icon.enum';
-import { HeaderService } from '../header/header.service';
-import APP_THEME from '../../Core/theme/theme';
+import { AuthService } from 'src/app/Account/services/auth.service';
+import { IconSizeEnum } from 'src/app/Components/icon/icons/icon.enum';
+import APP_THEME from 'src/app/Core/theme/theme';
 import { SubSink } from 'subsink';
+import { HeaderService } from '../../services/header.service';
 
 @Component({
   selector: 'pg-navbar',

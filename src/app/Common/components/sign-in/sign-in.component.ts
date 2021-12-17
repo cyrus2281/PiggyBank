@@ -1,8 +1,8 @@
 import { emailValidator } from 'src/app/Core/utilities/validate.utils';
 import { ButtonStyleEnum } from 'src/app/Components/enum/button-style.enum';
 import { Component, OnInit } from '@angular/core';
-import { SignInMethodsEnum } from '../../Account/enum/sign-in-methods.enum';
-import { AuthService } from '../../Account/services/auth.service';
+import { SignInMethodsEnum } from 'src/app/Account/enum/sign-in-methods.enum';
+import { AuthService } from 'src/app/Account/services/auth.service';
 
 @Component({
   selector: 'pg-sign-in',

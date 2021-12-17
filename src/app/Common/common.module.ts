@@ -1,16 +1,16 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
-import { AppModule } from "../app.module";
+import { FormsModule } from "@angular/forms";
 import { ComponentsModule } from "../Components/components.module";
 import { CoreModule } from "../Core/core.module";
-import { ActionBarComponent } from "./action-bar/action-bar.component";
-import { HeaderComponent } from "./header/header.component";
-import { NavbarComponent } from "./navbar/navbar.component";
-import { SideBarComponent } from "./side-bar/side-bar.component";
-import { SignInComponent } from "./sign-in/sign-in.component";
-import { SignUpComponent } from "./sign-up/sign-up.component";
-import { FormsModule } from "@angular/forms";
-import { MenuComponent } from './menu/menu.component';
+import { ActionBarComponent } from "./components/action-bar/action-bar.component";
+import { HeaderComponent } from "./components/header/header.component";
+import { MenuComponent } from "./components/menu/menu.component";
+import { NavbarComponent } from "./components/navbar/navbar.component";
+import { SideBarItemWrapperComponent } from './components/side-bar-item-wrapper/side-bar-item-wrapper.component';
+import { SideBarComponent } from "./components/side-bar/side-bar.component";
+import { SignInComponent } from "./components/sign-in/sign-in.component";
+import { SignUpComponent } from "./components/sign-up/sign-up.component";
 
 @NgModule({
   declarations: [
@@ -21,6 +21,7 @@ import { MenuComponent } from './menu/menu.component';
     SignInComponent,
     SignUpComponent,
     MenuComponent,
+    SideBarItemWrapperComponent,
   ],
   imports: [
       CommonModule,
