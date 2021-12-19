@@ -1,0 +1,31 @@
+@import "../../../Core/styles/variables.scss";
+
+.label-info {
+
+  &-container {
+    display: flex;
+    align-items: center;
+  }
+
+  &-icon {
+    margin-left: 5px;
+    height: 16px;
+
+    ::ng-deep .material-icons{
+      font-size: 16px!important;
+    }
+
+    .lightMode :host &-info{
+        color: $blue-1;
+    }
+
+    .lightMode :host &-help{
+        color: $orange-1;
+    }
+
+    .lightMode :host &-important{
+        color: $red-1;
+        font-size: 16px;
+    }
+  }
+}

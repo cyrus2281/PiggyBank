@@ -24,6 +24,7 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { ProgressBarWrapperComponent } from './component/progress-bar-wrapper/progress-bar-wrapper.component';
 import { ScrollPanelComponent } from './component/scroll-panel/scroll-panel.component';
+import { LabelInfoComponent } from './component/label-info/label-info.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { ScrollPanelComponent } from './component/scroll-panel/scroll-panel.comp
     ProgressBarComponent,
     ProgressBarWrapperComponent,
     ScrollPanelComponent,
+    LabelInfoComponent,
   ],
   imports: [
     CommonModule,
@@ -67,6 +69,7 @@ import { ScrollPanelComponent } from './component/scroll-panel/scroll-panel.comp
     ProgressBarComponent,
     ProgressBarWrapperComponent,
     ScrollPanelComponent,
+    LabelInfoComponent,
   ]
 })
 export class ComponentsModule { }

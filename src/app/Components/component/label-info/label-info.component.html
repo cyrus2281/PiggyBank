@@ -1,0 +1,23 @@
+<div class="label-info-container">
+  <span><ng-content class="label-info"></ng-content></span>
+  <ng-container [ngSwitch]="type">
+    <span
+      *ngSwitchCase="labelIconType.info"
+      class="label-info-icon label-info-icon-info"
+      [matTooltip]="tooltip | localize" [matTooltipPosition]="position"
+      ><pg-icon icon="info"></pg-icon
+    ></span>
+    <span
+      *ngSwitchCase="labelIconType.help"
+      class="label-info-icon label-info-icon-help"
+      [matTooltip]="tooltip | localize" [matTooltipPosition]="position"
+      ><pg-icon icon="help"></pg-icon
+    ></span>
+    <span
+      *ngSwitchCase="labelIconType.important"
+      class="label-info-icon label-info-icon-important"
+      [matTooltip]="tooltip | localize" [matTooltipPosition]="position"
+      >*</span
+    >
+  </ng-container>
+</div>
