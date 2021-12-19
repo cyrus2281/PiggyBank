@@ -1,8 +1,8 @@
-import { AccountModel } from "../account.model";
+import { Account } from "../model/account";
 import * as AccountActions from './account.actions';
 
 export interface AccountState {
-  account: AccountModel | null;
+  account: Account | null;
   error: string | null;
 }
 

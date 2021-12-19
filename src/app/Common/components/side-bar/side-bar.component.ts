@@ -2,7 +2,7 @@ import { Component, Inject, OnDestroy, OnInit } from '@angular/core';
 import APP_THEME from 'src/app/Core/theme/theme';
 import { SubSink } from 'subsink';
 import { SideBarItemModelInterface } from '../../models/side-bar-item.model';
-import { SideBarServiceInterface } from '../../models/side-bar.service.interface';
+import { SideBarServiceInterface } from '../../models/side-bar-service.interface';
 import { HeaderService } from '../../services/header.service';
 
 @Component({

@@ -8,7 +8,7 @@ import * as AccountActions from '../store/account.actions';
 import { RouterService } from 'src/app/Core/routing/router.service';
 import { MessageService } from 'src/app/Core/message/message.service';
 import { AuthFirebaseService } from 'src/app/Data/Firebase/auth.firebase.service';
-import { AccountModel } from '../account.model';
+import { Account } from '../model/account';
 import { Unsubscribe } from '@firebase/auth';
 import { MessageTypeEnum } from 'src/app/Core/message/message-type.enum';
 
@@ -28,7 +28,7 @@ export class AuthService {
   ) {
     this.unsubscribeFromAuth = this.authFirebaseService.onAuthStateChanged(user => {
       if (user) {
-        const account = new AccountModel(user.uid);
+        const account = new Account(user.uid);
         this.store.dispatch(new AccountActions.SignInSuccess(account));
       } else {
         this.store.dispatch(new AccountActions.SignOut());

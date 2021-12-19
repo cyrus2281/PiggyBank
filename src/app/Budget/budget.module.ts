@@ -9,6 +9,7 @@ import { ComponentsModule } from '../Components/components.module';
 import { FormsModule } from '@angular/forms';
 import { CoreModule } from '../Core/core.module';
 import { AppRoutingModule } from '../Core/routing/app-routing.module';
+import { DirectoryDataService } from './services/directory-data.service';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { AppRoutingModule } from '../Core/routing/app-routing.module';
     FormsModule,
   ],
   providers: [
+    DirectoryDataService,
     BudgetSidebarService,
     {
         provide: 'SideBarServiceInterface',

@@ -1,5 +1,5 @@
 
-export class AccountModel {
+export class Account {
   public isLoggedIn : boolean = false;
   private email!: string;
   private displayName!: string;

@@ -1,5 +1,5 @@
 import { Action } from "@ngrx/store";
-import { AccountModel } from "../account.model";
+import { Account } from "../model/account";
 
 export const SIGN_IN_WITH_EMAIL_START = '[Account] Sign In With Email Start';
 export const SIGN_IN_WITH_GOOGLE_START = '[Account] Sign In With Google';
@@ -31,7 +31,7 @@ export class SignInWithFacebook implements Action {
 
 export class SignInSuccess implements Action {
   readonly type = SIGN_IN_SUCCESS;
-  constructor(public payload: AccountModel){}
+  constructor(public payload: Account){}
 }
 export class SignUp implements Action {
   readonly type = SIGN_UP_START;

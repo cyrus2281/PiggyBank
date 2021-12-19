@@ -6,7 +6,7 @@ import { mergeMap } from 'rxjs/operators';
 import { MessageTypeEnum } from 'src/app/Core/message/message-type.enum';
 import { MessageService } from 'src/app/Core/message/message.service';
 import { AuthFirebaseService } from 'src/app/Data/Firebase/auth.firebase.service';
-import { AccountModel } from '../account.model';
+import { Account } from '../model/account';
 import * as AccountActions from './account.actions';
 
 @Injectable()
@@ -22,7 +22,7 @@ export class AccountEffects {
             loading.close();
             if (userCredential.user.uid) {
               this.messageService.showMessage('signin.success', MessageTypeEnum.success);
-              const account = new AccountModel(userCredential.user.uid);
+              const account = new Account(userCredential.user.uid);
               return new AccountActions.SignInSuccess(account);
             } else {
               throw new FirebaseError('auth/unknown', 'An unknown error occurred!');
@@ -46,7 +46,7 @@ export class AccountEffects {
             loading.close();
             if (userCredential.user.uid) {
               this.messageService.showMessage('signin.success', MessageTypeEnum.success);
-              const account = new AccountModel(userCredential.user.uid);
+              const account = new Account(userCredential.user.uid);
               return new AccountActions.SignInSuccess(account);
             } else {
               throw new FirebaseError('auth/unknown', 'An unknown error occurred!');
@@ -70,7 +70,7 @@ export class AccountEffects {
             loading.close();
             if (userCredential.user.uid) {
               this.messageService.showMessage('signin.success', MessageTypeEnum.success);
-              const account = new AccountModel(userCredential.user.uid);
+              const account = new Account(userCredential.user.uid);
               return new AccountActions.SignInSuccess(account);
             } else {
               throw new FirebaseError('auth/unknown', 'An unknown error occurred!');
@@ -94,7 +94,7 @@ export class AccountEffects {
             loading.close();
             if (userCredential.user.uid) {
               this.messageService.showMessage('signup.success', MessageTypeEnum.success);
-              const account = new AccountModel(userCredential.user.uid);
+              const account = new Account(userCredential.user.uid);
               return new AccountActions.SignInSuccess(account);
             } else {
               throw new FirebaseError('auth/unknown', 'An unknown error occurred!');
