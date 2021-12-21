@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable} from 'rxjs';
 import { AppState } from 'src/app/Data/Redux/root.reducer';
 import { Directory } from '../models/directory';
 import { DirectorySidebarCard } from '../models/directory-sidebar-card';
@@ -13,10 +13,6 @@ import { BUDGET_STORE } from '../store/budget.reducer';
 export class DirectoryDataService {
   private directories!: Directory[];
   private directories$ = new BehaviorSubject<Directory[]>([]);
-
-  private directorySidebarCards!: Directory[];
-  private directorySidebarCards$ = new BehaviorSubject<DirectorySidebarCard[]>([]);
-
 
   constructor(private store: Store<AppState>) {
     this.store.select(BUDGET_STORE).subscribe(budgetState => {
@@ -38,7 +34,4 @@ export class DirectoryDataService {
 
   }
 
-  getDirectorySidebarCards(): Observable<DirectorySidebarCard[]> {
-    return this.directorySidebarCards$;
-  }
 }

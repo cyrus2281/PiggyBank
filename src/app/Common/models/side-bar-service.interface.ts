@@ -8,12 +8,6 @@ export interface SideBarServiceInterface<T extends SideBarItemModelInterface>{
   getSidebarItems(): Observable<T[]>;
 
   /**
-   * sets the current items based on the current module
-   * @param items sidebar items
-   */
-  setSidebarItems(items: T[]): void;
-
-  /**
    * sets the selected item from the sidebar
    * @param item selected item
    */
