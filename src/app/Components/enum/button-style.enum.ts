@@ -1,6 +1,6 @@
 export enum ButtonStyleEnum {
   "SECONDARY" = 'secondary',
-  "SECONDARY_REVERSE" = 'secondary-reverse',
+  "LIGHT" = 'light',
   "PRIMARY" = 'primary',
   "PALE" = 'pale',
   "GOOGLE" = 'google',

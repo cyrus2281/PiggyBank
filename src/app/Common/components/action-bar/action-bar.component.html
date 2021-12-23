@@ -1,45 +1,95 @@
 <div class="action-bar">
-  <pg-button [style]="buttonStyle.PRIMARY" [circle]="true" class="action-bar-buttons-add"
-    (focus)="setShowWheel($event)">&#43;</pg-button>
-  <pg-progress-bar-wrapper [mode]="progressBarMode" [error]="progressBarError"></pg-progress-bar-wrapper>
+  <pg-button
+    [style]="buttonStyle.PRIMARY"
+    [circle]="true"
+    class="action-bar-buttons-add"
+    (focus)="setShowWheel($event)"
+    >&#43;</pg-button
+  >
+  <pg-progress-bar-wrapper
+    [mode]="progressBarMode"
+    [error]="progressBarError"
+  ></pg-progress-bar-wrapper>
   <div class="action-bar-buttons">
-    <pg-button [style]="buttonStyle.SECONDARY_REVERSE" class="action-bar-buttons-left"
-      (click)="actionBarService.buttonClicked(buttonType.MAIN_LEFT)">{{
-        actionBarButtons?.get(buttonType.MAIN_LEFT)?.label
-      }}</pg-button>
-    <pg-button [style]="buttonStyle.SECONDARY_REVERSE" class="action-bar-buttons-right"
-      (click)="actionBarService.buttonClicked(buttonType.MAIN_RIGHT)">{{
-        actionBarButtons?.get(buttonType.MAIN_RIGHT)?.label
-      }}</pg-button>
+    <pg-button
+      [style]="buttonStyle.SECONDARY"
+      [disabled]="!!btnLeft?.disable"
+      [class.hidden]="!btnLeft?.visible"
+      class="action-bar-buttons-left"
+      (click)="actionBarService.buttonClicked(buttonType.MAIN_LEFT)"
+      [matTooltip]="btnLeft?.tooltip || '' | localize"
+      matTooltipPosition="above"
+      >{{ btnLeft?.label }}</pg-button
+    >
+    <pg-button
+      [style]="buttonStyle.SECONDARY"
+      [disabled]="!!btnRight?.disable"
+      [class.hidden]="!btnRight?.visible"
+      class="action-bar-buttons-right"
+      (click)="actionBarService.buttonClicked(buttonType.MAIN_RIGHT)"
+      [matTooltip]="btnRight?.tooltip || '' | localize"
+      matTooltipPosition="above"
+      >{{ btnRight?.label }}</pg-button
+    >
   </div>
 </div>
 <div class="action-bar-wheel-container" [class.showWheel]="showWheel">
   <div class="action-bar-wheel">
-    <div class="action-bar-wheel-button action-bar-wheel-button-1">
-      <pg-button [style]="buttonStyle.SECONDARY" [circle]="true"
+    <div
+      class="action-bar-wheel-button action-bar-wheel-button-1"
+      [class.enabled]="!wheelBtn1?.disable"
+      [class.hidden]="!wheelBtn1?.visible"
+    >
+      <pg-button
+        [style]="buttonStyle.LIGHT"
+        [circle]="true"
         (click)="actionBarService.buttonClicked(buttonType.WHEEL_ONE)"
-        [matTooltip]="actionBarButtons?.get(buttonType.WHEEL_ONE)?.tooltip || '' | localize" matTooltipPosition="above">
-        <pg-icon class="action-bar-wheel-button-icon" [icon]="
-            actionBarButtons?.get(buttonType.WHEEL_ONE)?.icon || ''
-          "></pg-icon>
+        [disabled]="!!wheelBtn1?.disable"
+        [matTooltip]="wheelBtn1?.tooltip || '' | localize"
+        matTooltipPosition="above"
+      >
+        <pg-icon
+          class="action-bar-wheel-button-icon"
+          [icon]="wheelBtn1?.icon || ''"
+        ></pg-icon>
       </pg-button>
     </div>
-    <div class="action-bar-wheel-button action-bar-wheel-button-2">
-      <pg-button [style]="buttonStyle.SECONDARY" [circle]="true"
+    <div
+      class="action-bar-wheel-button action-bar-wheel-button-2"
+      [class.enabled]="!wheelBtn2?.disable"
+      [class.hidden]="!wheelBtn2?.visible"
+    >
+      <pg-button
+        [style]="buttonStyle.LIGHT"
+        [circle]="true"
         (click)="actionBarService.buttonClicked(buttonType.WHEEL_TWO)"
-        [matTooltip]="actionBarButtons?.get(buttonType.WHEEL_TWO)?.tooltip || '' | localize" matTooltipPosition="above">
-        <pg-icon class="action-bar-wheel-button-icon" [icon]="
-            actionBarButtons?.get(buttonType.WHEEL_TWO)?.icon || ''
-          "></pg-icon>
+        [disabled]="!!wheelBtn2?.disable"
+        [matTooltip]="wheelBtn2?.tooltip || '' | localize"
+        matTooltipPosition="above"
+      >
+        <pg-icon
+          class="action-bar-wheel-button-icon"
+          [icon]="wheelBtn2?.icon || ''"
+        ></pg-icon>
       </pg-button>
     </div>
-    <div class="action-bar-wheel-button action-bar-wheel-button-3">
-      <pg-button [style]="buttonStyle.SECONDARY" [circle]="true"
-      (click)="actionBarService.buttonClicked(buttonType.WHEEL_THREE)"
-      [matTooltip]="actionBarButtons?.get(buttonType.WHEEL_THREE)?.tooltip || '' | localize" matTooltipPosition="above">
-        <pg-icon class="action-bar-wheel-button-icon" [icon]="
-            actionBarButtons?.get(buttonType.WHEEL_THREE)?.icon || ''
-          "></pg-icon>
+    <div
+      class="action-bar-wheel-button action-bar-wheel-button-3"
+      [class.enabled]="!wheelBtn3?.disable"
+      [class.hidden]="!wheelBtn3?.visible"
+    >
+      <pg-button
+        [style]="buttonStyle.LIGHT"
+        [circle]="true"
+        (click)="actionBarService.buttonClicked(buttonType.WHEEL_THREE)"
+        [disabled]="!!wheelBtn3?.disable"
+        [matTooltip]="wheelBtn3?.tooltip || '' | localize"
+        matTooltipPosition="above"
+      >
+        <pg-icon
+          class="action-bar-wheel-button-icon"
+          [icon]="wheelBtn3?.icon || ''"
+        ></pg-icon>
       </pg-button>
     </div>
   </div>

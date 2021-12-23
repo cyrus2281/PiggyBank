@@ -57,6 +57,17 @@
   }
 
   .secondary {
+    background-color: $blue-1-lighten;
+    color: $black-1;
+    border-color: $blue-2;
+
+    &:hover {
+      background-color: $blue-3-lighten;
+      color: $black-1;
+    }
+  }
+
+  .light {
     background-color: $white-1;
     color: $black-1;
     border-color: $grey-1;
@@ -64,17 +75,6 @@
     &:hover {
       background-color: $white-3;
       color: $black-1;
-    }
-  }
-
-  .secondary-reverse {
-    background-color: $grey-1;
-    color: $black-1;
-    border-color: $grey-3;
-
-    &:hover {
-      background-color: $grey-3;
-      color: $white-1;
     }
   }
 

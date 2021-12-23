@@ -19,14 +19,25 @@ export class ActionBarComponent implements OnInit, OnDestroy {
 
   progressBarMode: ProgressBarMode = 'breath';
   progressBarError: boolean = false;
-  actionBarButtons!: Map<ActionBarButtonTypeEnum, ActionBarButtonModel>;
+
+  btnLeft?: ActionBarButtonModel;
+  btnRight?: ActionBarButtonModel;
+  wheelBtn1?: ActionBarButtonModel;
+  wheelBtn2?: ActionBarButtonModel;
+  wheelBtn3?: ActionBarButtonModel;
   showWheel: boolean = false;
 
   constructor(@Inject('ActionBarServiceModel') public actionBarService: ActionBarServiceModel) { }
 
   ngOnInit(): void {
     this.subscriptions.add(
-      this.actionBarService.getButtons().subscribe(buttons => this.actionBarButtons = buttons),
+      this.actionBarService.getButtons().subscribe(buttons => {
+        this.btnLeft = buttons?.get(ActionBarButtonTypeEnum.MAIN_LEFT);
+        this.btnRight = buttons?.get(ActionBarButtonTypeEnum.MAIN_RIGHT);
+        this.wheelBtn1 = buttons?.get(ActionBarButtonTypeEnum.WHEEL_ONE);
+        this.wheelBtn2 = buttons?.get(ActionBarButtonTypeEnum.WHEEL_TWO);
+        this.wheelBtn3 = buttons?.get(ActionBarButtonTypeEnum.WHEEL_THREE);
+      }),
       this.actionBarService.getProgressBarMode().subscribe(mode => this.progressBarMode = mode),
       this.actionBarService.getProgressBarError().subscribe(hasError => this.progressBarError = hasError),
     );

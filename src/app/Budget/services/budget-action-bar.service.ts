@@ -20,7 +20,7 @@ export class BudgetActionBarService implements ActionBarServiceModel {
           type:ActionBarButtonTypeEnum.MAIN_RIGHT,
           visible: true,
           disable: false,
-          label: 'Action two',
+          label: 'Action 2',
           tooltip: '',
         }],
         [ActionBarButtonTypeEnum.WHEEL_ONE, {

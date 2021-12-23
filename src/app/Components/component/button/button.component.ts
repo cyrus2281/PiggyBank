@@ -7,7 +7,7 @@ import APP_THEME from 'src/app/Core/theme/theme';
   templateUrl: './button.component.html',
   styleUrls: ['./button.component.scss']
 })
-export class ButtonComponent implements OnInit {
+export class ButtonComponent {
   app_theme = APP_THEME;
   @Input() label!: string;
   @Input() name!: string;
@@ -19,8 +19,4 @@ export class ButtonComponent implements OnInit {
   @Output() focus= new EventEmitter();
 
   constructor() { }
-
-  ngOnInit(): void {
-  }
-
 }
