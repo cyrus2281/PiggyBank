@@ -1,9 +1,46 @@
-
-<div class="action-bar" [class]="app_theme['theme']">
-  <pg-button [style]="buttonStyle.PRIMARY" [circle]="true" class="action-bar-buttons-add" (click)="change()">&#43;</pg-button>
-  <pg-progress-bar-wrapper [mode]="mode[num]" [value]="40" [bufferValue]="70"></pg-progress-bar-wrapper>
+<div class="action-bar">
+  <pg-button [style]="buttonStyle.PRIMARY" [circle]="true" class="action-bar-buttons-add"
+    (focus)="setShowWheel($event)">&#43;</pg-button>
+  <pg-progress-bar-wrapper [mode]="progressBarMode" [error]="progressBarError"></pg-progress-bar-wrapper>
   <div class="action-bar-buttons">
-  <pg-button [style]="buttonStyle.SECONDARY_REVERSE" class="action-bar-buttons-left">Action 1</pg-button>
-  <pg-button [style]="buttonStyle.SECONDARY_REVERSE" class="action-bar-buttons-right">Action 2</pg-button>
+    <pg-button [style]="buttonStyle.SECONDARY_REVERSE" class="action-bar-buttons-left"
+      (click)="actionBarService.buttonClicked(buttonType.MAIN_LEFT)">{{
+        actionBarButtons?.get(buttonType.MAIN_LEFT)?.label
+      }}</pg-button>
+    <pg-button [style]="buttonStyle.SECONDARY_REVERSE" class="action-bar-buttons-right"
+      (click)="actionBarService.buttonClicked(buttonType.MAIN_RIGHT)">{{
+        actionBarButtons?.get(buttonType.MAIN_RIGHT)?.label
+      }}</pg-button>
+  </div>
+</div>
+<div class="action-bar-wheel-container" [class.showWheel]="showWheel">
+  <div class="action-bar-wheel">
+    <div class="action-bar-wheel-button action-bar-wheel-button-1">
+      <pg-button [style]="buttonStyle.SECONDARY" [circle]="true"
+        (click)="actionBarService.buttonClicked(buttonType.WHEEL_ONE)"
+        [matTooltip]="actionBarButtons?.get(buttonType.WHEEL_ONE)?.tooltip || '' | localize" matTooltipPosition="above">
+        <pg-icon class="action-bar-wheel-button-icon" [icon]="
+            actionBarButtons?.get(buttonType.WHEEL_ONE)?.icon || ''
+          "></pg-icon>
+      </pg-button>
+    </div>
+    <div class="action-bar-wheel-button action-bar-wheel-button-2">
+      <pg-button [style]="buttonStyle.SECONDARY" [circle]="true"
+        (click)="actionBarService.buttonClicked(buttonType.WHEEL_TWO)"
+        [matTooltip]="actionBarButtons?.get(buttonType.WHEEL_TWO)?.tooltip || '' | localize" matTooltipPosition="above">
+        <pg-icon class="action-bar-wheel-button-icon" [icon]="
+            actionBarButtons?.get(buttonType.WHEEL_TWO)?.icon || ''
+          "></pg-icon>
+      </pg-button>
+    </div>
+    <div class="action-bar-wheel-button action-bar-wheel-button-3">
+      <pg-button [style]="buttonStyle.SECONDARY" [circle]="true"
+      (click)="actionBarService.buttonClicked(buttonType.WHEEL_THREE)"
+      [matTooltip]="actionBarButtons?.get(buttonType.WHEEL_THREE)?.tooltip || '' | localize" matTooltipPosition="above">
+        <pg-icon class="action-bar-wheel-button-icon" [icon]="
+            actionBarButtons?.get(buttonType.WHEEL_THREE)?.icon || ''
+          "></pg-icon>
+      </pg-button>
+    </div>
   </div>
 </div>

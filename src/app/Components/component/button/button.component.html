@@ -8,6 +8,8 @@
     [class.shadow]="shadow"
     [class.disabled]="disabled"
     [class.circle]="circle"
+    (focus)="focus.emit($event)"
+    (focusout)="focus.emit($event)"
   >
     {{ label }}
     <ng-content></ng-content>

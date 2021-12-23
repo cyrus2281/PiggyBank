@@ -31,7 +31,7 @@
       [class.close]="showMenu"
       (click)="headerService.toggleMenu()"
       *ngIf="authService.isLoggedIn"
-      [matTooltip]="(showMenu ? 'nav-menu-close' : 'nav-menu') | localize"
+      [matTooltip]="(showMenu ? 'navMenu.close' : 'navMenu') | localize"
       matTooltipTouchGestures="off"
     >
       <div class="nav-right-menu-bar-1"></div>

@@ -16,6 +16,7 @@ export class ButtonComponent implements OnInit {
   @Input() shadow: boolean = false;
   @Input() circle: boolean = false;
   @Input() style!: ButtonStyleEnum;
+  @Output() focus= new EventEmitter();
 
   constructor() { }
 

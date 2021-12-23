@@ -2,9 +2,13 @@
 @import "../../../Core/styles/functions.scss";
 
 .action-bar {
-  background-color: $white-3;
+  z-index: 110;
   position: relative;
   height: 100%;
+
+  .lightMode :host & {
+    background-color: $white-3;
+  }
 
   &-buttons {
     display: flex;
@@ -32,7 +36,7 @@
       position: absolute;
       right: 50%;
       transform: translate(50%, -50%);
-      z-index: 50;
+      z-index: 150;
 
       ::ng-deep {
         .pg-button {
@@ -42,21 +46,85 @@
           @include for-screen(width, 50px, 10px);
           @include for-screen(height, 50px, 10px);
 
-          &:hover {
+          &:hover, &:focus {
             transform: scale(1.1);
           }
 
-          .lightMode &:hover {
+          .lightMode :host &:hover {
             border-color: $blue-3;
           }
         }
       }
     }
   }
-}
 
-.lightMode {
-  &.action-bar {
-    background-color: $white-3;
+  &-wheel {
+    position: relative;
+
+    &-container {
+      position: fixed;
+      right: 50%;
+      transform: translate(50%, -65%) scale(0);
+      padding: 5px;
+      border-radius: 50%;
+      border: 2px solid;
+      z-index: 100;
+      transition: $transition-quick;
+
+      @include for-screen(width, 270px, 50px);
+      @include for-screen(height,270px, 50px);
+
+      &.showWheel {
+        transform: translate(50%, -65%) scale(1.1);
+      }
+
+      .lightMode :host & {
+        -webkit-box-shadow: 0px -3px 54px -5px rgba(0,0,0,0.75);
+        -moz-box-shadow: 0px -3px 54px -5px rgba(0,0,0,0.75);
+        box-shadow: 0px -3px 54px -5px rgba(0,0,0,0.75);
+        background-color: $white-3;
+        border-color: $grey-1;
+      }
+    }
+
+    &-button {
+      padding: 10px;
+      position: absolute;
+
+      ::ng-deep {
+        .pg-button {
+          &:hover, &:focus {
+            transform: scale(1.1);
+          }
+        }
+      }
+
+      &-1{
+        left: 10%;
+        @include for-screen(top, 40px, 15px);
+      }
+
+      &-2{
+        right: 50%;
+        transform: translateX(50%);
+
+      }
+
+      &-3 {
+        right: 10%;
+        @include for-screen(top, 40px, 15px);
+      }
+
+      &-icon {
+        width: 100%;
+        height: 100%;
+
+        ::ng-deep .icon {
+          @include for-screen(width, 20px, 10px);
+          @include for-screen(height, 20px, 10px);
+          @include for-screen(font-size, 25px, 5px);
+        }
+      }
+    }
   }
 }

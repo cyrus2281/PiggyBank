@@ -13,16 +13,16 @@ import { ActionBarServiceModel } from '../../models/action-bar-service.model';
 })
 export class ActionBarComponent implements OnInit, OnDestroy {
   buttonStyle = ButtonStyleEnum;
-  actionBarButtonType = ActionBarButtonTypeEnum;
+  buttonType = ActionBarButtonTypeEnum;
 
   subscriptions = new SubSink();
 
   progressBarMode: ProgressBarMode = 'breath';
   progressBarError: boolean = false;
   actionBarButtons!: Map<ActionBarButtonTypeEnum, ActionBarButtonModel>;
-  // actionBarService.buttonClicked()
+  showWheel: boolean = false;
 
-  constructor(@Inject('ActionBarServiceModel') private actionBarService: ActionBarServiceModel) { }
+  constructor(@Inject('ActionBarServiceModel') public actionBarService: ActionBarServiceModel) { }
 
   ngOnInit(): void {
     this.subscriptions.add(
@@ -32,8 +32,17 @@ export class ActionBarComponent implements OnInit, OnDestroy {
     );
   }
 
+  setShowWheel(event: FocusEvent) {
+    if (event.type === 'focus') {
+      this.showWheel = true;
+    } else if (event.type === 'focusout') {
+      setTimeout(() => {
+        this.showWheel = false;
+      }, 200);
+    }
+  }
 
   ngOnDestroy(): void {
-      this.subscriptions.unsubscribe()
+    this.subscriptions.unsubscribe()
   }
 }

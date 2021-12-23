@@ -59,24 +59,22 @@
   .secondary {
     background-color: $white-1;
     color: $black-1;
-    border-color: $black-1;
+    border-color: $grey-1;
 
     &:hover {
-      background-color: $black-1;
-      color: $white-1;
-      border-color: $white-1;
+      background-color: $white-3;
+      color: $black-1;
     }
   }
 
   .secondary-reverse {
-    background-color: $black-1;
-    color: $white-1;
-    border-color: $white-1;
+    background-color: $grey-1;
+    color: $black-1;
+    border-color: $grey-3;
 
     &:hover {
-      background-color: $white-1;
-      color: $black-1;
-      border-color: $black-1;
+      background-color: $grey-3;
+      color: $white-1;
     }
   }
 

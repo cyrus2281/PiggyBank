@@ -14,30 +14,35 @@ export class BudgetActionBarService implements ActionBarServiceModel {
           visible: true,
           disable: false,
           label: 'Action 1',
+          tooltip: '',
         }],
         [ActionBarButtonTypeEnum.MAIN_RIGHT, {
           type:ActionBarButtonTypeEnum.MAIN_RIGHT,
           visible: true,
           disable: false,
           label: 'Action two',
+          tooltip: '',
         }],
         [ActionBarButtonTypeEnum.WHEEL_ONE, {
           type:ActionBarButtonTypeEnum.WHEEL_ONE,
           visible: true,
           disable: false,
-          icon: 'icon',
+          icon: 'arrow_downward',
+          tooltip: 'actionBar.budget.add.transaction.expense',
         }],
         [ActionBarButtonTypeEnum.WHEEL_TWO, {
           type:ActionBarButtonTypeEnum.WHEEL_TWO,
           visible: true,
           disable: false,
-          icon: 'icon',
+          icon: 'playlist_add',
+          tooltip: 'actionBar.budget.add.subDirectory',
         }],
         [ActionBarButtonTypeEnum.WHEEL_THREE, {
           type:ActionBarButtonTypeEnum.WHEEL_THREE,
           visible: true,
           disable: false,
-          icon: 'icon',
+          icon: 'arrow_upward',
+          tooltip: 'actionBar.budget.add.transaction.income',
         }],
     ]
 );
@@ -46,7 +51,7 @@ export class BudgetActionBarService implements ActionBarServiceModel {
     return of(this.budgetActionBarButtons);
   }
   buttonClicked(type: ActionBarButtonTypeEnum): void {
-
+    console.log(type);
   }
   getProgressBarMode(): Observable<ProgressBarMode> {
     return EMPTY;

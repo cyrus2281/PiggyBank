@@ -50,7 +50,12 @@ export const localization : {[token: string]: string} = {
   'error.account.unknown': 'An unknown error occurred!',
 
   // Nav
-  'nav-menu': 'Menu',
-  'nav-menu-close': 'Close Menu',
+  'navMenu': 'Menu',
+  'navMenu.close': 'Close Menu',
+
+  // Action Bar
+  'actionBar.budget.add.transaction.income': 'Add Income',
+  'actionBar.budget.add.transaction.expense': 'Add Expense',
+  'actionBar.budget.add.subDirectory': 'Add Sub-Directory',
 
 }

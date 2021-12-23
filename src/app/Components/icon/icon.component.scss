@@ -1,4 +1,4 @@
-.icon-size{
+.icon-size {
   &-xsmall {
     width: 10px;
     height: 10px;
@@ -23,4 +23,10 @@
     width: 100px;
     height: 100px;
   }
+}
+
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
