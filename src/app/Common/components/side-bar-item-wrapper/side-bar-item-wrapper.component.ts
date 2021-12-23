@@ -1,12 +1,12 @@
 import { Component, ComponentFactoryResolver, ComponentRef, Input, ViewContainerRef } from '@angular/core';
-import { SideBarItemModelInterface } from '../../models/side-bar-item.model';
+import { SideBarItemModel } from '../../models/side-bar-item.model';
 import { SideBarItemComponent } from '../side-bar-item/side-bar-item.component';
 
 @Component({
   selector: 'pg-side-bar-item-wrapper',
   template: '',
 })
-export class SideBarItemWrapperComponent<T extends SideBarItemModelInterface> {
+export class SideBarItemWrapperComponent<T extends SideBarItemModel> {
   _model!: SideBarItemComponent<T>;
 
   @Input() set model(model: T) {

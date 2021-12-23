@@ -1,7 +1,7 @@
 import { Observable } from "rxjs";
-import { SideBarItemModelInterface } from "./side-bar-item.model";
+import { SideBarItemModel } from "./side-bar-item.model";
 
-export interface SideBarServiceInterface<T extends SideBarItemModelInterface>{
+export interface SideBarServiceModel<T extends SideBarItemModel>{
   /**
    * returns items models based on the current module
    */

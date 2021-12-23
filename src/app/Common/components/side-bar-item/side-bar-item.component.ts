@@ -1,11 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { SideBarItemModelInterface } from '../../models/side-bar-item.model';
+import { SideBarItemModel } from '../../models/side-bar-item.model';
 
 @Component({
   selector: 'pg-side-bar-item',
   template: '',
 })
-export class SideBarItemComponent<T extends SideBarItemModelInterface> {
+export class SideBarItemComponent<T extends SideBarItemModel> {
 
   @Input() model!: T;
 

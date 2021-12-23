@@ -1,8 +1,8 @@
 import { Component, Inject, OnDestroy, OnInit } from '@angular/core';
 import APP_THEME from 'src/app/Core/theme/theme';
 import { SubSink } from 'subsink';
-import { SideBarItemModelInterface } from '../../models/side-bar-item.model';
-import { SideBarServiceInterface } from '../../models/side-bar-service.interface';
+import { SideBarItemModel } from '../../models/side-bar-item.model';
+import { SideBarServiceModel } from '../../models/side-bar-service.model';
 import { HeaderService } from '../../services/header.service';
 
 @Component({
@@ -14,11 +14,11 @@ export class SideBarComponent implements OnInit, OnDestroy {
   app_theme = APP_THEME;
   subscriptions = new SubSink();
   show: boolean = false;
-  items: SideBarItemModelInterface[] = [];
+  items: SideBarItemModel[] = [];
 
   constructor(
     public headerService: HeaderService,
-    @Inject('SideBarServiceInterface') private sidebarService: SideBarServiceInterface<any>
+    @Inject('SideBarServiceModel') private sidebarService: SideBarServiceModel<any>
   ) { }
 
   ngOnInit(): void {

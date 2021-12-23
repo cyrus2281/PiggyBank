@@ -1,6 +1,7 @@
 import { Directory } from "../models/directory";
 import { BudgetAction } from "./budget.actions";
 import * as BudgetActions from './budget.actions'
+import { testDirectoryValues } from "./dummy-test-data";
 
 
 export interface BudgetState {
@@ -9,7 +10,7 @@ export interface BudgetState {
 }
 
 const initialState: BudgetState = {
-  directories: [],
+  directories: testDirectoryValues,
 }
 
 export const BUDGET_STORE = 'budget';

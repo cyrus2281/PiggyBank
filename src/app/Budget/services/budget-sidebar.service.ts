@@ -1,12 +1,12 @@
 import { Injectable, OnDestroy } from '@angular/core';
 import { BehaviorSubject, Observable, of } from 'rxjs';
-import { SideBarServiceInterface } from 'src/app/Common/models/side-bar-service.interface';
+import { SideBarServiceModel } from 'src/app/Common/models/side-bar-service.model';
 import { SubSink } from 'subsink';
 import { DirectorySidebarCard } from '../models/directory-sidebar-card';
 import { DirectoryDataService } from './directory-data.service';
 
 @Injectable()
-export class BudgetSidebarService implements SideBarServiceInterface<DirectorySidebarCard>, OnDestroy {
+export class BudgetSidebarService implements SideBarServiceModel<DirectorySidebarCard>, OnDestroy {
   private directorySidebarCards!: DirectorySidebarCard[];
   private directorySidebarCards$ = new BehaviorSubject<DirectorySidebarCard[]>([]);
 
@@ -14,7 +14,7 @@ export class BudgetSidebarService implements SideBarServiceInterface<DirectorySi
 
   constructor(private directoryDataService: DirectoryDataService) {
     this.subscriptions.add(this.directoryDataService.getDirectories().subscribe(directories => {
-      if (directories?.length > 0) {
+      if (directories?.length > 0 || true) {
         this.directorySidebarCards = directories.map(directory => new DirectorySidebarCard(directory.name))
         this.directorySidebarCards$.next(this.directorySidebarCards);
       }

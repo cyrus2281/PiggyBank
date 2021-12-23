@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { CoreModule } from '../Core/core.module';
 import { AppRoutingModule } from '../Core/routing/app-routing.module';
 import { DirectoryDataService } from './services/directory-data.service';
+import { BudgetActionBarService } from './services/budget-action-bar.service';
 
 
 @NgModule({
@@ -30,8 +31,13 @@ import { DirectoryDataService } from './services/directory-data.service';
     DirectoryDataService,
     BudgetSidebarService,
     {
-        provide: 'SideBarServiceInterface',
+        provide: 'SideBarServiceModel',
         useExisting: BudgetSidebarService
+    },
+    BudgetActionBarService,
+    {
+        provide: 'ActionBarServiceModel',
+        useExisting: BudgetActionBarService
     },
   ],
   exports: [

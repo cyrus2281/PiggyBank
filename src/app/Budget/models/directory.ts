@@ -1,7 +1,7 @@
 import { DirectoryModel } from "./directory.model";
 import { Transaction } from "./transaction";
 
-export class Directory implements DirectoryModel {
+export class Directory {
   id!: string;
   name!: string;
   icon!: string;
