@@ -35,62 +35,50 @@
 </div>
 <div class="action-bar-wheel-container" [class.showWheel]="showWheel">
   <div class="action-bar-wheel">
-    <div
-      class="action-bar-wheel-button action-bar-wheel-button-1"
-      [class.enabled]="!wheelBtn1?.disable"
-      [class.hidden]="!wheelBtn1?.visible"
-    >
-      <pg-button
-        [style]="buttonStyle.LIGHT"
-        [circle]="true"
-        (click)="actionBarService.buttonClicked(buttonType.WHEEL_ONE)"
-        [disabled]="!!wheelBtn1?.disable"
-        [matTooltip]="wheelBtn1?.tooltip || '' | localize"
-        matTooltipPosition="above"
-      >
-        <pg-icon
-          class="action-bar-wheel-button-icon"
-          [icon]="wheelBtn1?.icon || ''"
-        ></pg-icon>
-      </pg-button>
-    </div>
-    <div
-      class="action-bar-wheel-button action-bar-wheel-button-2"
-      [class.enabled]="!wheelBtn2?.disable"
-      [class.hidden]="!wheelBtn2?.visible"
-    >
-      <pg-button
-        [style]="buttonStyle.LIGHT"
-        [circle]="true"
-        (click)="actionBarService.buttonClicked(buttonType.WHEEL_TWO)"
-        [disabled]="!!wheelBtn2?.disable"
-        [matTooltip]="wheelBtn2?.tooltip || '' | localize"
-        matTooltipPosition="above"
-      >
-        <pg-icon
-          class="action-bar-wheel-button-icon"
-          [icon]="wheelBtn2?.icon || ''"
-        ></pg-icon>
-      </pg-button>
-    </div>
-    <div
-      class="action-bar-wheel-button action-bar-wheel-button-3"
-      [class.enabled]="!wheelBtn3?.disable"
-      [class.hidden]="!wheelBtn3?.visible"
-    >
-      <pg-button
-        [style]="buttonStyle.LIGHT"
-        [circle]="true"
-        (click)="actionBarService.buttonClicked(buttonType.WHEEL_THREE)"
-        [disabled]="!!wheelBtn3?.disable"
-        [matTooltip]="wheelBtn3?.tooltip || '' | localize"
-        matTooltipPosition="above"
-      >
-        <pg-icon
-          class="action-bar-wheel-button-icon"
-          [icon]="wheelBtn3?.icon || ''"
-        ></pg-icon>
-      </pg-button>
-    </div>
+    <ng-container
+      *ngTemplateOutlet="
+        wheelButton;
+        context: { model: wheelBtn1, number: '1', type: buttonType.WHEEL_ONE }
+      "
+    ></ng-container>
+    <ng-container
+      *ngTemplateOutlet="
+        wheelButton;
+        context: { model: wheelBtn2, number: '2', type: buttonType.WHEEL_TWO }
+      "
+    ></ng-container>
+    <ng-container
+      *ngTemplateOutlet="
+        wheelButton;
+        context: { model: wheelBtn3, number: '3', type: buttonType.WHEEL_THREE }
+      "
+    ></ng-container>
   </div>
 </div>
+
+<ng-template
+  #wheelButton
+  let-btnModel="model"
+  let-btnNumber="number"
+  let-btnType="type"
+>
+  <div
+    class="action-bar-wheel-button action-bar-wheel-button-{{ btnNumber }}"
+    [class.enabled]="!btnModel?.disable"
+    [class.hidden]="!btnModel?.visible"
+  >
+    <pg-button
+      [style]="buttonStyle.LIGHT"
+      [circle]="true"
+      (click)="actionBarService.buttonClicked(btnType)"
+      [disabled]="!!btnModel?.disable"
+      [matTooltip]="btnModel?.tooltip || '' | localize"
+      matTooltipPosition="above"
+    >
+      <pg-icon
+        class="action-bar-wheel-button-icon"
+        [icon]="btnModel?.icon || ''"
+      ></pg-icon>
+    </pg-button>
+  </div>
+</ng-template>
