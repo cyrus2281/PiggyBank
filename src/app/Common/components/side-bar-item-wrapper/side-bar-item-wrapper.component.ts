@@ -1,4 +1,5 @@
-import { Component, ComponentFactoryResolver, ComponentRef, Input, ViewContainerRef } from '@angular/core';
+import { Component, ComponentFactoryResolver, ComponentRef, EventEmitter, Input, Output, ViewContainerRef } from '@angular/core';
+import { SideBarActionEventEnum } from '../../enum/side-bar-action-event.enum';
 import { SideBarItemModel } from '../../models/side-bar-item.model';
 import { SideBarItemComponent } from '../side-bar-item/side-bar-item.component';
 
@@ -8,6 +9,7 @@ import { SideBarItemComponent } from '../side-bar-item/side-bar-item.component';
 })
 export class SideBarItemWrapperComponent<T extends SideBarItemModel> {
   _model!: SideBarItemComponent<T>;
+  @Output() action = new EventEmitter<SideBarActionEventEnum>();
 
   @Input() set model(model: T) {
     this.setModel(model);
@@ -34,6 +36,7 @@ export class SideBarItemWrapperComponent<T extends SideBarItemModel> {
 
     this._model = componentRef.instance;
     this._model.model = model;
+    this._model.action.subscribe(action => this.action.emit(action));
 
     return componentRef;
   }

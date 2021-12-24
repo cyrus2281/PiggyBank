@@ -4,10 +4,13 @@ import { DirectoryCardComponent } from "../components/directory-card/directory-c
 
 export class DirectorySidebarCard implements SideBarItemModel {
   type: Type<DirectoryCardComponent> = DirectoryCardComponent;
-  label: string;
 
-  constructor(label: string){
-    this.label = label;
-  }
 
+  constructor(
+    public id: string,
+    public label: string,
+    public icon: string,
+    public totalIncome: number,
+    public totalOutcome: number,
+    ){}
 }

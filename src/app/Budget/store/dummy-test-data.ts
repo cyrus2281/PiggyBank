@@ -23,8 +23,8 @@ const transactionGenerator = (count: number):Transaction[] => {
 export const testDirectoryValues = [
   new Directory({
     id: 'id_one',
-    name: 'directory one',
-    icon: 'icon',
+    name: 'directory one but this one has a very long name',
+    icon: 'google',
     creationDate: new Date(0),
     modifiedDate: new Date(),
     transactions: transactionGenerator(10),
@@ -32,7 +32,7 @@ export const testDirectoryValues = [
       new Directory({
         id: 'sub_id_one',
         name: 'subDirectory one',
-        icon: 'icon',
+        icon: 'google',
         creationDate: new Date(0),
         modifiedDate: new Date(),
         transactions: transactionGenerator(3),
@@ -40,7 +40,7 @@ export const testDirectoryValues = [
           new Directory({
             id: 'sub_sub_id_one',
             name: 'subSubDirectory one',
-            icon: 'icon',
+            icon: 'google',
             creationDate: new Date(0),
             modifiedDate: new Date(),
             transactions: transactionGenerator(1),
@@ -50,7 +50,7 @@ export const testDirectoryValues = [
       new Directory({
         id: 'sub_id_two',
         name: 'subDirectory two',
-        icon: 'icon',
+        icon: 'google',
         creationDate: new Date(0),
         modifiedDate: new Date(),
         transactions: [],
@@ -60,7 +60,7 @@ export const testDirectoryValues = [
   new Directory({
     id: 'id_two',
     name: 'directory two',
-    icon: 'icon',
+    icon: 'google',
     creationDate: new Date(0),
     modifiedDate: new Date(),
     transactions: transactionGenerator(5),
@@ -68,7 +68,7 @@ export const testDirectoryValues = [
   new Directory({
     id: 'id_three',
     name: 'directory three',
-    icon: 'icon',
+    icon: 'facebook',
     creationDate: new Date(0),
     modifiedDate: new Date(),
     transactions: transactionGenerator(10),
@@ -76,7 +76,7 @@ export const testDirectoryValues = [
   new Directory({
     id: 'id_four',
     name: 'directory four',
-    icon: 'icon',
+    icon: 'google',
     creationDate: new Date(0),
     modifiedDate: new Date(),
     transactions: transactionGenerator(7),
@@ -84,7 +84,7 @@ export const testDirectoryValues = [
   new Directory({
     id: 'id_five',
     name: 'directory five',
-    icon: 'icon',
+    icon: 'github',
     creationDate: new Date(0),
     modifiedDate: new Date(),
     transactions: [],

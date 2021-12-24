@@ -12,6 +12,9 @@ export class Directory {
   transactions!: Transaction[];
   subDirectories?: Directory[];
 
+  totalIncome: number = 0;
+  totalOutcome: number = 0;
+
   constructor(model?: DirectoryModel) {
     if (model) {
       this.id = model.id;

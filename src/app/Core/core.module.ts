@@ -4,10 +4,12 @@ import { HotToastModule } from "@ngneat/hot-toast";
 import { LocalizePipe } from './localization/localize.pipe';
 import { RouterService } from "./routing/router.service";
 import {MatTooltipModule} from '@angular/material/tooltip';
+import { TextLimitPipe } from './pipes/text-limit.pipe';
 
 @NgModule({
   declarations: [
-    LocalizePipe
+    LocalizePipe,
+    TextLimitPipe
   ],
   imports: [
       CommonModule,
@@ -16,6 +18,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
   ],
   exports: [
     LocalizePipe,
+    TextLimitPipe,
     MatTooltipModule
   ],
   providers: [

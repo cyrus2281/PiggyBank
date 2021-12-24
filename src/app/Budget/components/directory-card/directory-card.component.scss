@@ -1,41 +1,91 @@
 @import "../../../Core/styles/functions.scss";
 
-
-@include tablet-less() {
-  .show :host {
-    // delete
-    .h {
-      display: flex;
-    }
-    // till here
-  }
-}
-
-// delete from here
-.temp {
-  font-size: 16px;
+.directory-card {
   display: flex;
+  padding: 10px;
   align-items: center;
+  cursor: pointer;
 
-  &2 {
-    font-size: 22px;
-    margin-left: 5px;
-  display: flex;
+  &.active {
+    .lightMode :host & {
+      background-color: $white-4;
+    }
+  }
 
+  &:hover &-label {
+    .lightMode :host & {
+      color: $blue-1;
+    }
+  }
+
+
+  &-icon {
+    height: 45px;
+    width: 45px;
+    min-height: 45px;
+    min-width: 45px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid;
+    overflow: hidden;
+
+    ::ng-deep .svg {
+    transform: translateY(10%);
+    }
+
+    .lightMode :host & {
+      background-color: $white-1;
+      border-color: $grey-1;
+    }
+  }
+
+  &-details {
+    display: flex;
+    margin-left: 10px;
+    flex: 2;
+    justify-content: space-between;
+
+    @include tablet-less() {
+      display: none;
+
+      .show :host &{
+        display: flex;
+      }
+    }
+  }
+
+  &-info{
+    overflow: hidden;
+  }
+
+  &-label {
+    max-height: 10px;
+    text-overflow: ellipsis;
+    transition: color .3s ease-in-out;
+  }
+
+  &-buttons {
+    display: flex;
+    gap: 5px;
+
+    &-view{
+      transition: color .3s ease-in-out;
+      &:hover {
+        .lightMode :host & {
+          color: $blue-1;
+        }
+      }
+    }
+
+    &-edit{
+      transition: color .3s ease-in-out;
+      &:hover {
+        .lightMode :host & {
+          color: $blue-3;
+        }
+      }
+    }
   }
 }
-
-.test {
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  overflow: hidden;
-  margin: 10px;
-}
-
-.h {
-  @include tablet-less() {
-    display: none;
-  }
-}
-// delete till here

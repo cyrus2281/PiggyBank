@@ -2,7 +2,10 @@
   <div class="sidebar-container">
     <pg-scroll-panel>
       <div class="sidebar-items">
-        <pg-side-bar-item-wrapper *ngFor="let item of items" [model]="item"></pg-side-bar-item-wrapper>
+        <pg-side-bar-item-wrapper
+        *ngFor="let item of items" [model]="item"
+        (action)="onAction(item, $event)"
+        ></pg-side-bar-item-wrapper>
       </div>
     </pg-scroll-panel>
   </div>

@@ -1,10 +1,37 @@
-<li class="temp">
-  <div class="test">
-    <img src="https://miro.medium.com/max/1400/1*PWdG4Rs528yuQgIOY0b8-g.jpeg" />
+<div
+  class="directory-card"
+  [class.active]="model.label === 'directory two'"
+  (click)="action.emit(actionEvent.SELECTED)"
+>
+  <div class="directory-card-icon">
+    <pg-icon [svg]="model.icon"></pg-icon>
   </div>
-  <p class="h">{{ model.label }} </p>
-  <div class="temp2 h">
-    <p>✏</p>
-    <p>❌</p>
+  <div class="directory-card-details">
+    <div
+      class="directory-card-info"
+      [matTooltip]="
+        (model.label | localize).length > 20 ? model.label : ('' | localize)
+      "
+      matTooltipPosition="above"
+    >
+      <p class="directory-card-label">
+        {{ model.label | localize | textLimit: 22 }}
+      </p>
+    </div>
+    <div class="directory-card-buttons">
+      <div class="directory-card-buttons-view">
+        <pg-icon icon="bubble_chart"></pg-icon>
+        <ng-container
+          *ngTemplateOutlet="summaryHover; context: { item: true }"
+        ></ng-container>
+      </div>
+      <div class="directory-card-buttons-edit"
+      (click)="action.emit(actionEvent.EDIT)"
+      >
+        <pg-icon icon="edit"></pg-icon>
+      </div>
+    </div>
   </div>
-</li>
+</div>
+
+<ng-template #summaryHover let-item="item"> </ng-template>

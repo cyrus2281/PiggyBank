@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { SideBarActionEventEnum } from '../../enum/side-bar-action-event.enum';
 import { SideBarItemModel } from '../../models/side-bar-item.model';
 
 @Component({
@@ -6,8 +7,12 @@ import { SideBarItemModel } from '../../models/side-bar-item.model';
   template: '',
 })
 export class SideBarItemComponent<T extends SideBarItemModel> {
+  actionEvent = SideBarActionEventEnum;
 
   @Input() model!: T;
+  @Input() active!: boolean;
+
+  @Output() action = new EventEmitter<SideBarActionEventEnum>();
 
   constructor() { }
 

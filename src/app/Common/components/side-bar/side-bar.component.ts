@@ -1,6 +1,7 @@
 import { Component, Inject, OnDestroy, OnInit } from '@angular/core';
 import APP_THEME from 'src/app/Core/theme/theme';
 import { SubSink } from 'subsink';
+import { SideBarActionEventEnum } from '../../enum/side-bar-action-event.enum';
 import { SideBarItemModel } from '../../models/side-bar-item.model';
 import { SideBarServiceModel } from '../../models/side-bar-service.model';
 import { HeaderService } from '../../services/header.service';
@@ -26,6 +27,11 @@ export class SideBarComponent implements OnInit, OnDestroy {
       this.headerService.getSideBarStatus().subscribe(show => this.show = show),
       this.sidebarService.getSidebarItems().subscribe(items => this.items = items)
     );
+  }
+
+  onAction(item:SideBarItemModel , action: any){
+    //TODO: set selected and emit to service
+    console.log(item, action);
   }
 
   ngOnDestroy(): void {
