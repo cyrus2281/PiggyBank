@@ -5,6 +5,7 @@
         <pg-side-bar-item-wrapper
         *ngFor="let item of items" [model]="item"
         (action)="onAction(item, $event)"
+        [active]="item.id === selectedItem?.id"
         ></pg-side-bar-item-wrapper>
       </div>
     </pg-scroll-panel>

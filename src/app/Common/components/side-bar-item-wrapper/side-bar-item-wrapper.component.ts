@@ -8,10 +8,19 @@ import { SideBarItemComponent } from '../side-bar-item/side-bar-item.component';
   template: '',
 })
 export class SideBarItemWrapperComponent<T extends SideBarItemModel> {
-  _model!: SideBarItemComponent<T>;
+  private _component!: SideBarItemComponent<T>;
+  private _model!:T;
+  private _active: boolean = false;
+
   @Output() action = new EventEmitter<SideBarActionEventEnum>();
 
+  @Input() set active(active: boolean) {
+    this._active = active
+    this.setModel(this._model);
+  }
+
   @Input() set model(model: T) {
+    this._model = model;
     this.setModel(model);
   }
 
@@ -34,9 +43,10 @@ export class SideBarItemWrapperComponent<T extends SideBarItemModel> {
     const componentFactory = this.componentResolver.resolveComponentFactory(modelComponentType);
     const componentRef = this.viewContainer.createComponent(componentFactory);
 
-    this._model = componentRef.instance;
-    this._model.model = model;
-    this._model.action.subscribe(action => this.action.emit(action));
+    this._component = componentRef.instance;
+    this._component.model = model;
+    this._component.active = this._active;
+    this._component.action.subscribe(action => this.action.emit(action));
 
     return componentRef;
   }

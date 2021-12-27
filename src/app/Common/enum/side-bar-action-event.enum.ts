@@ -1,4 +1,4 @@
 export enum SideBarActionEventEnum {
-  'SELECTED',
-  'EDIT',
+  SELECTED = 'SELECTED',
+  EDIT = 'EDIT',
 }

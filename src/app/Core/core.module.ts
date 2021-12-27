@@ -5,11 +5,13 @@ import { LocalizePipe } from './localization/localize.pipe';
 import { RouterService } from "./routing/router.service";
 import {MatTooltipModule} from '@angular/material/tooltip';
 import { TextLimitPipe } from './pipes/text-limit.pipe';
+import { ToPricePipe } from './pipes/to-price.pipe';
 
 @NgModule({
   declarations: [
     LocalizePipe,
-    TextLimitPipe
+    TextLimitPipe,
+    ToPricePipe
   ],
   imports: [
       CommonModule,
@@ -19,7 +21,8 @@ import { TextLimitPipe } from './pipes/text-limit.pipe';
   exports: [
     LocalizePipe,
     TextLimitPipe,
-    MatTooltipModule
+    ToPricePipe,
+    MatTooltipModule,
   ],
   providers: [
     RouterService

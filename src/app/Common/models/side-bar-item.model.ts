@@ -3,4 +3,5 @@ import { SideBarItemComponent } from "../components/side-bar-item/side-bar-item.
 
 export interface SideBarItemModel {
   type: Type<SideBarItemComponent<any>>;
+  id: string;
 }

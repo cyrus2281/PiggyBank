@@ -16,6 +16,7 @@ export class SideBarComponent implements OnInit, OnDestroy {
   subscriptions = new SubSink();
   show: boolean = false;
   items: SideBarItemModel[] = [];
+  selectedItem!: SideBarItemModel;
 
   constructor(
     public headerService: HeaderService,
@@ -25,13 +26,13 @@ export class SideBarComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.subscriptions.add(
       this.headerService.getSideBarStatus().subscribe(show => this.show = show),
-      this.sidebarService.getSidebarItems().subscribe(items => this.items = items)
+      this.sidebarService.getSidebarItems().subscribe(items => this.items = items),
+      this.sidebarService.getSelectedSidebarItem().subscribe(item => this.selectedItem = item),
     );
   }
 
-  onAction(item:SideBarItemModel , action: any){
-    //TODO: set selected and emit to service
-    console.log(item, action);
+  onAction(item:SideBarItemModel, action: SideBarActionEventEnum){
+    this.sidebarService.selectSidebarItem(item, action)
   }
 
   ngOnDestroy(): void {
