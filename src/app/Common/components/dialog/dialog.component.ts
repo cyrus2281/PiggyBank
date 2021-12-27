@@ -22,7 +22,7 @@ export class DialogComponent implements AfterViewInit, OnDestroy {
   @ViewChild('modal') modal!: ElementRef;
 
   private subscriptions = new SubSink();
-  show: boolean = false;
+  closing: boolean = false;
 
   constructor(
     private componentFactoryResolver: ComponentFactoryResolver,
@@ -47,10 +47,6 @@ export class DialogComponent implements AfterViewInit, OnDestroy {
     this.appRef.attachView(componentRef.hostView);
     const domElem = (componentRef.hostView as EmbeddedViewRef<any>).rootNodes[0] as HTMLElement;
     this.modal.nativeElement.appendChild(domElem);
-
-    setTimeout(() => {
-      this.show = true;
-    }, 0);
   }
 
   onFadeClick(event: Event){
@@ -60,7 +56,7 @@ export class DialogComponent implements AfterViewInit, OnDestroy {
   }
 
   closeDialog(){
-    this.show = false;
+    this.closing = true;
     setTimeout(() => {
       this.close.emit(true);
     }, 500);

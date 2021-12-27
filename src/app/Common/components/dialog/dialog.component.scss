@@ -23,12 +23,12 @@
     padding: 5px;
     border-radius: 15px;
     transition: $transition-fast;
-    transform: translateY(-200%);
-    opacity: 0;
+    transform: translateY(-10%);
+    animation: show .5s ease-in-out;
 
-    .show &{
-      opacity: 1;
-      transform: translateY(-25%);
+    .closing &{
+      opacity: 0;
+      transform: translateY(-200%);
     }
 
     .lightMode & {
@@ -41,5 +41,15 @@
     position: absolute;
     right: 5px;
     cursor: pointer;
+  }
+}
+
+@keyframes show {
+  from {
+    transform: translateY(200%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(-10%);
   }
 }
