@@ -1,0 +1,45 @@
+@import "../../../Core/styles/functions.scss";
+
+.dialog {
+  &-fade {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    overflow: hidden;
+    outline: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: rgba(0, 0, 0, .3);
+  }
+
+  &-container {
+    position: relative;
+    border: 5px solid;
+    padding: 5px;
+    border-radius: 15px;
+    transition: $transition-fast;
+    transform: translateY(-200%);
+    opacity: 0;
+
+    .show &{
+      opacity: 1;
+      transform: translateY(-25%);
+    }
+
+    .lightMode & {
+      border-color: $white-4;
+      background-color: $white-1;
+    }
+  }
+
+  &-close {
+    position: absolute;
+    right: 5px;
+    cursor: pointer;
+  }
+}

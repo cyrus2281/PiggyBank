@@ -1,6 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ButtonStyleEnum } from 'src/app/Components/enum/button-style.enum';
-import APP_THEME from 'src/app/Core/theme/theme';
 
 @Component({
   selector: 'pg-button',
@@ -8,7 +7,6 @@ import APP_THEME from 'src/app/Core/theme/theme';
   styleUrls: ['./button.component.scss']
 })
 export class ButtonComponent {
-  app_theme = APP_THEME;
   @Input() label!: string;
   @Input() name!: string;
   @Input() type: string = 'button';

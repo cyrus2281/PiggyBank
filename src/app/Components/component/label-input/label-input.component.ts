@@ -1,6 +1,5 @@
 import { Component, EventEmitter, forwardRef, Input, OnInit, Output } from '@angular/core';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
-import APP_THEME from 'src/app/Core/theme/theme';
 import { Validator } from 'src/app/Core/utilities/validate.utils';
 import { ControlValueAccessorModel } from 'src/app/Components/model/control-value-accessor.model';
 
@@ -17,7 +16,6 @@ import { ControlValueAccessorModel } from 'src/app/Components/model/control-valu
   ]
 })
 export class LabelInputComponent extends ControlValueAccessorModel<string> implements OnInit {
-  app_theme = APP_THEME;
   @Input() label!: string;
   @Input() name!: string;
   @Input() type: string = 'text';

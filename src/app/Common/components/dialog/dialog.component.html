@@ -1,0 +1,17 @@
+<div
+  class="dialog-fade"
+  [class]="app_theme['theme']"
+  [class.show]="show"
+  (click)="onFadeClick($event)"
+>
+  <div class="dialog-container">
+    <div class="dialog-close" *ngIf="includeCloseIcon">
+      <pg-icon icon="close" (click)="closeDialog()"></pg-icon>
+    </div>
+    <div class="dialog">
+      <div class="dialog-modal">
+        <div #modal></div>
+      </div>
+    </div>
+  </div>
+</div>

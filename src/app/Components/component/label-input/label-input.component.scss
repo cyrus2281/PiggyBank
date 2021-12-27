@@ -56,7 +56,7 @@
   }
 }
 
-.lightMode {
+.lightMode :host {
   .form-input {
     border-color: $grey-3;
     color: $black-1;
