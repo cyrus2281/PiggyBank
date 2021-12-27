@@ -1,6 +1,6 @@
 <div
   class="directory-card"
-  [class.active]="model.label === 'directory two'"
+  [class.active]="active"
   (click)="action.emit(actionEvent.SELECTED)"
 >
   <div class="directory-card-icon">
@@ -22,7 +22,7 @@
       <div class="directory-card-buttons-view">
         <pg-icon icon="bubble_chart"></pg-icon>
         <ng-container
-          *ngTemplateOutlet="summaryHover; context: { item: true }"
+          *ngTemplateOutlet="summaryHover; context: { item: model }"
         ></ng-container>
       </div>
       <div class="directory-card-buttons-edit"
@@ -34,4 +34,20 @@
   </div>
 </div>
 
-<ng-template #summaryHover let-item="item"> </ng-template>
+<ng-template #summaryHover let-item="item" >
+  <div class="directory-card-summary-container">
+    <div class="directory-card-summary">
+      <div class="directory-card-summary-details">
+        <div class="directory-card-summary-income">
+          <div class="directory-card-summary-label">{{'directory.totalIncome' | localize }}</div>
+          <div class="directory-card-summary-amount">{{item.totalIncome | toPrice}}</div>
+        </div>
+        <div class="directory-card-summary-expense">
+          <div class="directory-card-summary-label">{{'directory.totalExpense' | localize }}</div>
+          <div class="directory-card-summary-amount">{{item.totalExpense | toPrice}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</ng-template>

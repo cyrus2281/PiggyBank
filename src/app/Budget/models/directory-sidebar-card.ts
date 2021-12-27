@@ -11,6 +11,6 @@ export class DirectorySidebarCard implements SideBarItemModel {
     public label: string,
     public icon: string,
     public totalIncome: number,
-    public totalOutcome: number,
+    public totalExpense: number,
     ){}
 }

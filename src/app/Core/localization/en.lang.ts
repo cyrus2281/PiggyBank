@@ -58,4 +58,9 @@ export const localization : {[token: string]: string} = {
   'actionBar.budget.add.transaction.expense': 'Add Expense',
   'actionBar.budget.add.subDirectory': 'Add Sub-Directory',
 
+
+  // Directory
+  'directory.totalIncome': 'total income',
+  'directory.totalExpense': 'total expense',
+
 }

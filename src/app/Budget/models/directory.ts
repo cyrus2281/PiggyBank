@@ -1,3 +1,4 @@
+import { TransactionTypeEnum } from "../enums/transaction-type.enum";
 import { DirectoryModel } from "./directory.model";
 import { Transaction } from "./transaction";
 
@@ -13,7 +14,7 @@ export class Directory {
   subDirectories?: Directory[];
 
   totalIncome: number = 0;
-  totalOutcome: number = 0;
+  totalExpense: number = 0;
 
   constructor(model?: DirectoryModel) {
     if (model) {
@@ -24,13 +25,25 @@ export class Directory {
       this.modifiedDate = model.modifiedDate;
 
       if (model.transactions?.length > 0) {
-        this.transactions = model.transactions.map(transactionModel => new Transaction(transactionModel));
+        this.transactions = model.transactions.map(transactionModel => {
+          const transaction = new Transaction(transactionModel)
+          if (transaction.type === TransactionTypeEnum.INCOME) {
+            this.totalIncome += transaction.amount;
+          } else if (transaction.type === TransactionTypeEnum.EXPENSE) {
+            this.totalExpense += transaction.amount;
+          }
+          return transaction;
+        });
       }
 
       if (model?.subDirectories && model.subDirectories?.length > 0) {
-        this.subDirectories = model.subDirectories.map(directoryModel => new Directory(directoryModel));
+        this.subDirectories = model.subDirectories.map(directoryModel => {
+          const directory = new Directory(directoryModel);
+          this.totalIncome += directory.totalIncome;
+          this.totalExpense += directory.totalExpense;
+          return directory;
+        });
       }
-
     }
   }
 
@@ -47,6 +60,8 @@ export class Directory {
     directory.id = this.id;
     directory.name = this.name;
     directory.icon = this.icon;
+    directory.totalIncome = this.totalIncome;
+    directory.totalExpense = this.totalExpense;
     directory.creationDate = new Date(this.creationDate);
     directory.modifiedDate = new Date(this.modifiedDate);
     directory.transactions = this.transactions.map(transaction => transaction.clone());
@@ -65,6 +80,8 @@ export class Directory {
       this.id !== other.id ||
       this.name !== other.name ||
       this.icon !== other.icon ||
+      this.totalIncome !== other.totalIncome ||
+      this.totalExpense !== other.totalExpense ||
       this.creationDate.toJSON() !== other.creationDate.toJSON()
     ) {
       return false

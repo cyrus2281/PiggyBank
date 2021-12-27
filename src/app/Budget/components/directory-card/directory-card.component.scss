@@ -2,22 +2,26 @@
 
 .directory-card {
   display: flex;
-  padding: 10px;
   align-items: center;
   cursor: pointer;
+  transition: $transition-quick;
+  @include for-screen(padding, 5px, 2.5px);
+
+  &:hover {
+    .lightMode :host & {
+      background-color: $white-3;
+
+      .directory-card-label {
+        color: $blue-1;
+      }
+    }
+  }
 
   &.active {
     .lightMode :host & {
       background-color: $white-4;
     }
   }
-
-  &:hover &-label {
-    .lightMode :host & {
-      color: $blue-1;
-    }
-  }
-
 
   &-icon {
     height: 45px;
@@ -32,7 +36,7 @@
     overflow: hidden;
 
     ::ng-deep .svg {
-    transform: translateY(10%);
+      transform: translateY(10%);
     }
 
     .lightMode :host & {
@@ -50,42 +54,101 @@
     @include tablet-less() {
       display: none;
 
-      .show :host &{
+      .show :host & {
         display: flex;
       }
     }
   }
 
-  &-info{
+  &-info {
     overflow: hidden;
   }
 
   &-label {
     max-height: 10px;
     text-overflow: ellipsis;
-    transition: color .3s ease-in-out;
+    transition: $transition-quick;
   }
 
   &-buttons {
     display: flex;
     gap: 5px;
 
-    &-view{
-      transition: color .3s ease-in-out;
+    &-view {
+      transition: $transition-quick;
+      position: relative;
       &:hover {
         .lightMode :host & {
           color: $blue-1;
         }
+
+        .directory-card-summary-container {
+          height: 90px;
+          padding: 10px;
+        }
       }
     }
 
-    &-edit{
-      transition: color .3s ease-in-out;
+    &-edit {
+      transition: $transition-quick;
       &:hover {
         .lightMode :host & {
           color: $blue-3;
         }
       }
     }
+  }
+
+  &-summary {
+    &-container {
+      position: fixed;
+      width: 200px;
+      transform: translate(-40%, 10px);
+      border-radius: 20px;
+      padding: 0px;
+      z-index: 50;
+      transition: $transition-quick;
+      height: 0;
+      overflow: hidden;
+
+      .lightMode :host &{
+        background-color: $blue-1-lighten;
+        color: $black-1;
+      }
+    }
+
+    &-details {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    &-income, &-expense {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      gap: 10px;
+    }
+
+    &-label {
+      text-transform: capitalize;
+    }
+
+    &-amount {
+      padding: 5px 7px;
+      border-radius: 5px;
+
+      .directory-card-summary-income & {
+        .lightMode :host &{
+          background-color: $income-1;
+        }
+      }
+      .directory-card-summary-expense & {
+        .lightMode :host &{
+          background-color: $expense-1;
+        }
+      }
+    }
+
   }
 }
