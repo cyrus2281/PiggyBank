@@ -12,7 +12,7 @@ const transactionGenerator = (count: number):Transaction[] => {
       id: `transaction_${i}`,
       title: `Transaction number ${i}`,
       category: ' custom',
-      amount: +(Math.random()*100).toFixed(2),
+      amount: +(Math.random()*1000).toFixed(2),
       dateAdded: new Date(),
     }));
   }
