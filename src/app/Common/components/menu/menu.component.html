@@ -3,12 +3,12 @@
     <div class="menu">
       <!-- delete from here -->
       <ul>
-        <li>menu item 1</li>
-        <li>menu item 2</li>
-        <li>menu item 3</li>
-        <li>menu item 4</li>
-        <li>menu item 5</li>
-        <li>menu item 6</li>
+        <br><br>
+        <li><a routerLink="/">Piggy Bank</a></li>
+        <li><a routerLink="/disclaimer/cookies_policy">Cookies Policy</a></li>
+        <li><a routerLink="/disclaimer/privacy_policy">Privacy Policy</a></li>
+        <li><a routerLink="/disclaimer/terms_conditions">Terms and Conditions</a></li>
+        <br><br><br>
       </ul>
       <!-- delete till here -->
       <pg-button (click)="authService.signOut()" *ngIf="authService.isLoggedIn" [matTooltip]="'signout' | localize" matTooltipPosition="above">

@@ -16,6 +16,7 @@ import { DialogComponent } from './components/dialog/dialog.component';
 import { CookiesPolicyComponent } from './components/cookies-policy/cookies-policy.component';
 import { PrivacyPolicyComponent } from './components/privacy-policy/privacy-policy.component';
 import { TermsPolicyComponent } from './components/terms-policy/terms-policy.component';
+import { RouterModule } from "@angular/router";
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { TermsPolicyComponent } from './components/terms-policy/terms-policy.com
       ComponentsModule,
       CoreModule,
       FormsModule,
-      ComponentsModule
+      ComponentsModule,
+      RouterModule
   ],
   exports: [
     NavbarComponent,

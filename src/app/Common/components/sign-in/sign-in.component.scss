@@ -51,8 +51,13 @@
     @include tablet-plus {
       grid-template-columns: 1fr 1fr;
     }
-
   }
+
+  &-disclaimer {
+    font-size: 12px;
+    text-align: center;
+  }
+
   ::ng-deep  .primary {
     height: 50px;
   }
