@@ -1,5 +1,6 @@
 import { Injectable, Type } from "@angular/core";
 import { EMPTY, Observable, of } from "rxjs";
+import { CookiesPolicyComponent } from "src/app/Common/components/cookies-policy/cookies-policy.component";
 import { SignInComponent } from "src/app/Common/components/sign-in/sign-in.component";
 import { ActionBarButtonTypeEnum } from "src/app/Common/enum/action-bar-button-type.enum";
 import { ActionBarButtonModel } from "src/app/Common/models/action-bar-button.model";
@@ -58,7 +59,7 @@ export class BudgetActionBarService implements ActionBarServiceModel {
   buttonClicked(type: ActionBarButtonTypeEnum): void {
     console.log(type);
     if (type === 'MAIN_LEFT') {
-      this.dialogService.openDialog(SignInComponent, {
+      this.dialogService.openDialog(CookiesPolicyComponent, {
         closeOnclickAway: true,
         includeCloseIcon: true,
       })

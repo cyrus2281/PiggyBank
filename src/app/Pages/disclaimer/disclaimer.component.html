@@ -1,0 +1,14 @@
+<pg-scroll-panel class="disclaimer">
+    <div class="disclaimer-content">
+    <ng-container *ngIf="page === 'terms'">
+      <pg-terms-policy></pg-terms-policy>
+    </ng-container>
+    <ng-container *ngIf="page === 'cookies'">
+      <pg-cookies-policy></pg-cookies-policy>
+    </ng-container>
+    <ng-container *ngIf="page === 'privacy'">
+      <pg-privacy-policy></pg-privacy-policy>
+    </ng-container>
+  </div>
+</pg-scroll-panel>
+<pg-menu></pg-menu>

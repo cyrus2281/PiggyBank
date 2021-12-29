@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
-import { AppRoutingModule } from './Core/routing/app-routing.module';
+import { AppRoutingModule } from './Core/routes/app-routing.module';
 import { ComponentsModule } from './Components/components.module';
 import { CommonComponentsModule } from './Common/common.module';
 import { PagesModule } from './Pages/pages.module';

@@ -126,5 +126,9 @@ export class AccountEffects {
     )
   });
 
-  constructor(private actions$: Actions, private authFirebaseService: AuthFirebaseService, private messageService: MessageService) { }
+  constructor(
+    private actions$: Actions,
+    private authFirebaseService: AuthFirebaseService,
+    private messageService: MessageService
+    ) { }
 }

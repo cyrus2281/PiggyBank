@@ -1,6 +1,8 @@
 @import "../../../Core/styles/functions.scss";
 
 .dialog {
+  padding-top: 15px;
+
   &-fade {
     position: fixed;
     top: 0;
@@ -25,6 +27,8 @@
     transition: $transition-fast;
     transform: translateY(-10%);
     animation: show .5s ease-in-out;
+    max-width: 90vw;
+    max-height: 90vh;
 
     .closing &{
       opacity: 0;

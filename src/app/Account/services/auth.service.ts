@@ -5,7 +5,7 @@ import { SubSink } from 'subsink';
 import { SignInMethodsEnum } from '../enum/sign-in-methods.enum';
 import { ACCOUNT_STORE } from '../store/account.reducer';
 import * as AccountActions from '../store/account.actions';
-import { RouterService } from 'src/app/Core/routing/router.service';
+import { RouterService } from 'src/app/Core/routes/router.service';
 import { MessageService } from 'src/app/Core/message/message.service';
 import { AuthFirebaseService } from 'src/app/Data/Firebase/auth.firebase.service';
 import { Account } from '../model/account';
@@ -38,10 +38,17 @@ export class AuthService {
     this.subscriptions.add(this.store.select(ACCOUNT_STORE).subscribe(accountStore => {
       if (this._isLoggedIn !== accountStore?.account?.isLoggedIn) {
         this._isLoggedIn = !!accountStore?.account?.isLoggedIn
+        // TODO: find a better way to handle auto login and redirect
         if (this._isLoggedIn) {
-          this.routerService.goToApp();
+          // only switches to app if it is on login page
+          if (this.routerService.getRouter().url.match(/^\/account\//)){
+            this.routerService.goToApp();
+          }
         } else {
-          this.routerService.goToLogin();
+          // only switches to login page if it is in the app
+          if (this.routerService.getRouter().url.match(/^\/budget\//)){
+            this.routerService.goToLogin();
+          }
         }
       }
       if (!!accountStore.error) {

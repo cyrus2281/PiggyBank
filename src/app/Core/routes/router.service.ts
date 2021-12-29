@@ -6,8 +6,11 @@ import { Observable } from 'rxjs';
 export class RouterService {
   readonly app_route = '/';
   readonly login_route = '/account/signin';
+  readonly privacy_route = '/disclaimer/privacy_policy';
+  readonly cookies_route = '/disclaimer/cookies_policy';
+  readonly terms_route = '/disclaimer/terms_conditions';
 
-  constructor(private router: Router, private route: ActivatedRoute) { }
+  constructor(private router: Router, private route: ActivatedRoute) {}
 
   /**
    * goes to an absolute path
@@ -35,11 +38,35 @@ export class RouterService {
   }
 
   /**
-     * goes to login page
-     * @returns Promise<boolean> A Promise that resolves to true when navigation succeeds, to false when navigation fails, or is rejected on error.
+    * goes to login page
+    * @returns Promise<boolean> A Promise that resolves to true when navigation succeeds, to false when navigation fails, or is rejected on error.
    */
   goToLogin() {
     return this.goTo([this.login_route]);
+  }
+
+  /**
+    * goes to login page
+    * @returns Promise<boolean> A Promise that resolves to true when navigation succeeds, to false when navigation fails, or is rejected on error.
+   */
+  goToPrivacyPolicy() {
+    return this.goTo([this.privacy_route]);
+  }
+
+  /**
+    * goes to login page
+    * @returns Promise<boolean> A Promise that resolves to true when navigation succeeds, to false when navigation fails, or is rejected on error.
+   */
+  goToCookiesPolicy() {
+    return this.goTo([this.cookies_route]);
+  }
+
+  /**
+    * goes to login page
+    * @returns Promise<boolean> A Promise that resolves to true when navigation succeeds, to false when navigation fails, or is rejected on error.
+   */
+  goToTermsConditions() {
+    return this.goTo([this.terms_route]);
   }
 
   /**
@@ -48,6 +75,14 @@ export class RouterService {
    */
   getRoute(): ActivatedRoute {
     return this.route;
+  }
+
+  /**
+   * get router object
+   * @returns router object
+   */
+  getRouter(): Router {
+    return this.router;
   }
 
   /**

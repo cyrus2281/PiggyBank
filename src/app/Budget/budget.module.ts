@@ -8,7 +8,7 @@ import { CommonComponentsModule } from '../Common/common.module';
 import { ComponentsModule } from '../Components/components.module';
 import { FormsModule } from '@angular/forms';
 import { CoreModule } from '../Core/core.module';
-import { AppRoutingModule } from '../Core/routing/app-routing.module';
+import { AppRoutingModule } from '../Core/routes/app-routing.module';
 import { DirectoryDataService } from './services/directory-data.service';
 import { BudgetActionBarService } from './services/budget-action-bar.service';
 
