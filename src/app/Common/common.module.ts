@@ -13,6 +13,9 @@ import { SignInComponent } from "./components/sign-in/sign-in.component";
 import { SignUpComponent } from "./components/sign-up/sign-up.component";
 import { SideBarItemComponent } from './components/side-bar-item/side-bar-item.component';
 import { DialogComponent } from './components/dialog/dialog.component';
+import { CookiesPolicyComponent } from './components/cookies-policy/cookies-policy.component';
+import { PrivacyPolicyComponent } from './components/privacy-policy/privacy-policy.component';
+import { TermsPolicyComponent } from './components/terms-policy/terms-policy.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +29,9 @@ import { DialogComponent } from './components/dialog/dialog.component';
     SideBarItemWrapperComponent,
     SideBarItemComponent,
     DialogComponent,
+    CookiesPolicyComponent,
+    PrivacyPolicyComponent,
+    TermsPolicyComponent,
   ],
   imports: [
       CommonModule,
@@ -44,6 +50,10 @@ import { DialogComponent } from './components/dialog/dialog.component';
     MenuComponent,
     SideBarItemWrapperComponent,
     SideBarItemComponent,
+    DialogComponent,
+    CookiesPolicyComponent,
+    PrivacyPolicyComponent,
+    TermsPolicyComponent,
   ]
 })
 export class CommonComponentsModule { }
