@@ -1,14 +1,10 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Observable } from 'rxjs';
+import * as Routes from 'src/app/Core/routes/app-routes';
 
 @Injectable()
 export class RouterService {
-  readonly app_route = '/';
-  readonly login_route = '/account/signin';
-  readonly privacy_route = '/disclaimer/privacy_policy';
-  readonly cookies_route = '/disclaimer/cookies_policy';
-  readonly terms_route = '/disclaimer/terms_conditions';
 
   constructor(private router: Router, private route: ActivatedRoute) {}
 
@@ -34,7 +30,7 @@ export class RouterService {
    * @returns Promise<boolean> A Promise that resolves to true when navigation succeeds, to false when navigation fails, or is rejected on error.
    */
   goToApp() {
-    return this.goTo([this.app_route]);
+    return this.goTo([Routes.app_route]);
   }
 
   /**
@@ -42,7 +38,7 @@ export class RouterService {
     * @returns Promise<boolean> A Promise that resolves to true when navigation succeeds, to false when navigation fails, or is rejected on error.
    */
   goToLogin() {
-    return this.goTo([this.login_route]);
+    return this.goTo([Routes.login_route]);
   }
 
   /**
@@ -50,7 +46,7 @@ export class RouterService {
     * @returns Promise<boolean> A Promise that resolves to true when navigation succeeds, to false when navigation fails, or is rejected on error.
    */
   goToPrivacyPolicy() {
-    return this.goTo([this.privacy_route]);
+    return this.goTo([Routes.privacy_route]);
   }
 
   /**
@@ -58,7 +54,7 @@ export class RouterService {
     * @returns Promise<boolean> A Promise that resolves to true when navigation succeeds, to false when navigation fails, or is rejected on error.
    */
   goToCookiesPolicy() {
-    return this.goTo([this.cookies_route]);
+    return this.goTo([Routes.cookies_route]);
   }
 
   /**
@@ -66,7 +62,7 @@ export class RouterService {
     * @returns Promise<boolean> A Promise that resolves to true when navigation succeeds, to false when navigation fails, or is rejected on error.
    */
   goToTermsConditions() {
-    return this.goTo([this.terms_route]);
+    return this.goTo([Routes.terms_route]);
   }
 
   /**

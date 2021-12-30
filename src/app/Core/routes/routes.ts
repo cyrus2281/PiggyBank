@@ -8,6 +8,8 @@ import { PiggyBankGuard } from "src/app/Pages/piggy-bank/guard/piggy-bank.guard"
 import { SignInUpGuard } from "src/app/Pages/sign-in-up/guard/sign-in-up.guard";
 import { PiggyBankComponent } from "../../Pages/piggy-bank/piggy-bank.component";
 import { SignInUpComponent } from "../../Pages/sign-in-up/sign-in-up.component";
+import * as paths from 'src/app/Core/routes/app-routes';
+
 
 export const appRoutes: Routes = [
   {
