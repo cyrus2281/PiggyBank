@@ -1,20 +1,21 @@
 <div class="dropdown-container">
-  <div class="dropdown">
+  <div class="dropdown" (click)="toggleDropdown()">
     <div class="dropdown-label">
+      <pg-icon *ngIf="icon" [icon]="icon"></pg-icon>
+      <pg-icon *ngIf="svg" [svg]="svg"></pg-icon>
       <pg-label-info
         [tooltip]="tooltip"
         [type]="tooltipType"
         [position]="tooltipPosition"
-        >{{ label | localize }}</pg-label-info
-      >
+        >
+        {{ label | localize }}
+      </pg-label-info>
     </div>
-    <div class="dropdown-icon" [class.close]="expanded" *ngIf="toggleable" (click)="toggleDropdown()">
+    <div class="dropdown-icon" [class.close]="expanded" *ngIf="toggleable">
       <pg-icon icon="keyboard_arrow_down"></pg-icon>
     </div>
   </div>
-  <div class="dropdown-content-container">
-    <div class="dropdown-content" [class.close]="expanded">
-      <ng-content #content></ng-content>
+    <div class="dropdown-content" [class.close]="!expanded" [ngStyle]="{maxHeight: expanded ? '100vh' : '0px'}">
+      <ng-content ></ng-content>
     </div>
   </div>
-</div>

@@ -8,7 +8,7 @@ import { LabelIconTypeEnum } from '../../enum/label-icon-type.enum';
   styleUrls: ['./label-info.component.scss']
 })
 export class LabelInfoComponent {
-  @Input() type: LabelIconTypeEnum = LabelIconTypeEnum.info;
+  @Input() type!: LabelIconTypeEnum;
   @Input() tooltip!: string;
   @Input() position:TooltipPosition = 'above'
   labelIconType = LabelIconTypeEnum;
