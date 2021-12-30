@@ -3,6 +3,7 @@ import { AuthService } from 'src/app/Account/services/auth.service';
 import { ButtonStyleEnum } from 'src/app/Components/enum/button-style.enum';
 import { LocalizationService } from 'src/app/Core/localization/localization.service';
 import { emailValidator, passwordValidatorGenerator, confirmPasswordValidator, textLengthValidatorGenerator, Validator } from 'src/app/Core/utilities/validate.utils';
+import * as Routes from 'src/app/Core/routes/app-routes';
 
 @Component({
   selector: 'pg-sign-up',
@@ -15,6 +16,7 @@ export class SignUpComponent implements OnInit {
   textLengthValidator = textLengthValidatorGenerator(2,32);
   confirmPasswordValidator = confirmPasswordValidator;
   passwordValidator!: Validator;
+  routes = Routes;
 
   name!: string;
   email!: string;

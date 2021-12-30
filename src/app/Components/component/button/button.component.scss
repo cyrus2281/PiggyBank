@@ -5,7 +5,6 @@
   width: 100%;
   letter-spacing: 0.5px;
   padding: 10px;
-  font-family: $family3;
   font-weight: bolder;
   border: none;
   cursor: pointer;
@@ -13,6 +12,8 @@
   justify-content: center;
   transition: $transition-quick;
   border: 1px solid transparent;
+  position: relative;
+  font-weight: 500;
   @include for-screen("font-size", 12px, 2px);
 
   &-container {
@@ -33,11 +34,40 @@
     text-align: center;
   }
 
+  ::ng-deep & .background {
+    transition: $transition-quick;
+    position: absolute;
+    height: 100%;
+    width: 50px;
+    z-index: 0;
+    background: white;
+    border-radius: 0 5px 5px 0;
+  }
+
+  ::ng-deep & span {
+    z-index: 1;
+    transition: $transition-quick;
+  }
+
+  ::ng-deep & pg-icon {
+    z-index: 1;
+  }
+
   ::ng-deep & .svg {
     padding: 10px;
     display: block;
     margin-right: 15px;
-    border-radius: 0 5px 5px 0;
+    border-radius: 0 7px 7px 0;
+  }
+
+  &:hover {
+    & ::ng-deep span{
+      color: $black-1;
+    }
+
+    & ::ng-deep .background {
+      width: 350px;
+    }
   }
 }
 
@@ -105,7 +135,7 @@
     color: $white-1;
     border: 2pt solid $blue-2;
 
-    & ::ng-deep .svg {
+    & ::ng-deep .background {
       background-color: $white-1;
     }
 

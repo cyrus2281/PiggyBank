@@ -27,6 +27,7 @@ export const localization : {[token: string]: string} = {
   'signin.success': 'Signed in successfully',
   'signout': 'Sign Out',
   'signout.success': 'Signed out successfully',
+  'sign.disclaimer': 'By continuing to use our services, you agree to Piggy Bank\'s',
 
   // Validation
   'validate.error.localEmail': 'Local part of email can not be more than 64 characters!',

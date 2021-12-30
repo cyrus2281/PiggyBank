@@ -25,6 +25,10 @@
     font-size: 12px;
     padding: 10px;
     text-align: center;
+
+    & a {
+      color: $link;
+    }
   }
 
   ::ng-deep  .primary {

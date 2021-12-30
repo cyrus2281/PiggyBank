@@ -52,7 +52,10 @@
         ></pg-button>
     </div>
     <div class="sign-up-disclaimer">
-      By continuing to use our services, you agree to Piggy Bank's <a routerLink="/disclaimer/terms_conditions">Terms and Conditions</a>, <a routerLink="/disclaimer/privacy_policy">Privacy Policy</a>, and <a routerLink="/disclaimer/cookies_policy">Cookies Policy</a>.
-    </div>
+      {{ 'sign.disclaimer' | localize }}
+      <a [routerLink]="routes.terms_route">{{ 'menu.terms' | localize }}</a>,
+      <a [routerLink]="routes.privacy_route">{{ 'menu.privacy' | localize }}</a>
+      , {{ 'common.and' | localize }}
+      <a [routerLink]="routes.cookies_route">{{ 'menu.cookies' | localize }}</a>.    </div>
   </form>
 </div>
