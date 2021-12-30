@@ -3,6 +3,8 @@ import { AuthService } from 'src/app/Account/services/auth.service';
 import APP_THEME from 'src/app/Core/theme/theme';
 import { SubSink } from 'subsink';
 import { HeaderService } from '../../services/header.service';
+import * as Routes from 'src/app/Core/routes/app-routes';
+import { ButtonStyleEnum } from 'src/app/Components/enum/button-style.enum';
 
 @Component({
   selector: 'pg-menu',
@@ -11,6 +13,9 @@ import { HeaderService } from '../../services/header.service';
 })
 export class MenuComponent implements OnInit, OnDestroy {
   app_theme = APP_THEME;
+  buttonStyle = ButtonStyleEnum;
+  routes = Routes;
+
   subscriptions = new SubSink();
   show: boolean = false;
 
@@ -19,6 +24,11 @@ export class MenuComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.subscriptions.add(this.headerService.getMenuStatus().subscribe(show => this.show = show));
+  }
+
+  signOut() {
+    this.authService.signOut();
+    this.headerService.showMenu(false);
   }
 
   ngOnDestroy(): void {

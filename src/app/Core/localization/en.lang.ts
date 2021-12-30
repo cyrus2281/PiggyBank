@@ -1,5 +1,7 @@
 
 export const localization : {[token: string]: string} = {
+  'piggyBank': 'Piggy Bank',
+
   // Common Words
   'common.cancel': 'Cancel',
   'common.apply': 'Apply',
@@ -57,6 +59,15 @@ export const localization : {[token: string]: string} = {
   'actionBar.budget.add.transaction.income': 'Add Income',
   'actionBar.budget.add.transaction.expense': 'Add Expense',
   'actionBar.budget.add.subDirectory': 'Add Sub-Directory',
+
+  // Menu
+  'menu.budgetApp': 'Budget App',
+  'menu.preferences': 'Preferences',
+  'menu.contact': 'Contact Us',
+  'menu.disclaimer': 'Policies',
+  'menu.terms': 'Terms & Conditions',
+  'menu.cookies': 'Cookies Policy',
+  'menu.privacy': 'Privacy Policy',
 
 
   // Directory

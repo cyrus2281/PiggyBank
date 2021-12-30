@@ -3,6 +3,9 @@
 
 .menu {
   @include for-screen(padding, 32px, 10);
+  @include for-screen(margin-top, 32px, 10);
+  @include for-screen(margin-bottom, 32px, 10);
+  @include for-screen(line-height, 25px, 5);
 
   &-overlay {
     position: fixed;
@@ -32,13 +35,54 @@
     float: right;
     transition: $transition-fast;
     transform: translateX(100%);
+    position: relative;
 
     .show & {
       transform: translateX(0);
     }
 
-    .lightMode &{
+    .lightMode & {
       background-color: $white-2;
     }
+  }
+
+  &-logo {
+    position: absolute;
+    color: $blue-3;
+    left: 30px;
+    top: 25px;
+    @include for-screen(font-size, 18px, 4);
+  }
+
+  &-options {
+    @include for-screen(font-size, 14px, 3);
+
+    &-link {
+      transition: $transition-quick;
+      a {
+        color: $link;
+      }
+
+      &:hover{
+        padding-left: 10px;
+        a {
+          color: $link-hover;
+        }
+
+      }
+    }
+
+    &-disclaimer {
+      padding-left: 15px;
+    }
+  }
+
+  &-signout-btn {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 25px;
+    max-width: 50%;
+    margin: 0 auto;
   }
 }

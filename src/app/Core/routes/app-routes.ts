@@ -4,6 +4,10 @@ export const login_base_route = '/account/';
 export const login_route = '/account/signin';
 export const signup_route = '/account/signup';
 
+export const preferences_route = '/preferences';
+
+export const contact_route = '/contact';
+
 export const budget_route = '/budget';
 export const budget_dashboard_route = '/budget/dashboard';
 

@@ -1,17 +1,24 @@
 <div class="menu-overlay" [class]="app_theme['theme']" [class.show]="show" (click)="headerService.showMenu(false)">
   <div class="menu-container" (click)="$event.stopPropagation()">
+    <a class="menu-logo" routerLink="/">
+      {{ 'piggyBank' | localize}}
+    </a>
     <div class="menu">
-      <!-- delete from here -->
-      <ul>
-        <br><br>
-        <li><a routerLink="/">Piggy Bank</a></li>
-        <li><a routerLink="/disclaimer/cookies_policy">Cookies Policy</a></li>
-        <li><a routerLink="/disclaimer/privacy_policy">Privacy Policy</a></li>
-        <li><a routerLink="/disclaimer/terms_conditions">Terms and Conditions</a></li>
-        <br><br><br>
+      <ul class="menu-options">
+        <li class="menu-options-link"><a [routerLink]="routes.budget_route">{{ 'menu.budgetApp' | localize}}</a></li>
+        <li class="menu-options-link"><a [routerLink]="routes.preferences_route">{{ 'menu.preferences' | localize}}</a></li>
+        <li class="menu-options-link"><a [routerLink]="routes.contact_route">{{ 'menu.contact' | localize}}</a></li>
+        <li><pg-drop-down [label]="'menu.disclaimer' | localize">
+          <div class="menu-options-disclaimer">
+            <li class="menu-options-link"><a [routerLink]="routes.terms_route">{{ 'menu.terms' | localize}}</a></li>
+            <li class="menu-options-link"><a [routerLink]="routes.privacy_route">{{ 'menu.privacy' | localize}}</a></li>
+            <li class="menu-options-link"><a [routerLink]="routes.cookies_route">{{ 'menu.cookies' | localize}}</a></li>
+          </div>
+        </pg-drop-down></li>
       </ul>
-      <!-- delete till here -->
-      <pg-button (click)="authService.signOut()" *ngIf="authService.isLoggedIn" [matTooltip]="'signout' | localize" matTooltipPosition="above">
+    </div>
+    <div class="menu-signout-btn">
+      <pg-button (click)="signOut()" [style]="buttonStyle.LIGHT" *ngIf="authService.isLoggedIn" [matTooltip]="'signout' | localize" matTooltipPosition="above">
         {{ 'signout' | localize}}
       </pg-button>
     </div>
