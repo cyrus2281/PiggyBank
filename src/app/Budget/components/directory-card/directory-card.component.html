@@ -4,7 +4,7 @@
   (click)="action.emit(actionEvent.SELECTED)"
 >
   <div class="directory-card-icon">
-    <pg-icon [svg]="model.icon"></pg-icon>
+    <pg-icon [svg]="model.icon" [size]="largeIcon"></pg-icon>
   </div>
   <div class="directory-card-details">
     <div
@@ -49,5 +49,4 @@
       </div>
     </div>
   </div>
-
 </ng-template>

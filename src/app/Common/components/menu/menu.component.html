@@ -6,9 +6,9 @@
     <div class="menu">
       <ul class="menu-options">
         <li class="menu-options-link"><a [routerLink]="routes.budget_route">{{ 'menu.budgetApp' | localize}}</a></li>
-        <li class="menu-options-link"><a [routerLink]="routes.preferences_route">{{ 'menu.preferences' | localize}}</a></li>
+        <li  *ngIf="authService.isLoggedIn" class="menu-options-link"><a [routerLink]="routes.preferences_route">{{ 'menu.preferences' | localize}}</a></li>
         <li class="menu-options-link"><a [routerLink]="routes.contact_route">{{ 'menu.contact' | localize}}</a></li>
-        <li><pg-drop-down [label]="'menu.disclaimer' | localize">
+        <li><pg-drop-down height='105px' [label]="'menu.disclaimer' | localize">
           <div class="menu-options-disclaimer">
             <li class="menu-options-link"><a [routerLink]="routes.terms_route">{{ 'menu.terms' | localize}}</a></li>
             <li class="menu-options-link"><a [routerLink]="routes.privacy_route">{{ 'menu.privacy' | localize}}</a></li>
@@ -20,6 +20,9 @@
     <div class="menu-signout-btn">
       <pg-button (click)="signOut()" [style]="buttonStyle.LIGHT" *ngIf="authService.isLoggedIn" [matTooltip]="'signout' | localize" matTooltipPosition="above">
         {{ 'signout' | localize}}
+      </pg-button>
+      <pg-button [routerLink]="routes.login_route" [style]="buttonStyle.LIGHT" *ngIf="!authService.isLoggedIn" [matTooltip]="'signin' | localize" matTooltipPosition="above">
+        {{ 'signin' | localize}}
       </pg-button>
     </div>
   </div>

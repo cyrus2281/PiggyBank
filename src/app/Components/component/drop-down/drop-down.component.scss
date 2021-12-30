@@ -19,11 +19,17 @@
   }
 
   &-content {
-    transition: $transition-normal;
+    &-container {
+      transition: $transition-fast;
+      overflow: hidden;
+    }
+
+    transition: $transition-fast;
     overflow: hidden;
+    transform: translateY(-105%);
 
     &.close {
-      transition: $transition-fast;
+      transform: translateY(0%);
     }
   }
 

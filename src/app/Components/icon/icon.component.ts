@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
-import { DomSanitizer } from '@angular/platform-browser';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { MatIconRegistry } from '@angular/material/icon';
 import { iconListMap, ICONS } from './icons/icons';
 import { IconSizeEnum } from './icons/icon.enum';
@@ -16,16 +16,17 @@ export class IconComponent implements OnInit {
   @Input() styles!: { [klass: string]: any; } | null;
   @Input() size : IconSizeEnum = IconSizeEnum.medium;
 
+  svgHTML!: SafeHtml;
   iconList = iconListMap;
 
-  constructor(private iconRegistry: MatIconRegistry, private sanitizer: DomSanitizer) {
+  constructor(private sanitizer: DomSanitizer) {
 
   }
 
   ngOnInit(): void {
     if (!!this.svg) {
       const icon = this.iconList[this.type][this.svg.toLowerCase()]
-      this.iconRegistry.addSvgIconLiteral(this.svg, this.sanitizer.bypassSecurityTrustHtml(icon));
+      this.svgHTML = this.sanitizer.bypassSecurityTrustHtml(icon);
     }
   }
 

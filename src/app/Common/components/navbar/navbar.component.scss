@@ -114,7 +114,7 @@
     &-menu {
       position: static;
       padding: 3px;
-      z-index: 150;
+      z-index: 550;
       @include tablet-plus() {
         cursor: pointer;
       }

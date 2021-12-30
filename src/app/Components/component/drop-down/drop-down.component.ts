@@ -17,6 +17,7 @@ export class DropDownComponent {
   @Input() icon!: string;
   @Input() svg!: string;
 
+  @Input() height: string = '100px';
 
   @Input() toggleable: boolean = true;
   @Input() expanded: boolean = false;

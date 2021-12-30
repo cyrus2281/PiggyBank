@@ -37,11 +37,11 @@
       </div>
       <div class="sign-in-third-party">
         <pg-button type="submit" [style]="buttonStyle.GOOGLE"[shadow]="true" (click)="authService.signInWith(signInMethods.GOOGLE)"
-          ><pg-icon svg="google"></pg-icon
+          ><pg-icon svg="google" [size]="largeIcon"></pg-icon
           ><span>{{ "signin.google" | localize }}</span></pg-button
         >
         <pg-button type="submit" [style]="buttonStyle.FACEBOOK" [shadow]="true" (click)="authService.signInWith(signInMethods.FACEBOOK)"
-          ><pg-icon svg='facebook'></pg-icon
+          ><pg-icon svg='facebook' [size]="largeIcon"></pg-icon
           ><span>{{ "signin.facebook" | localize }}</span></pg-button
         >
       </div>

@@ -1,10 +1,10 @@
-<mat-icon
+<div
   *ngIf="!!svg"
+  [innerHTML]="svgHTML"
   class="svg"
-  [svgIcon]="svg"
   [ngStyle]="styles"
   [class]="'icon-size-' + size"
-></mat-icon>
+></div>
 
 <mat-icon
   *ngIf="!!icon"

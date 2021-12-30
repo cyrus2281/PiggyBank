@@ -15,7 +15,9 @@
       <pg-icon icon="keyboard_arrow_down"></pg-icon>
     </div>
   </div>
-    <div class="dropdown-content" [class.close]="!expanded" [ngStyle]="{maxHeight: expanded ? '100vh' : '0px'}">
+  <div class="dropdown-content-container" [ngStyle]="{maxHeight: expanded ? height : '0px'}">
+    <div class="dropdown-content" [class.close]="expanded">
       <ng-content ></ng-content>
     </div>
   </div>
+</div>
