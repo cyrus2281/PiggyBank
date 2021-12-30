@@ -1,5 +1,5 @@
 <div class="dropdown-container">
-  <div class="dropdown" (click)="toggleDropdown()">
+  <div *ngIf="!hidePanel" class="dropdown" (click)="toggleDropdown()">
     <div class="dropdown-label">
       <pg-icon *ngIf="icon" [icon]="icon"></pg-icon>
       <pg-icon *ngIf="svg" [svg]="svg"></pg-icon>

@@ -55,7 +55,7 @@ export class LabelInputComponent extends ControlValueAccessorModel<string> imple
     }
     const validation = this.validate(this.value, ...this.validateArgs);
     this.valid = validation.isValid;
-    this.error = validation.error;
+    this.error = !!validation.error ? validation.error : this.error;
     this.isValid.emit(this.valid);
     this.onModelChange(this.value);
   }

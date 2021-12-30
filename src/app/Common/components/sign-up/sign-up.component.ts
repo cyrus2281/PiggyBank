@@ -11,9 +11,9 @@ import * as Routes from 'src/app/Core/routes/app-routes';
   styleUrls: ['./sign-up.component.scss']
 })
 export class SignUpComponent implements OnInit {
-  buttonStyle =  ButtonStyleEnum.PRIMARY;
+  buttonStyle = ButtonStyleEnum.PRIMARY;
   emailValidator = emailValidator;
-  textLengthValidator = textLengthValidatorGenerator(2,32);
+  textLengthValidator = textLengthValidatorGenerator(2, 32);
   confirmPasswordValidator = confirmPasswordValidator;
   passwordValidator!: Validator;
   routes = Routes;
@@ -30,14 +30,16 @@ export class SignUpComponent implements OnInit {
     confirmPassword: false,
   }
 
-  constructor(private localizationService : LocalizationService, public authService: AuthService) {
-      this.passwordValidator = passwordValidatorGenerator(this.localizationService.translate.bind(localizationService))
-   }
+  constructor(private localizationService: LocalizationService, public authService: AuthService) {
+    this.passwordValidator = passwordValidatorGenerator(this.localizationService.translate.bind(localizationService))
+  }
 
   ngOnInit(): void {
   }
 
   signUp() {
-    this.authService.signUp(this.name, this.email, this.password);
+    if (this.isValid.email && this.isValid.password && this.isValid.confirmPassword && this.isValid.name) {
+      this.authService.signUp(this.name, this.email, this.password);
+    }
   }
 }

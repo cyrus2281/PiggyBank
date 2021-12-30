@@ -22,8 +22,6 @@ export class DisclaimerComponent implements OnInit {
   ngOnInit(): void {
     this.routerService.getRoute().paramMap.subscribe(param => {
       const urlPage = Routes.disclaimer_base_route + param.get(Routes.disclaimer_route_ID);
-      console.log(urlPage);
-
 
       switch (urlPage) {
         case Routes.privacy_route:

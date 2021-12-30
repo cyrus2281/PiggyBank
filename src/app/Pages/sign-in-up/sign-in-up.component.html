@@ -4,8 +4,8 @@
       <span class="sign-in-up-tab" routerLinkActive="current-tab"><a routerLink="signup">{{ 'signup' | localize}}</a></span>
       <span class="sign-in-up-tab" routerLinkActive="current-tab"><a routerLink="signin">{{ 'signin' | localize}}</a></span>
     </div>
-    <div class="sign-in-up-component">
-      <router-outlet></router-outlet>
+    <div class="sign-in-up-component" [@slideAnimation]="prepareRoute(outlet)">
+      <router-outlet #outlet="outlet"></router-outlet>
     </div>
   </div>
 </div>

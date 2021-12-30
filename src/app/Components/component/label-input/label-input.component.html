@@ -16,8 +16,10 @@
   <label *ngIf="label" class="form-input-label" [class.shrink]="!!value">{{
     label | localize
   }}</label>
+  <pg-drop-down [expanded]="!valid" [hidePanel]="true">
+    <div class="form-input-error" [innerHTML]="error | localize"></div>
+  </pg-drop-down>
 
-  <div class="form-input-error" *ngIf="!valid && !!error" [innerHTML]="error | localize"></div>
 
   <mat-autocomplete #auto="matAutocomplete">
     <ng-container  *ngIf="!!options">

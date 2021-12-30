@@ -21,6 +21,7 @@ export class DropDownComponent {
 
   @Input() toggleable: boolean = true;
   @Input() expanded: boolean = false;
+  @Input() hidePanel: boolean = false;
 
   constructor() { }
 

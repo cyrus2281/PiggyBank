@@ -17,6 +17,8 @@
     max-width: $tablet-width;
     box-shadow: 0px 10px 13px -7px #000000, -50px 5px 15px 15px rgba(0, 0, 0, 0);
     overflow: auto;
+    overflow: hidden;
+
 
     @include tablet-plus {
       border: 1pt solid;
@@ -52,6 +54,7 @@
   }
 
   &-component {
+    position: relative;
     padding: 10px;
   }
 }

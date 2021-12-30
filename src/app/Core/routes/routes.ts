@@ -26,14 +26,17 @@ export const appRoutes: Routes = [
     ]
   },
   {
-    path: "disclaimer/:disclaimer", component: DisclaimerComponent,
+    path: "disclaimer", component: DisclaimerComponent
+  },
+  {
+    path: "disclaimer/:disclaimer", component: DisclaimerComponent
   },
   {
     path: "account", component: SignInUpComponent,
     canActivate: [SignInUpGuard],
     children: [
-      { path: "signin", component: SignInComponent },
-      { path: "signup", component: SignUpComponent },
+      { path: "signin", component: SignInComponent, data: {page: 'isRight'}},
+      { path: "signup", component: SignUpComponent, data: {page: 'isLeft'} },
     ]
   },
   {

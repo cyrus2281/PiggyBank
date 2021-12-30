@@ -8,6 +8,7 @@ import { PiggyBankComponent } from "./piggy-bank/piggy-bank.component";
 import { SignInUpComponent } from "./sign-in-up/sign-in-up.component";
 import { FormsModule } from "@angular/forms";
 import { DisclaimerComponent } from './disclaimer/disclaimer.component';
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { DisclaimerComponent } from './disclaimer/disclaimer.component';
       CommonModule,
       AppRoutingModule,
       CommonComponentsModule,
+      BrowserAnimationsModule,
       CoreModule,
       ComponentsModule,
       FormsModule,

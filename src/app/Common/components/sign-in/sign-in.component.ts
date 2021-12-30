@@ -30,6 +30,8 @@ export class SignInComponent implements OnInit {
   ngOnInit(): void {}
 
   signIn() {
-    this.authService.signInWithEmail(this.email, this.password);
+    if (this.isValid.email && this.isValid.password) {
+      this.authService.signInWithEmail(this.email, this.password);
+    }
   }
 }

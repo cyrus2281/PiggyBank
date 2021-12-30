@@ -27,6 +27,8 @@ import { BudgetModule } from './Budget/budget.module';
     CommonComponentsModule,
     BrowserAnimationsModule,
     BudgetModule,
+    PagesModule,
+    CoreModule,
     StoreModule.forRoot(reducers),
     EffectsModule.forRoot(effects),
     StoreDevtoolsModule.instrument({logOnly:environment.production}),
