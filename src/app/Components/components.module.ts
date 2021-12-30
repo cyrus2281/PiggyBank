@@ -25,6 +25,7 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { ProgressBarWrapperComponent } from './component/progress-bar-wrapper/progress-bar-wrapper.component';
 import { ScrollPanelComponent } from './component/scroll-panel/scroll-panel.component';
 import { LabelInfoComponent } from './component/label-info/label-info.component';
+import { DropDownComponent } from './component/drop-down/drop-down.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { LabelInfoComponent } from './component/label-info/label-info.component'
     ProgressBarWrapperComponent,
     ScrollPanelComponent,
     LabelInfoComponent,
+    DropDownComponent,
   ],
   imports: [
     CommonModule,
@@ -70,6 +72,7 @@ import { LabelInfoComponent } from './component/label-info/label-info.component'
     ProgressBarWrapperComponent,
     ScrollPanelComponent,
     LabelInfoComponent,
+    DropDownComponent,
   ]
 })
 export class ComponentsModule { }

@@ -1,0 +1,20 @@
+<div class="dropdown-container">
+  <div class="dropdown">
+    <div class="dropdown-label">
+      <pg-label-info
+        [tooltip]="tooltip"
+        [type]="tooltipType"
+        [position]="tooltipPosition"
+        >{{ label | localize }}</pg-label-info
+      >
+    </div>
+    <div class="dropdown-icon" [class.close]="expanded" *ngIf="toggleable" (click)="toggleDropdown()">
+      <pg-icon icon="keyboard_arrow_down"></pg-icon>
+    </div>
+  </div>
+  <div class="dropdown-content-container">
+    <div class="dropdown-content" [class.close]="expanded">
+      <ng-content #content></ng-content>
+    </div>
+  </div>
+</div>

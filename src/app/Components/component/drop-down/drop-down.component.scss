@@ -1,0 +1,30 @@
+@import "../../../Core/styles/functions.scss";
+
+.dropdown {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &-icon {
+    transition: $transition-fast;
+
+    &.close {
+      transform: rotate(180deg);
+    }
+  }
+
+  &-content {
+    &-container {
+      overflow: hidden;
+    }
+
+    transition: $transition-fast;
+    overflow: hidden;
+    transform: translateY(-105%);
+
+    &.close {
+    transform: translateY(0%);
+    }
+  }
+
+}
