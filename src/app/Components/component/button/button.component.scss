@@ -22,8 +22,7 @@
   }
 }
 
-.google,
-.facebook {
+.icon {
   display: flex;
   justify-content: start;
   align-items: center;
@@ -129,8 +128,7 @@
     }
   }
 
-  .google,
-  .facebook {
+  .icon {
     background-color: $blue-1;
     color: $white-1;
     border: 2pt solid $blue-2;

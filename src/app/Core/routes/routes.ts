@@ -9,6 +9,7 @@ import { SignInUpGuard } from "src/app/Pages/sign-in-up/guard/sign-in-up.guard";
 import { PiggyBankComponent } from "../../Pages/piggy-bank/piggy-bank.component";
 import { SignInUpComponent } from "../../Pages/sign-in-up/sign-in-up.component";
 import * as paths from 'src/app/Core/routes/app-routes';
+import { ContactComponent } from "src/app/Pages/contact/contact.component";
 
 
 export const appRoutes: Routes = [
@@ -26,7 +27,7 @@ export const appRoutes: Routes = [
     ]
   },
   {
-    path: "disclaimer", component: DisclaimerComponent
+    path: "contact", component: ContactComponent
   },
   {
     path: "disclaimer/:disclaimer", component: DisclaimerComponent

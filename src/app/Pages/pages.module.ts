@@ -9,12 +9,14 @@ import { SignInUpComponent } from "./sign-in-up/sign-in-up.component";
 import { FormsModule } from "@angular/forms";
 import { DisclaimerComponent } from './disclaimer/disclaimer.component';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
     PiggyBankComponent,
     SignInUpComponent,
     DisclaimerComponent,
+    ContactComponent,
   ],
   imports: [
       CommonModule,
@@ -29,6 +31,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
     PiggyBankComponent,
     SignInUpComponent,
     DisclaimerComponent,
+    ContactComponent,
   ]
 })
 export class PagesModule { }

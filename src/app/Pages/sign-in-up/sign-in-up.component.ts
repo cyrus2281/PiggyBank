@@ -12,8 +12,6 @@ import { slider } from 'src/app/Core/animations/route.animations';
   ]
 })
 export class SignInUpComponent {
-  app_theme = APP_THEME;
-
   constructor() { }
 
   prepareRoute(outlet: RouterOutlet){

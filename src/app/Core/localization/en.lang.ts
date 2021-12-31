@@ -72,6 +72,18 @@ export const localization : {[token: string]: string} = {
   'menu.cookies': 'Cookies Policy',
   'menu.privacy': 'Privacy Policy',
 
+  // Contact
+  'contact.contactUs': 'contact us',
+  'contact.replyTo': 'How can we reach you?',
+  'contact.subject': 'I want',
+  'contact.subject.feedback': 'to send a feedback.',
+  'contact.subject.bug': 'to report a bug.',
+  'contact.subject.help': 'assistance with an issue.',
+  'contact.subject.other': 'Other (Please specify in message)',
+  'contact.message': 'Your Message',
+  'contact.send': 'send',
+
+
 
   // Directory
   'directory.totalIncome': 'total income',

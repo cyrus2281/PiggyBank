@@ -3,6 +3,5 @@ export enum ButtonStyleEnum {
   "LIGHT" = 'light',
   "PRIMARY" = 'primary',
   "PALE" = 'pale',
-  "GOOGLE" = 'google',
-  "FACEBOOK" = 'facebook',
+  "ICON" = 'icon',
 }

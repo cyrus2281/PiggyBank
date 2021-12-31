@@ -17,6 +17,7 @@ import { CookiesPolicyComponent } from './components/cookies-policy/cookies-poli
 import { PrivacyPolicyComponent } from './components/privacy-policy/privacy-policy.component';
 import { TermsPolicyComponent } from './components/terms-policy/terms-policy.component';
 import { RouterModule } from "@angular/router";
+import { ContactFormComponent } from './components/contact-form/contact-form.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { RouterModule } from "@angular/router";
     CookiesPolicyComponent,
     PrivacyPolicyComponent,
     TermsPolicyComponent,
+    ContactFormComponent,
   ],
   imports: [
       CommonModule,
@@ -56,6 +58,7 @@ import { RouterModule } from "@angular/router";
     CookiesPolicyComponent,
     PrivacyPolicyComponent,
     TermsPolicyComponent,
+    ContactFormComponent,
   ]
 })
 export class CommonComponentsModule { }

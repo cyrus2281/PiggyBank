@@ -1,6 +1,6 @@
 <pg-header></pg-header>
 <pg-menu></pg-menu>
-<div class="app" [@routeAnimation]="prepareRoute(outlet)">
+<div class="app" [@routeAnimation]="prepareRoute(outlet)" [class]="app_theme['theme']">
   <router-outlet  #outlet="outlet"></router-outlet>
 </div>
 
