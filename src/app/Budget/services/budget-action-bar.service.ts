@@ -1,12 +1,10 @@
-import { Injectable, Type } from "@angular/core";
+import { Injectable } from "@angular/core";
 import { EMPTY, Observable, of } from "rxjs";
-import { CookiesPolicyComponent } from "src/app/Common/components/cookies-policy/cookies-policy.component";
-import { SignInComponent } from "src/app/Common/components/sign-in/sign-in.component";
 import { ActionBarButtonTypeEnum } from "src/app/Common/enum/action-bar-button-type.enum";
 import { ActionBarButtonModel } from "src/app/Common/models/action-bar-button.model";
 import { ActionBarServiceModel } from "src/app/Common/models/action-bar-service.model";
-import { DialogService } from "src/app/Common/services/dialog.service";
 import { ProgressBarMode } from "src/app/Components/component/progress-bar/progress-bar.component";
+import { MessageService } from "src/app/Core/message/message.service";
 
 @Injectable()
 export class BudgetActionBarService implements ActionBarServiceModel {
@@ -50,7 +48,7 @@ export class BudgetActionBarService implements ActionBarServiceModel {
     ]
   );
 
-  constructor(private dialogService: DialogService) { }
+  constructor(private messageService: MessageService) { }
 
   getButtons(): Observable<Map<ActionBarButtonTypeEnum, ActionBarButtonModel>> {
     return of(this.budgetActionBarButtons);
@@ -59,9 +57,11 @@ export class BudgetActionBarService implements ActionBarServiceModel {
   buttonClicked(type: ActionBarButtonTypeEnum): void {
     console.log(type);
     if (type === 'MAIN_LEFT') {
-      this.dialogService.openDialog(CookiesPolicyComponent, {
-        closeOnclickAway: true,
-        includeCloseIcon: true,
+      this.messageService.sendEmail({
+        name: 'Cyrus',
+        age: '19',
+        _replyto: 'ecocyrus@gmail.com',
+        message: 'this is very cool, thanks'
       })
     }
   }

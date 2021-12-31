@@ -41,6 +41,8 @@ export const localization : {[token: string]: string} = {
   'validate.error.password.hasCapital': 'Password must contain at least one uppercase character!',
   'validate.error.password.hasLower': 'Password must contain at least one lowercase character!',
   'validate.error.password.hasSymbol': 'Password must contain at least one symbol!',
+  'validate.error.message': 'Oops, Something went wrong, please try again later.',
+  'validate.success.message': 'Your message was sent successfully!',
 
   // Error
   'error.account.userDisabled': 'This account has been disabled. Contact us for more info.',
