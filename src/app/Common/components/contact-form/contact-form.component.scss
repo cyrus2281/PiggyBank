@@ -1,0 +1,26 @@
+@import "../../../Core/styles/functions.scss";
+
+.contact {
+  &-form {
+    @include for-screen(padding, 10px, 5);
+
+    &-info {
+      font-size: 24px;
+    }
+
+    &-subject {
+      &-title {
+        font-size: 24px;
+        margin-bottom: 15px;
+      }
+
+      & ::ng-deep .radio-group {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        @include for-screen(margin-left, 15px,15);
+      }
+    }
+  }
+
+}

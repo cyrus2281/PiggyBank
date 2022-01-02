@@ -1,5 +1,6 @@
 <div class="group">
   <input
+    *ngIf="!multiLine"
     [(ngModel)]="value"
     (ngModelChange)="valueChange(value)"
     [type]="type"
@@ -13,6 +14,20 @@
     [disabled]="disabled"
     [matAutocomplete]="auto"
   />
+  <textarea
+  *ngIf="multiLine"
+  [(ngModel)]="value"
+  (ngModelChange)="valueChange(value)"
+  [name]="name"
+  class="form-input textarea"
+  (keydown)="onKeyDown.emit($event)"
+  (keyup)="onKeyUp.emit($event)"
+  (change)="change.emit($event)"
+  [required]="required"
+  [readOnly]="readOnly"
+  [disabled]="disabled"
+  [rows]="lines"
+  ></textarea>
   <label *ngIf="label" class="form-input-label" [class.shrink]="!!value">{{
     label | localize
   }}</label>

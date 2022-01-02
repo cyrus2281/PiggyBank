@@ -1,1 +1,22 @@
-<p>contact-form works!</p>
+<div class="contact-form-container">
+  <div class="contact-form">
+    <div class="contact-form-info">
+      {{ 'contact.replyTo' | localize}}
+      <pg-label-input [(ngModel)]="email" label="contact.email"></pg-label-input>
+    </div>
+    <div class="contact-form-subject">
+      <div class="contact-form-subject-title">{{ 'contact.subject' | localize}}:</div>
+      <pg-radio-button [(ngModel)]="subject" [options]="subjects"></pg-radio-button>
+    </div>
+    <div class="contact-form-message">
+      <pg-label-input [multiLine]="true" [label]="'contact.message'" [(ngModel)]="message"></pg-label-input>
+    </div>
+    <div class="contact-form-send">
+      <pg-button [style]="buttonStyle" (click)="sendMessage()">
+        <div class="background"></div>
+        <pg-icon svg="send" [type]="'common'" [size]="largeIcon"></pg-icon>
+        <span>{{ 'contact.send' | localize}}</span>
+      </pg-button>
+    </div>
+  </div>
+</div>

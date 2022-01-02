@@ -22,10 +22,12 @@ export class LabelInputComponent extends ControlValueAccessorModel<string> imple
   @Input() required: boolean = false;
   @Input() readOnly: boolean = false;
   @Input() disabled: boolean = false;
+  @Input() multiLine: boolean = false;
   @Input() validate: Validator = (value: string) => ({isValid: !!value, error:''});
   @Input() validateArgs: any[] = [];
   @Input() options!: string[];
   @Input() auto!: any;
+  @Input() lines: number = 4;
 
   @Output() change = new EventEmitter();
   @Output() onKeyUp = new EventEmitter();

@@ -79,9 +79,10 @@ export const localization : {[token: string]: string} = {
   'contact.subject.feedback': 'to send a feedback.',
   'contact.subject.bug': 'to report a bug.',
   'contact.subject.help': 'assistance with an issue.',
-  'contact.subject.other': 'Other (Please specify in message)',
+  'contact.subject.other': 'Other (Please specify in message).',
   'contact.message': 'Your Message',
-  'contact.send': 'send',
+  'contact.email': 'Your Email',
+  'contact.send': 'Send',
 
 
 

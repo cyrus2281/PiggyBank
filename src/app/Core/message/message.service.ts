@@ -37,6 +37,7 @@ export class MessageService {
   async sendEmail(options: { [name: string]: string }) {
     const formData = new FormData();
     Object.keys(options).forEach(key => formData.append(key, options[key]));
+    formData.append('subject', 'PiggyBank Contact')
 
     await fetch(this.formspreeURL, {
       method: 'POST',

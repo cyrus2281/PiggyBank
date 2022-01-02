@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { AppState } from '../../Data/Redux/root.reducer';
 import { AccountState, ACCOUNT_STORE } from '../store/account.reducer';
 
@@ -18,5 +19,13 @@ export class AccountService {
 
   getAccount(): Observable<AccountState> {
     return this.store.select(ACCOUNT_STORE);
+  }
+
+  getEmail(): Observable<string | undefined> {
+    return this.store.select(ACCOUNT_STORE).pipe(map(store => store.account?.email));
+  }
+
+  getDisplayName(): Observable<string | undefined> {
+    return this.store.select(ACCOUNT_STORE).pipe(map(store => store.account?.displayName));
   }
 }
