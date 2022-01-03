@@ -57,12 +57,7 @@ export class BudgetActionBarService implements ActionBarServiceModel {
   buttonClicked(type: ActionBarButtonTypeEnum): void {
     console.log(type);
     if (type === 'MAIN_LEFT') {
-      this.messageService.sendEmail({
-        name: 'Cyrus',
-        age: '19',
-        _replyto: 'ecocyrus@gmail.com',
-        message: 'this is very cool, thanks'
-      })
+
     }
   }
   getProgressBarMode(): Observable<ProgressBarMode> {

@@ -44,11 +44,16 @@ export class ContactFormComponent implements OnInit {
   }
 
   sendMessage(){
+    //TODO: add validation to inputs
     if (this.email && this.subject && this.message) {
       this.messageService.sendEmail({
         email: this.email,
-        reason: this.subject,
+        subject: `PiggyBank Contact(${this.subject})`,
+        objective: this.subject,
         message: this.message
+      }).then(()=>{
+        this.subject = '';
+        this.message = '';
       });
     }
   }

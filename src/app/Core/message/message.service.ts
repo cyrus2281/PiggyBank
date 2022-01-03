@@ -34,12 +34,11 @@ export class MessageService {
     return this.toastService.observe({ loading, success, error });
   }
 
-  async sendEmail(options: { [name: string]: string }) {
+  async sendEmail(options: { [name: string]: string }): Promise<boolean> {
     const formData = new FormData();
     Object.keys(options).forEach(key => formData.append(key, options[key]));
-    formData.append('subject', 'PiggyBank Contact')
 
-    await fetch(this.formspreeURL, {
+    return await fetch(this.formspreeURL, {
       method: 'POST',
       body: formData,
       headers: {
@@ -47,8 +46,10 @@ export class MessageService {
       }
     }).then(response => {
       this.showMessage('validate.success.message', MessageTypeEnum.success);
+      return true;
     }).catch(error => {
       this.showMessage('validate.error.message', MessageTypeEnum.error);
+      return false;
     });
   }
 }

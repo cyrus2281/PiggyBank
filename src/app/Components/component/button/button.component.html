@@ -10,8 +10,18 @@
     [class.circle]="circle"
     (focus)="focus.emit($event)"
     (focusout)="focus.emit($event)"
+    (mousedown)="startHold()"
+    (mouseup)="clearHold()"
+    (mouseleave)="clearHold()"
   >
-    {{ label }}
-    <ng-content></ng-content>
+    <div
+      *ngIf="holdable"
+      class="pg-button-hold-overlay"
+      [style]="holdPercentage"
+    ></div>
+    <div class="pg-button-content">
+      {{ label }}
+      <ng-content></ng-content>
+    </div>
   </button>
 </div>

@@ -5,7 +5,7 @@ export class Account {
   public displayName!: string;
 
 
-  constructor(private uid: string, email:string = "test@email.com", displayName?:string){
+  constructor(private uid: string, email?:string, displayName?:string){
       if (uid) {
         this.isLoggedIn = true;
       }

@@ -14,15 +14,34 @@
   border: 1px solid transparent;
   position: relative;
   font-weight: 500;
+  overflow: hidden;
   @include for-screen("font-size", 12px, 2px);
 
   &-container {
     height: 100%;
     width: 100%;
   }
+
+  &-content {
+    position: relative;
+    z-index: 50;
+  }
+
+  &-hold-overlay {
+    position: absolute;
+    transition: all 100ms linear;
+    z-index: 1;
+    height: 100%;
+    left: 0;
+    top: 0;
+  }
 }
 
 .icon {
+  padding: 0;
+}
+
+.icon .pg-button-content {
   display: flex;
   justify-content: start;
   align-items: center;
@@ -93,6 +112,10 @@
       background-color: $blue-3-lighten;
       color: $black-1;
     }
+
+    & .pg-button-hold-overlay {
+      background: darken($blue-3-lighten, 25);
+    }
   }
 
   .light {
@@ -103,6 +126,10 @@
     &:hover {
       background-color: $white-3;
       color: $black-1;
+    }
+
+    & .pg-button-hold-overlay {
+      background: darken($white-3, 25);
     }
   }
 
@@ -115,6 +142,10 @@
     &:hover {
       border-color: $white-3;
     }
+
+    & .pg-button-hold-overlay {
+      background: darken($blue-1, 25);
+    }
   }
 
   .pale {
@@ -125,6 +156,10 @@
     &:hover {
       background-color: $grey-3;
       border-color: $grey-3;
+    }
+
+    & .pg-button-hold-overlay {
+      background: darken($grey-3, 25);
     }
   }
 
