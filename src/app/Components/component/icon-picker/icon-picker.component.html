@@ -3,8 +3,8 @@
     <pg-label-info [type]="tooltipType" [tooltip]="tooltip" [position]="tooltipPosition">{{label | localize}}</pg-label-info>
   </div>
   <div class="icon-picker" (click)="toggleBrowser()">
-    <div class="icon-picker-icon">
-      <pg-icon type="icons" [id]="value" [size]="size.large" [svg]="value"></pg-icon>
+    <div class="icon-picker-icon" *ngIf="!!value">
+      <pg-icon type="icons" [size]="size.large" [svg]="value"></pg-icon>
     </div>
     <div class="icon-picker-button">
       <pg-icon icon="apps"></pg-icon>
@@ -19,7 +19,8 @@
 <ng-template #iconBrowser>
   <div class="icon-picker-browser-overlay">
     <div class="icon-picker-browser">
-      <div class="icon-picker-browser-header">
+      <div *ngIf="!!header" class="icon-picker-browser-header">
+        {{header}}
       </div>
       <pg-scroll-panel class="icon-picker-browser-icons-container">
         <div class="icon-picker-browser-icons">

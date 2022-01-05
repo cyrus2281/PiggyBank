@@ -5,7 +5,6 @@ import { LabelIconTypeEnum } from '../../enum/label-icon-type.enum';
 import { IconSizeEnum } from '../../icon/icons/icon.enum';
 import { iconListMap } from '../../icon/icons/icons';
 import { ControlValueAccessorModel } from '../../model/control-value-accessor.model';
-import { LabelInputComponent } from '../label-input/label-input.component';
 
 @Component({
   selector: 'pg-icon-picker',
@@ -14,20 +13,20 @@ import { LabelInputComponent } from '../label-input/label-input.component';
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => LabelInputComponent),
+      useExisting: forwardRef(() => IconPickerComponent),
       multi: true
     }
   ]
 })
 export class IconPickerComponent extends ControlValueAccessorModel<string>  implements OnInit {
-  @Input() label: string = ''//'Pick Directory Icon';
+  @Input() label!: string;
+  @Input() header!: string;
   @Input() tooltip!: string;
   @Input() tooltipType!: LabelIconTypeEnum;
   @Input() tooltipPosition!:TooltipPosition;
 
   size = IconSizeEnum;
-  openBrowser: boolean = true;
-
+  openBrowser: boolean = false;
   icons!: string[];
 
 

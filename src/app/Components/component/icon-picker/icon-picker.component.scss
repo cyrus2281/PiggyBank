@@ -57,6 +57,7 @@
 
   &-browser {
     display: flex;
+    flex-direction: column;
     height: 200px;
 
 
@@ -99,6 +100,16 @@
 
       .lightMode :host &:hover {
         background-color: $blue-1;
+        border-color: $blue-2;
+      }
+    }
+
+    &-header {
+      padding: 15px;
+      border-bottom: 1px solid;
+
+      .lightMode :host & {
+        background-color: $white-3;
         border-color: $blue-2;
       }
     }
