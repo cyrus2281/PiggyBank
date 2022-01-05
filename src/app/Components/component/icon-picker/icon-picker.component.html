@@ -1,0 +1,33 @@
+<div class="icon-picker-container">
+  <div class="icon-picker-label" *ngIf="!!label">
+    <pg-label-info [type]="tooltipType" [tooltip]="tooltip" [position]="tooltipPosition">{{label | localize}}</pg-label-info>
+  </div>
+  <div class="icon-picker" (click)="toggleBrowser()">
+    <div class="icon-picker-icon">
+      <pg-icon type="icons" [id]="value" [size]="size.large" [svg]="value"></pg-icon>
+    </div>
+    <div class="icon-picker-button">
+      <pg-icon icon="apps"></pg-icon>
+    </div>
+    <div class="icon-picker-browser-container" *ngIf="openBrowser">
+      <ng-container *ngTemplateOutlet="iconBrowser"></ng-container>
+    </div>
+  </div>
+</div>
+
+
+<ng-template #iconBrowser>
+  <div class="icon-picker-browser-overlay">
+    <div class="icon-picker-browser">
+      <div class="icon-picker-browser-header">
+      </div>
+      <pg-scroll-panel class="icon-picker-browser-icons-container">
+        <div class="icon-picker-browser-icons">
+          <div class="icon-picker-browser-icon" *ngFor="let icon of icons" (click)="selectIcon(icon)">
+            <pg-icon type="icons" [svg]="icon"></pg-icon>
+          </div>
+        </div>
+      </pg-scroll-panel>
+    </div>
+  </div>
+</ng-template>

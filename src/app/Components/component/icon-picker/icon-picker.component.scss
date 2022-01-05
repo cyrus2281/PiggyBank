@@ -1,0 +1,107 @@
+@import "../../../Core/styles/functions.scss";
+
+
+.icon-picker {
+  position: relative;
+
+  &-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &-icon {
+    padding: 4px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid;
+    overflow: hidden;
+
+    .lightMode :host & {
+      background-color: $white-1;
+      border-color: $blue-2;
+    }
+  }
+
+  &-button {
+    position: absolute;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid;
+    cursor: pointer;
+    right: 0px;
+    bottom: 0px;
+    transform: translate(50%, 20%);
+    transition: $transition-quick;
+
+    & ::ng-deep .icon {
+      font-size: 16px;
+    }
+
+
+    .lightMode :host & {
+      color: $black-1;
+      background-color: $blue-2;
+      border-color: $black-1;
+
+      &:hover {
+        background-color: $blue-1;
+      }
+
+    }
+  }
+
+  &-browser {
+    display: flex;
+    height: 200px;
+
+
+    &-container {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+    }
+
+    &-overlay {
+      border-radius: 10px;
+      border: 1px solid;
+      overflow: hidden;
+
+      .lightMode :host & {
+        background-color: $white-1;
+        border-color: $blue-2;
+      }
+    }
+
+    &-icons {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      justify-items: center;
+
+      &-container {
+        height: 100%;
+
+        & ::ng-deep .scroll-panel {
+          overflow-x: hidden;
+        }
+      }
+    }
+
+    &-icon{
+      padding: 12px;
+      margin: 5px;
+      border-radius: 16px;
+      transition: $transition-quick;
+
+      .lightMode :host &:hover {
+        background-color: $blue-1;
+        border-color: $blue-2;
+      }
+    }
+  }
+
+}

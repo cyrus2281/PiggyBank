@@ -26,6 +26,7 @@ import { ProgressBarWrapperComponent } from './component/progress-bar-wrapper/pr
 import { ScrollPanelComponent } from './component/scroll-panel/scroll-panel.component';
 import { LabelInfoComponent } from './component/label-info/label-info.component';
 import { DropDownComponent } from './component/drop-down/drop-down.component';
+import { IconPickerComponent } from './component/icon-picker/icon-picker.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { DropDownComponent } from './component/drop-down/drop-down.component';
     ScrollPanelComponent,
     LabelInfoComponent,
     DropDownComponent,
+    IconPickerComponent,
   ],
   imports: [
     CommonModule,
@@ -73,6 +75,7 @@ import { DropDownComponent } from './component/drop-down/drop-down.component';
     ScrollPanelComponent,
     LabelInfoComponent,
     DropDownComponent,
+    IconPickerComponent,
   ]
 })
 export class ComponentsModule { }
