@@ -10,6 +10,7 @@ export const contact_route = '/contact';
 
 export const budget_route = '/budget';
 export const budget_dashboard_route = '/budget/dashboard';
+export const budget_directory_route = '/budget/dir';
 
 export const disclaimer_base_route = '/disclaimer/';
 export const disclaimer_route_ID = 'disclaimer';

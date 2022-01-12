@@ -2,6 +2,7 @@ import { Injectable, OnDestroy } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { SideBarActionEventEnum } from 'src/app/Common/enum/side-bar-action-event.enum';
 import { SideBarServiceModel } from 'src/app/Common/models/side-bar-service.model';
+import { RouterService } from 'src/app/Core/routes/router.service';
 import { SubSink } from 'subsink';
 import { DirectorySidebarCard } from '../models/directory-sidebar-card';
 import { DirectoryDataService } from './directory-data.service';
@@ -17,7 +18,7 @@ export class BudgetSidebarService implements SideBarServiceModel<DirectorySideba
 
   private subscriptions = new SubSink();
 
-  constructor(private directoryDataService: DirectoryDataService) {
+  constructor(private directoryDataService: DirectoryDataService, private routerService: RouterService) {
     this.subscriptions.add(
       this.directoryDataService.getDirectories().subscribe((directories) => {
         if (directories?.length > 0 || true) {
@@ -42,9 +43,18 @@ export class BudgetSidebarService implements SideBarServiceModel<DirectorySideba
   }
 
   selectSidebarItem(item: DirectorySidebarCard, action: SideBarActionEventEnum): void {
-    this.selectedItem = item;
-    this.selectedItem$.next(this.selectedItem);
-    console.log(item, action);
+    switch (action) {
+      case SideBarActionEventEnum.SELECTED:
+        this.selectedItem = item;
+        this.selectedItem$.next(this.selectedItem);
+        this.routerService.goToDirectory(item.id);
+
+
+        break;
+      default:
+        console.log(item, action);
+        break;
+    }
   }
 
   ngOnDestroy(): void {

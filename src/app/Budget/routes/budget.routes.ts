@@ -1,6 +1,7 @@
 import { Route } from "@angular/router";
 import { BudgetComponent } from "../components/budget/budget.component";
 import { DashboardComponent } from "../components/dashboard/dashboard.component";
+import { DirectoryComponent } from "../components/directory/directory.component";
 
 export const budgetRouts: Route = {
   path: "budget",
@@ -9,6 +10,10 @@ export const budgetRouts: Route = {
     {
       path: "dashboard",
       component: DashboardComponent
+    },
+    {
+      path: "dir/:directory",
+      component: DirectoryComponent
     },
     {
       path: "",

@@ -41,6 +41,10 @@ export class RouterService {
     return this.goTo([Routes.login_route]);
   }
 
+  goToDirectory(id: string) {
+    return this.goTo([`${Routes.budget_directory_route}/${id}`]);
+  }
+
   /**
     * goes to login page
     * @returns Promise<boolean> A Promise that resolves to true when navigation succeeds, to false when navigation fails, or is rejected on error.

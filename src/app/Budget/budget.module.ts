@@ -11,6 +11,7 @@ import { CoreModule } from '../Core/core.module';
 import { AppRoutingModule } from '../Core/routes/app-routing.module';
 import { DirectoryDataService } from './services/directory-data.service';
 import { BudgetActionBarService } from './services/budget-action-bar.service';
+import { DirectoryComponent } from './components/directory/directory.component';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { BudgetActionBarService } from './services/budget-action-bar.service';
     DashboardComponent,
     DirectoryCardComponent,
     BudgetComponent,
+    DirectoryComponent,
   ],
   imports: [
     CommonModule,
