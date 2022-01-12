@@ -1,0 +1,92 @@
+@import "../../../Core/styles/functions.scss";
+
+.directory {
+  height: 100%;
+
+  &-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+  }
+
+  &-header {
+    &-container {
+      width: 100%;
+      padding: 5px 10px 0 10px;
+    }
+
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 5px;
+
+    @include tablet-plus() {
+      padding: 15px 10px;
+    }
+
+    .lightMode :host & {
+      background-color: $blue-1-lighten;
+    }
+  }
+
+  &-body {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  &-summary {
+    &-container {
+      padding: 10px;
+    }
+
+    border-radius: 10px;
+    @include for-screen(padding, 10px, 10);
+    @include for-screen(height, 100px, 15);
+
+    .lightMode :host & {
+      background-color: $white-3;
+    }
+  }
+
+  &-results {
+    margin: 0 10px 5px 10px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    border: 1px solid;
+    flex: 2;
+    height: 100%;
+
+    .lightMode :host & {
+      border-color: $blue-2;
+    }
+
+    &-scroll {
+      height: 100%;
+    }
+
+    &-header {
+      width: 100%;
+      padding: 10px;
+      border-radius: 10px;
+      border-bottom: 1px solid;
+
+      .lightMode :host & {
+        background-color: $white-3;
+        border-color: $blue-2;
+      }
+    }
+
+    &-transactions {
+      height: 0;
+      padding: 10px;
+    }
+
+    &-transaction {
+
+    }
+  }
+}

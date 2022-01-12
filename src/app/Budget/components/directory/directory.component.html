@@ -1,2 +1,29 @@
-<p>directory works!</p>
-{{directory.name}}
+<div class="directory">
+  <div class="directory-container">
+    <div class="directory-header-container">
+    <div class="directory-header">
+      <div class="directory-header-left">{{directory.name}}</div>
+      <div class="directory-header-right">{{directory.id}}</div>
+    </div>
+    </div>
+    <div class="directory-body">
+      <div class="directory-summary-container">
+        <div class="directory-summary">
+          {{directory.totalIncome}}
+        </div>
+      </div>
+      <div class="directory-results">
+        <div class="directory-results-header">
+          filter, sort
+        </div>
+        <pg-scroll-panel class="directory-results-scroll">
+          <div class="directory-results-transactions">
+            <div class="directory-results-transaction" *ngFor="let transaction of directory.transactions">
+                {{transaction.id}}
+            </div>
+          </div>
+        </pg-scroll-panel>
+      </div>
+    </div>
+  </div>
+</div>

@@ -18,7 +18,8 @@ export class DirectoryComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.subscriptions.add(
       this.directoryDataService.getSelectedDirectory().subscribe(directory => {
-        this.directory = directory
+        this.directory = directory;
+        console.log(directory);
       }),
     );
   }
