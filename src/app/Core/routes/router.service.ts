@@ -41,6 +41,11 @@ export class RouterService {
     return this.goTo([Routes.login_route]);
   }
 
+    /**
+    * goes to directory with give id
+    * @params id string directory id
+    * @returns Promise<boolean> A Promise that resolves to true when navigation succeeds, to false when navigation fails, or is rejected on error.
+   */
   goToDirectory(id: string) {
     return this.goTo([`${Routes.budget_directory_route}/${id}`]);
   }

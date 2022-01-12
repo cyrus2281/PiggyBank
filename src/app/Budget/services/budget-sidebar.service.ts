@@ -21,7 +21,7 @@ export class BudgetSidebarService implements SideBarServiceModel<DirectorySideba
   constructor(private directoryDataService: DirectoryDataService, private routerService: RouterService) {
     this.subscriptions.add(
       this.directoryDataService.getDirectories().subscribe((directories) => {
-        if (directories?.length > 0 || true) {
+        if (directories?.length > 0) {
           this.directorySidebarCards = directories.map(
             (directory) =>
               new DirectorySidebarCard(
@@ -47,9 +47,8 @@ export class BudgetSidebarService implements SideBarServiceModel<DirectorySideba
       case SideBarActionEventEnum.SELECTED:
         this.selectedItem = item;
         this.selectedItem$.next(this.selectedItem);
+        this.directoryDataService.setSelectedDirectoryFromID(item.id);
         this.routerService.goToDirectory(item.id);
-
-
         break;
       default:
         console.log(item, action);
